@@ -9,50 +9,56 @@
           <a class="nav-link active" aria-current="page" href="/home">Home</a>
         </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">TOP 5 Favorites</a>
+            <a class="nav-link active" aria-current="page" href="/favorites">TOP 5 Favorites</a>
           </li>
+
+          <% if logged_in? %>
       
-          <li class="nav-item dropdown">
-            <button class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-              Tracker Records
-            </button>
-            <ul class="dropdown-menu">
-              <li>
-                <a class="dropdown-item" aria-current="page" href="#">Adding Records</a>
-              </li>
-              <li>
-                <a class="dropdown-item" aria-current="page" href="#">Show PetA's Records</a>
-              </li>
-              <li>
-                <a class="dropdown-item" aria-current="page" href="#">Show PetB's Records</a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-item dropdown">
-            <button class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-              Owner Profile
-            </button>
-            <ul class="dropdown-menu">
-              <li>
-                <a class="dropdown-item" aria-current="page" href="#">View Profile</a>
-              </li>
-              <li>
-                 <a class="dropdown-item" aria-current="page" href="#">Edit Profile</a>
-              </li>
-              <li>
-                <a class="dropdown-item text-danger" aria-current="page" href="#">Delete Profile</a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Log Out</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/login">Log In</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="/signup">Sign Up</a>
-          </li>
+            <li class="nav-item dropdown">
+              <button class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                Tracker Records
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item" aria-current="page" href="#">Adding Records</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" aria-current="page" href="#">Show PetA's Records</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" aria-current="page" href="#">Show PetB's Records</a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+              <button class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                <%= "(Admin)" if current_user.admin %> Profile <%= current_user.name.split(" ").map(&:capitalize).join(' ') %>
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <%= link_to "View Profile", user_path(current_user), class: "dropdown-item" %>
+                </li>
+                <li>
+                  <%= link_to "Edit Profile", edit_user_path(current_user), class: "dropdown-item" %>
+                </li>
+                <li>
+                  <%= link_to "Delete Profile", user_path(current_user), class: "dropdown-item text-danger", data: {"turbo-confirm": "Are you sure to delete your account? The whole data you created will gone...", "turbo-method": :delete } %>
+                </li>
+              </ul>
+            </li>
+
+            <li class="nav-item">
+              <%= link_to "Log Out", logout_path, class: "nav-link", method: :delete %>
+            </li>
+          <% else %>
+            <li class="nav-item">
+              <a class="nav-link" href="/login">Log In</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="/signup">Sign Up</a>
+            </li>
+          <% end %>
       </ul>
     </div>
   </div>

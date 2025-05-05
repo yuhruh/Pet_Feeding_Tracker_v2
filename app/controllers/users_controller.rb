@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
   before_action :set_user, only: %i[ show edit update destroy ]
+  before_action :require_user, only: %i[ edit update ]
+  before_action :require_same_user, only: %i[ edit update destroy ]
 
   # GET /users or /users.json
   def index
@@ -25,8 +27,8 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to @user, notice: "User was successfully created." }
-        format.json { render :show, status: :created, location: @user }
+        format.html { redirect_to '/favorites', notice: "Welcome to Pet Trackers App, #{@user.name.split(" ").map(&:capitalize).join(" ")}. You have signed up successfully." }
+        format.json { render :show, status: :created, location: '/favorites' }
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @user.errors, status: :unprocessable_entity }
@@ -38,7 +40,7 @@ class UsersController < ApplicationController
   def update
     respond_to do |format|
       if @user.update(user_params)
-        format.html { redirect_to @user, notice: "User was successfully updated." }
+        format.html { redirect_to @user, notice: "Account was successfully updated." }
         format.json { render :show, status: :ok, location: @user }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -50,9 +52,10 @@ class UsersController < ApplicationController
   # DELETE /users/1 or /users/1.json
   def destroy
     @user.destroy!
+    session[:user_id] = nil if @user == current_user
 
     respond_to do |format|
-      format.html { redirect_to users_path, status: :see_other, notice: "User was successfully destroyed." }
+      format.html { redirect_to users_path, status: :see_other, alert: "#{@user.name} and all associated records were successfully deleted." }
       format.json { head :no_content }
     end
   end
@@ -66,5 +69,12 @@ class UsersController < ApplicationController
     # Only allow a list of trusted parameters through.
     def user_params
       params.expect(user: [ :name, :email, :password ])
+    end
+
+    def require_same_user
+      if current_user != @user && !current_user.admin?
+        flash[:alert] = "You can only edit or delete your own account...."
+        redirect_to @user
+      end
     end
 end
