@@ -50,9 +50,10 @@ test:
 production:
   primary: &primary_production
     <<: *default
-    database: pet_feeding_tracker_v2_production
-    username: pet_feeding_tracker_v2
-    password: <%= ENV["PET_FEEDING_TRACKER_V2_DATABASE_PASSWORD"] %>
+    url: <%= ENV["DATABASE_URL"] %>
+    # database: pet_feeding_tracker_v2_production
+    # username: pet_feeding_tracker_v2
+    # password: <%= ENV["PET_FEEDING_TRACKER_V2_DATABASE_PASSWORD"] %>
   cache:
     <<: *primary_production
     database: pet_feeding_tracker_v2_production_cache
