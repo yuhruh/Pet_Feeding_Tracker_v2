@@ -2,7 +2,7 @@ Using RoR, Heroku and Chartkick to record feeding amount a day with dry and wet 
 
 https://feeding-tracker-v2-3e86df55d613.herokuapp.com/
 
-*** Requirements
+###Requirements
 Sign In/Sign Out/Sign Up, having basic validation on email and password/ timezone selection when sign up.
 add/edit/delete records.
 edit/ delete users by their own.
@@ -11,7 +11,7 @@ automatically show the current date and time when creating a new record, date ca
 show the column chart following the records.
 pagination for users and records.
 
-***Improvement
+###Improvement
 add multiple pets selection for record.
 add unit selection for record.
 automatically show the pet's love food when creating a new record for a new day.
