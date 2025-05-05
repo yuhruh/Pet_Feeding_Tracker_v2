@@ -1,0 +1,15 @@
+<div class="container">
+
+  <p style="color: green"><%= notice %></p>
+
+  <h1 class="text-center mt-4">Users</h1>
+
+  <div id="users" class="d-flex justify-content-center">
+    <% @users.each do |user| %>
+      <%= render user %>
+      <p>
+        <%= link_to "Show this user", user %> | <%= link_to "New user", new_user_path %>
+      </p>
+    <% end %>
+  </div>
+</div>

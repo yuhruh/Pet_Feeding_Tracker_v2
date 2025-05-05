@@ -1,0 +1,58 @@
+<div class="container">
+  <%= form_with(model: user) do |form| %>
+    <div class="d-flex justify-content-center">
+      <% if user.errors.any? %>
+        <div style="color: red">
+          <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+          <ul>
+            <% user.errors.each do |error| %>
+              <li><%= error.full_message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+    </div>
+
+    <div class="col-12">
+      <div class="row mb-3 justify-content-center">
+      <%= form.label :name, class: "col-sm-3 col-form-label", style: "color: #515a5a; font-weight: bold" %>
+      <div class="col-sm-3">
+        <%= form.text_field :name, class: "form-control", placeholder: "Enter a username" %>
+       </div> 
+    </div>
+
+    <div class="col-12">
+      <div class="row mb-3 justify-content-center">
+      <%= form.label :email, class: "col-sm-3 col-form-label", style: "color: #515a5a; font-weight: bold" %>
+      <div class="col-sm-3">
+        <%= form.email_field :email, class: "form-control", placeholder: "Enter your email address" %>
+      </div>
+    </div>
+
+    <div class="col-12">
+      <div class="row mb-3 justify-content-center">
+        <%= form.label :password, class: "col-sm-3 col-form-label", style: "color: #515a5a; font-weight: bold" %>
+        <div class="col-sm-3">
+          <%= form.password_field :password, class: "form-control", placeholder: "Create password" %>
+        <div id="passwordHelpBlock" class="form-text">Password should contain at least one upper case, one lower case, one digit and one special character</div>
+      </div>
+    </div>
+
+    <div class="col-12">
+      <div class="row mb-3 justify-content-center">
+        <%= form.label :password_confirmation, class: "col-sm-3 col-form-label", style: "color: #515a5a; font-weight: bold" %>
+        <div class="col-sm-3">
+        <%= form.password_field :password_confirmation, class: "form-control", placeholder: "Please type your password again" %>
+      </div>
+    </div>
+
+    <div class="col-12">
+      <%= render "shared/time_zone_select", {form: form, class_names: "hidden"} %>
+    </div>
+
+    <div class="d-flex justify-content-center">
+      <%= form.submit "Create New User" %>
+    </div>
+  <% end %>
+</div>
