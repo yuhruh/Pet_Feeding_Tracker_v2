@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   before_save { self.email = email.downcase, self.password = password_confirmation }
   # has_many :pet_trackers, dependent: :destroy
+  has_secure_password
   validates :name, presence: true, 
                       uniqueness: { case_sensitive: false }, 
                       length: { minimum: 3, maximum: 25 }
@@ -15,7 +16,5 @@ class User < ApplicationRecord
   validates :password_confirmation, presence: true
   validates :time_zone, presence: true, 
                       inclusion: {
-                        in: ActiveSupport::TimeZone.all.map(&:tzinfo).map(&:identifier)
-                      }
-  has_secure_password
+                        in: ActiveSupport::TimeZone.all.map(&:tzinfo).map(&:identifier) }
 end

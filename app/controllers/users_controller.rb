@@ -10,6 +10,7 @@ class UsersController < ApplicationController
 
   # GET /users/1 or /users/1.json
   def show
+    @user = User.find(params[:id])
   end
 
   # GET /users/new
@@ -23,10 +24,11 @@ class UsersController < ApplicationController
 
   # POST /users or /users.json
   def create
-    @user = User.new(params.expect(user: [:name, :email, :password, :password_confirmation, :time_zone]))
+    @user = User.new(params.expect(user: [ :name, :email, :password, :password_confirmation, :time_zone ]))
 
     respond_to do |format|
       if @user.save
+        session[:user_id] = @user.id
         format.html { redirect_to '/favorites', notice: "Welcome to Pet Trackers App, #{@user.name.split(" ").map(&:capitalize).join(" ")}. You have signed up successfully." }
         format.json { render :show, status: :created, location: '/favorites' }
       else

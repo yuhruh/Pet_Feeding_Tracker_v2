@@ -3,13 +3,13 @@ class SessionsController < ApplicationController
   end
 
   def create
-    user = User.find_by(email: params[:session][:email].downcase)
-    if user && user.authenticate(params[:session][:password])
+    user = User.find_by(name: params[:session][:name])
+    if user && user.authenticate_password(params[:session][:password])
       session[:user_id] = user.id
       flash[:notice] = "Logged in successfully."
-      redirect_to user
+      redirect_to '/favorites'
     else
-      flash.now[:alert] = "There was something wrong with your login details"
+      flash.now[:alert] = "Invalid usesrname or Password"
       render :new, status: :unprocessable_entity
     end
   end
