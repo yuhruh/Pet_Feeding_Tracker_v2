@@ -29,8 +29,8 @@ class UsersController < ApplicationController
     respond_to do |format|
       if @user.save
         session[:user_id] = @user.id
-        format.html { redirect_to '/favorites', notice: "Welcome to Pet Trackers App, #{@user.name.split(" ").map(&:capitalize).join(" ")}. You have signed up successfully." }
-        format.json { render :show, status: :created, location: '/favorites' }
+        format.html { redirect_to new_pet_path, notice: "Welcome to Pet Trackers App, #{@user.name.split(" ").map(&:capitalize).join(" ")}. You have signed up successfully." }
+        format.json { render :show, status: :created, location: new_pet_path }
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @user.errors, status: :unprocessable_entity }
