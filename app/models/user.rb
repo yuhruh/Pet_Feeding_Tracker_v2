@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   before_save { self.email = email.downcase, self.password = password_confirmation }
+  has_many :pets, dependent: :destroy
   # has_many :pet_trackers, dependent: :destroy
   has_secure_password
   validates :name, presence: true, 
