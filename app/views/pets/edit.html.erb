@@ -1,12 +1,10 @@
-<% content_for :title, "Editing pet" %>
-
-<h1>Editing pet</h1>
+<h1 class="text-center mt-4">Editing <%= @pet.pet_name %>'s Profile</h1>
 
 <%= render "form", pet: @pet %>
 
 <br>
 
-<div>
+<div class="d-flex justify-content-center mb-4">
   <%= link_to "Show this pet", @pet %> |
   <%= link_to "Back to pets", pets_path %>
 </div>
