@@ -1,24 +1,26 @@
-<h1 class="text-center mt-4"><%= (@pet.pet_name).capitalize %>'s Profile</h1>
 
-<div class="container">
-  <div class="d-flex justify-content-center mb-4">
-    <% if @pet.gender == 'Female' || @pet.gender == 'F' %>
-      <%= image_tag("Female_Cat.png", width: "150px") %>
-    <% elsif @pet.gender == 'Male' || @pet.gender == 'M' %>
-      <%= image_tag("Male_Cat.png", width: "150px") %>
-    <% end %>
+<div class="d-flex justify-content-center">
+  <div class="card" style="width: 35rem; background: #f2f4f6">
+    <h1 class="text-center mt-4"><%= (@pet.pet_name).capitalize %>'s Profile</h1>
+    <div class="container">
+      <div class="d-flex justify-content-center mb-4">
+        <% if @pet.gender == 'Female' || @pet.gender == 'F' %>
+          <%= image_tag("stitch_female_cat-Photoroom.png", width: "150px", class:"figure-img img-fluid rounded") %>
+        <% elsif @pet.gender == 'Male' || @pet.gender == 'M' %>
+          <%= image_tag("stitch_male_cat-Photoroom.png", width: "150px", class:"figure-img img-fluid rounded") %>
+        <% else %>
+          <%= image_tag("do_not_want_answer.png", width: "150px", class:"figure-img img-fluid rounded") %>
+        <% end %>
+      </div>
+
+      <div class="d-flex justify-content-center mb-4">
+        <%= render @pet %>
+      </div>
+
+      <div class="text-center m-4">
+        <%= link_to "Edit Pet Profile", edit_pet_path(@pet), class: "btn btn-outline-success btn-sm mb-4" %>
+        <%= link_to "Delete Pet Profile", pet_path(@pet), class: "btn btn-outline-danger btn-sm mb-4 text-danger", data: {"turbo-confirm": "Are you sure to delete the pet? ", "turbo-method": :delete } %>
+      </div>
+    </div>
   </div>
-
-  <div class="d-flex justify-content-center mb-4">
-    <%= render @pet %>
-  </div>
-
-  <div class="text-center m-4">
-    <%= link_to "Edit Pet Profile", edit_pet_path(@pet), class: "btn btn-outline-success btn-sm mb-4" %>
-    <%= link_to "Delete Pet Profile", pet_path(@pet), class: "btn btn-outline-danger btn-sm mb-4 text-danger", data: {"turbo-confirm": "Are you sure to delete the pet? ", "turbo-method": :delete } %>
-  </div>
-</div>
-
-<div class="d-flex justify-content-center mb-4">
-  <%= link_to "Back to pets", pets_path %>
 </div>

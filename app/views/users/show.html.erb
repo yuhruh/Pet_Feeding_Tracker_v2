@@ -4,12 +4,18 @@
   <%= link_to "Delete your Profile", user_path(@user), class: "btn btn-outline-danger btn-sm mb-4 text-danger", data: {"turbo-confirm":  "Are you sure to delete this user account? The user and associated trackers will all gone..", "turbo-method": :delete } %>
 </div>
 
-<%= current_user.pets.count %>
-<%= @user.pets.nil? %>
-
 
 <div class="d-flex justify-content-center">
-  <h4><%= @user.name.capitalize %> has <%= @user.pets.count %> pets</h4>
+  <h4>
+    <%= @user.name.capitalize %> has <%= @user.pets.count %> pets: 
+    <ol class="list-group list-group-numbered">
+      <% current_user.pets.each do |pet| %>
+        <li class="list-group-item">
+          <%= link_to "#{pet.pet_name}'s Profile", "/pets/#{pet.id}", class: "btn" %>
+        </li> 
+      <% end %>
+    </ol>
+  </h4>
 </div>
 
 
