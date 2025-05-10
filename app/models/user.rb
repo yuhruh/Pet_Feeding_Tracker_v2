@@ -3,6 +3,7 @@ class User < ApplicationRecord
   has_many :pets, dependent: :destroy
   # has_many :pet_trackers, dependent: :destroy
   has_secure_password
+  validates_associated :pets
   validates :name, presence: true, 
                       uniqueness: { case_sensitive: false }, 
                       length: { minimum: 3, maximum: 25 }
@@ -11,9 +12,10 @@ class User < ApplicationRecord
                     uniqueness: { case_sensitive: false }, 
                     length: { maximum: 105 },
                     format: { with: VALID_EMAIL_REGEX }
-  validates :password_digest, presence: true,
+  validates :password, presence: true,
                        length: { minimum: 8 },
-                       format: { with: /(?=.*[0-9])(?=.*?[^A-Za-z0-9])(?=.*[a-z])(?=.*[A-Z])/ }
+                       format: { with: /(?=.*[0-9])(?=.*?[^A-Za-z0-9])(?=.*[a-z])(?=.*[A-Z])/, 
+                       message: " should contain at least one upper case, one lower case, one digit and one special character" }
   validates :password_confirmation, presence: true
   validates :time_zone, presence: true, 
                       inclusion: {

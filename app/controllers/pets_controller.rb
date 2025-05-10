@@ -1,5 +1,6 @@
 class PetsController < ApplicationController
   before_action :set_pet, only: %i[ show edit update destroy ]
+  before_action :require_user, except: %i[ show edit update destroy ]
 
   # GET /pets or /pets.json
   def index
