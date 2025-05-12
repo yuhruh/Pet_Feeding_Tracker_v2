@@ -1,9 +1,9 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary mb-2">
   <div class="container-fluid">
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav">
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="/home">Home</a>
@@ -16,24 +16,24 @@
           <% if logged_in? %>
             <% if current_user.pets.count != 0 %>
               <li class="nav-item dropdown">
-                <button class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Pet(s) Profile
-                </button>
-                  <ul class="dropdown-menu">
-                    <% current_user.pets.each do |pet| %>
-                      <li>
-                        <%= link_to "View #{pet.pet_name}'s Profile", "/pets/#{pet.id}", class: "dropdown-item" %>
-                      </li>
-                    <% end %>
-                  </ul>
+                </a>
+                <ul class="dropdown-menu">
+                  <% current_user.pets.each do |pet| %>
+                    <li>
+                      <%= link_to "View #{pet.pet_name}'s Profile", "/pets/#{pet.id}", class: "dropdown-item" %>
+                    </li>
+                  <% end %>
+                </ul>
               </li>
             <% end %>
             
       
             <li class="nav-item dropdown">
-              <button class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+              <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Tracker Records
-              </button>
+              </a>
               <ul class="dropdown-menu">
                 <li>
                   <a class="dropdown-item" aria-current="page" href="#">Adding Records</a>
@@ -48,9 +48,9 @@
             </li>
 
             <li class="nav-item dropdown">
-              <button class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+              <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 <%= "(Admin)" if current_user.admin %> Profile <%= current_user.name.split(" ").map(&:capitalize).join(' ') %>
-              </button>
+              </a>
               <ul class="dropdown-menu">
                 <li>
                   <%= link_to "Add Pet", new_pet_path, class: "dropdown-item" %>
