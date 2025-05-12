@@ -13,10 +13,8 @@ class User < ApplicationRecord
                     length: { maximum: 105 },
                     format: { with: VALID_EMAIL_REGEX }
   validates :password, presence: true,
-                       length: { minimum: 8 },
-                       format: { with: /(?=.*[0-9])(?=.*?[^A-Za-z0-9])(?=.*[a-z])(?=.*[A-Z])/, 
-                       message: " should contain at least one upper case, one lower case, one digit and one special character" }
-  validates :password_confirmation, presence: true
+                       length: { minimum: 8 }
+  validates :password_confirmation, presence: { message: "Upper and lower case should be the same."}
   validates :time_zone, presence: true, 
                       inclusion: {
                         in: ActiveSupport::TimeZone.all.map(&:tzinfo).map(&:identifier) }
