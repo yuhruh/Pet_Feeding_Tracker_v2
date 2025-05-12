@@ -5,6 +5,23 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="mobile-web-app-capable" content="yes">
+    <script type="module">
+    import { Application, Controller } from "https://unpkg.com/@hotwired/stimulus/dist/stimulus.js"
+    window.Stimulus = Application.start()
+
+    Stimulus.register("time-zone", class extends Controller {
+      static targets = [ "tz", "button.btn" ];
+
+      initialize() {
+        this.tzTarget.value = Intl.DateTimeFormat().resolvedOptions().timeZone;
+      }
+
+      systemTimeZone() {
+        console.log(this.tzTarget.value);
+      }
+    })
+  </script>
+
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 

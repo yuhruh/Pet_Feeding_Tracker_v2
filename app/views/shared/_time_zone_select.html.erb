@@ -1,10 +1,8 @@
-<div class="<%= class_names %>" data-controller="time-zone">
-  <div class="row mb-3 justify-content-center">
+<div class="<%= class_names %>">
+  <div class="row mb-3 justify-content-center visually-hidden" data-controller="time-zone">
     <%= form.label :time_zone, class: "col-sm-3 col-form-label", style: "color: #515a5a; font-weight: bold" %>
     <div class="col-sm-3">
-      <%= form.select :time_zone,
-              ActiveSupport::TimeZone.all.map{ |tz| [tz.name, tz.tzinfo.identifier] },
-              { prompt: "Select your time zone" }, class: "form-control" %>
+      <%= form.text_field :time_zone, data: { "time_zone_target"=> "tz" }, class: "form-control" %>
     </div>
   </div>
 </div>
