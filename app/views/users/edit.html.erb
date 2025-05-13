@@ -1,3 +1,48 @@
 <h1 class="text-center mt-4">Edit <%= (@user.name.split(' ').map(&:capitalize).join(' ')) %>'s profile</h1>
 
-<%= render "form", user: @user %>
+<div class="container">
+  <%= form_with(model: @user) do |form| %>
+    <div class="d-flex justify-content-center">
+      <%= render 'shared/errors', obj: @user %>
+    </div>
+
+    <div class="col-12">
+      <div class="row mb-3 justify-content-center">
+      <%= form.label :name, class: "col-sm-3 col-form-label", style: "color: #515a5a; font-weight: bold" %>
+      <div class="col-sm-4">
+        <%= form.text_field :name, class: "form-control", value: @user.name, :required => true %>
+       </div> 
+    </div>
+
+    <div class="col-12">
+      <div class="row mb-3 justify-content-center">
+        <%= form.label :password, class: "col-sm-3 col-form-label", style: "color: #515a5a; font-weight: bold" %>
+        <div class="col-sm-4">
+          <%= form.password_field :password, class: "form-control", placeholder: "New password", :required => true %>
+      </div>
+    </div>
+
+    <div class="col-12">
+      <div class="row mb-3 justify-content-center">
+        <%= form.label :password_confirmation, class: "col-sm-3 col-form-label", style: "color: #515a5a; font-weight: bold" %>
+        <div class="col-sm-4">
+        <%= form.password_field :password_confirmation, class: "form-control", placeholder: "Please type your new password again", :required => true %>
+      </div>
+    </div>
+
+    <div class="col-12">
+      <div class="row mb-3 justify-content-center" data-controller="time-zone">
+        <%= form.label :time_zone, class: "col-sm-3 col-form-label", style: "color: #515a5a; font-weight: bold" %>
+        <div class="col-sm-4">
+          <fieldset disabled>
+            <%= form.text_field :time_zone, data: { "time_zone_target"=> "tz" }, id: "disabledTextInput", class: "form-control" %>
+          </fieldset>
+        </div>
+      </div>
+    </div>
+
+    <div class="d-flex justify-content-center">
+      <%= form.submit "Create New User" %>
+    </div>
+  <% end %>
+</div>
