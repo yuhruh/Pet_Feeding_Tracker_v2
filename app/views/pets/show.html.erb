@@ -18,6 +18,7 @@
       </div>
 
       <div class="text-center m-4">
+        <%= link_to "Add #{@pet.pet_name.capitalize}'s Record", new_tracker_path, class: "btn btn-outline-primary btn-sm mb-4" %>
         <%= link_to "Edit Pet Profile", edit_pet_path(@pet), class: "btn btn-outline-success btn-sm mb-4" %>
         <%= link_to "Delete Pet Profile", pet_path(@pet), class: "btn btn-outline-danger btn-sm mb-4 text-danger", data: {"turbo-confirm": "Are you sure to delete the pet? ", "turbo-method": :delete } %>
       </div>

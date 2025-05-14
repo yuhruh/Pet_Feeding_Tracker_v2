@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :trackers
   root 'pages#home'
   resources :pets
   resources :users, except: [:new]

@@ -12,6 +12,7 @@
       <% current_user.pets.each do |pet| %>
         <li class="list-group-item">
           <%= link_to "#{pet.pet_name}'s Profile", "/pets/#{pet.id}", class: "btn" %>
+          <%= link_to "Add #{pet.pet_name.capitalize}'s Record", new_tracker_path, class: "btn btn-warning", style: "background: #f8e4a8;" %>
         </li> 
       <% end %>
     </ol>

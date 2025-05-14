@@ -1,0 +1,11 @@
+<% content_for :title, "New tracker" %>
+
+<h1 class="text-center mt-4 mb-4">New Feeding Record</h1>
+
+<%= render "form", tracker: @tracker %>
+
+<br>
+
+<div class="d-flex justify-content-center">
+  <%= link_to "Back to trackers", trackers_path %>
+</div>
