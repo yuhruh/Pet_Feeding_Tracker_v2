@@ -9,6 +9,7 @@ class PetsController < ApplicationController
 
   # GET /pets/1 or /pets/1.json
   def show
+    @trackers = @pet.trackers
   end
 
   # GET /pets/new

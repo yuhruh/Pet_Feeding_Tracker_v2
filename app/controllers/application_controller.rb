@@ -7,9 +7,9 @@ class ApplicationController < ActionController::Base
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
 
-  def current_pet
-    @current_pet ||= Pet.find(session[:pet_id]) if session[:pet_id]
-  end
+  # def current_pet 
+  #   Pet.find(@pet.id)
+  # end
 
   def logged_in?
     !!current_user

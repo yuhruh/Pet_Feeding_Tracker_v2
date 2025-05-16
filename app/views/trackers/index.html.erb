@@ -1,16 +1,9 @@
-<p style="color: green"><%= notice %></p>
-
-<% content_for :title, "Trackers" %>
-
-<h1>Trackers</h1>
-
-<div id="trackers">
-  <% @trackers.each do |tracker| %>
-    <%= render tracker %>
-    <p>
-      <%= link_to "Show this tracker", tracker %>
-    </p>
-  <% end %>
+<div class="d-flex justify-content-center">
+  <h1 class="text-center mt-4">Pet <%= @pet.pet_name.capitalize %>'s Trackers</h1>
 </div>
 
-<%= link_to "New tracker", new_tracker_path %>
+<div class="d-flex float-sm-center justify-content-center mb-4">
+  <%= link_to "#{image_tag('icon_add.png', width:'18px', height: '18px')}  Adding #{@pet.pet_name.capitalize}'s New Record".html_safe, new_pet_tracker_path %>
+</div>
+
+<%= render 'tracker' %>

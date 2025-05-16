@@ -1,8 +1,10 @@
 class User < ApplicationRecord
   before_save { self.email = email.downcase, self.password = password_confirmation }
   has_many :pets, dependent: :destroy
+  has_many :trackers, dependent: :destroy
   has_secure_password
   validates_associated :pets
+  validates_associated :trackers
   validates :name, presence: true, 
                       uniqueness: { case_sensitive: false }, 
                       length: { minimum: 3, maximum: 25 }

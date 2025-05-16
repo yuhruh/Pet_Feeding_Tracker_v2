@@ -1,52 +1,39 @@
-<div id="<%= dom_id tracker %>">
-  <p>
-    <strong>Pet:</strong>
-    <%= tracker.pet_id %>
-  </p>
-
-  <p>
-    <strong>Date:</strong>
-    <%= tracker.date %>
-  </p>
-
-  <p>
-    <strong>Feeding time:</strong>
-    <%= tracker.feeding_time %>
-  </p>
-
-  <p>
-    <strong>Time of eat back and forth:</strong>
-    <%= tracker.time_of_eat_back_and_forth %>
-  </p>
-
-  <p>
-    <strong>Type:</strong>
-    <%= tracker.type %>
-  </p>
-
-  <p>
-    <strong>Brand:</strong>
-    <%= tracker.brand %>
-  </p>
-
-  <p>
-    <strong>Description:</strong>
-    <%= tracker.description %>
-  </p>
-
-  <p>
-    <strong>Amount:</strong>
-    <%= tracker.amount %>
-  </p>
-
-  <p>
-    <strong>Left amount:</strong>
-    <%= tracker.left_amount %>
-  </p>
-
-  <p>
-    <strong>Favorite score:</strong>
-    <%= tracker.favorite_score %>
-  </p>
-
-</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Date</th>
+      <th scope="col">Feeding Time</th>
+      <th scope='col'>Time of eat back and forth</th>
+      <th scope='col'>Food Type</th>
+      <th scope="col">Brand</th>
+      <th scope="col">Description</th>
+      <th scope="col">Amount (g)</th>
+      <th scope="col">Left Amount (g)</th>
+      <th scope="col">Total Ate Amount (g)</th>
+      <th scope="col">Favorite Score</th>
+      <th scope="col">Edit</th>
+      <th scope="col">Delete</th>
+    </tr>
+  </thead>
+  <tbody id="trackers">
+    <% @trackers.each_with_index do |pet_tracker, idx| %>
+      <tr>
+      <%=pet_tracker.id%>
+        <th scope="row"><%= idx+1 %></th>
+        <td><%= pet_tracker.date.strftime("%Y-%m-%d") %></td>
+        <td><%= JSON(pet_tracker.feeding_time).split(' ')[1] %></td>
+        <td><%= pet_tracker.time_of_eat_back_and_forth %></td>
+        <td><%= pet_tracker.food_type %></td>
+        <td><%= pet_tracker.brand %></td>
+        <td><%= pet_tracker.description %></td>
+        <td><%= pet_tracker.amount %></td>
+        <td><%= pet_tracker.left_amount %></td>
+        <td><%= ((pet_tracker.amount).to_f - (pet_tracker.left_amount).to_f).round(3) %></td>
+        <td><%= pet_tracker.favorite_score %></td>
+        <td><%= link_to (image_tag("icon_edit.png", width:"18px")), edit_pet_tracker_path(@pet, pet_tracker) %></td>
+        <td><%= link_to (image_tag("icon_delete.png", width:"18px")) , pet_tracker_path(@pet, pet_tracker), data: { "turbo-method": :delete, 'turbo-confirm': 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

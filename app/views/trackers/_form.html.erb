@@ -1,20 +1,9 @@
 <div class="container">
-  <%= form_with(model: tracker) do |form| %>
+  <%= form_with(model: [@pet, tracker]) do |form| %>
     <div class="d-flex justify-content-center">
-      <% if tracker.errors.any? %>
-        <div style="color: red">
-          <h2><%= pluralize(tracker.errors.count, "error") %> prohibited this tracker from being saved:</h2>
-
-          <ul>
-            <% tracker.errors.each do |error| %>
-              <li><%= error.full_message %></li>
-            <% end %>
-          </ul>
-        </div>
-      <% end %>
+       <%= render 'shared/errors', obj: @tracker %>
     </div>
 
-    <div class="col-12">
       <div class="row mb-3 justify-content-center">
         <%= form.label :date, class: "col-sm-3 col-form-label", style: "color: #515a5a; font-weight: bold" %>
         <div class="col-sm-3">
@@ -37,9 +26,9 @@
       </div>
 
       <div class="row mb-3 justify-content-center">
-        <%= form.label :type, class: "col-sm-3 col-form-label", style: "color: #515a5a; font-weight: bold" %>
+        <%= form.label :food_type, class: "col-sm-3 col-form-label", style: "color: #515a5a; font-weight: bold" %>
         <div class="col-sm-3">
-          <%= form.select :type, [["Dry"], ["Wet"], ["Other"]], { prompt: "Select Food Type" }, class: "form-control" %>
+          <%= form.select :food_type, [["Dry"], ["Wet"], ["Other"]], { prompt: "Select Food Type" }, class: "form-control" %>
         </div>
       </div>
 
@@ -75,13 +64,13 @@
         <%= form.label :favorite_score, class: "col-sm-3 col-form-label", style: "color: #515a5a; font-weight: bold" %>
         <div class="col-sm-3">
           <fieldset disabled>
-            <%= form.number_field :favorite_score, class:"form-control" %>
+            <%= form.number_field :favorite_score, class:"form-control", value: 0 %>
           </fieldset>
         </div>
       </div>
 
       <div class="d-flex justify-content-center">
-        <%= form.submit "Add New Record" %>
+        <%= form.submit(@tracker.new_record? ? 'Add a new record' : "Modify Tracker", class: "btn", style: "color: #515a5a; font-weight: bold; background-color: #d5dbdb") %>
       </div>
     </div>
   <% end %>

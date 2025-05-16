@@ -25,3 +25,6 @@ https://feeding-tracker-v2-3e86df55d613.herokuapp.com/
 - automatically show the pet's love food when creating a new record for a new day.
 
 - add new column for weights, numbers of pee and poo/day, note.
+
+
+"/pets/#{@pet.id}/trackers/#{pet_tracker.id}/edit

@@ -3,8 +3,8 @@
 <%= render @tracker %>
 
 <div>
-  <%= link_to "Edit this tracker", edit_tracker_path(@tracker) %> |
-  <%= link_to "Back to trackers", trackers_path %>
+  <%= link_to "Edit this tracker", edit_pet_tracker_path([@pet, @tracker]) %> |
+  <%= link_to "Back to trackers", pet_trackers_path %>
 
-  <%= button_to "Destroy this tracker", @tracker, method: :delete %>
+  <%= button_to "Destroy this tracker", pet_tracker_path(@tracker), method: :delete %>
 </div>

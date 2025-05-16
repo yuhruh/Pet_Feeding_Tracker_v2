@@ -1,12 +1,10 @@
-<% content_for :title, "Editing tracker" %>
-
-<h1>Editing tracker</h1>
+<h1 class="text-center mt-4">Editing tracker</h1>
 
 <%= render "form", tracker: @tracker %>
 
 <br>
 
-<div>
-  <%= link_to "Show this tracker", @tracker %> |
-  <%= link_to "Back to trackers", trackers_path %>
+<div class="d-flex justify-content-center mb-4">
+  <%= link_to "Show this tracker", pet_tracker_path(@tracker) %> |
+  <%= link_to "Back to trackers", pet_trackers_path %>
 </div>
