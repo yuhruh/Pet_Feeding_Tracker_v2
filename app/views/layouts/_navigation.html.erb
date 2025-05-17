@@ -35,12 +35,11 @@
                 Tracker Records
               </a>
               <ul class="dropdown-menu">
-                <li>
-                  <a class="dropdown-item" aria-current="page" href="#">Show PetA's Records</a>
-                </li>
-                <li>
-                  <a class="dropdown-item" aria-current="page" href="#">Show PetB's Records</a>
-                </li>
+                <% current_user.pets.each do |pet| %>
+                  <li>
+                    <%= link_to "View #{pet.pet_name}'s Records", "/pets/#{pet.id}/trackers", class: "dropdown-item" %>
+                  </li>
+                <% end %>
               </ul>
             </li>
 

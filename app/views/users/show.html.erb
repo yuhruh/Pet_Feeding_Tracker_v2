@@ -12,7 +12,8 @@
       <% current_user.pets.each do |pet| %>
         <li class="list-group-item">
           <%= link_to "#{pet.pet_name}'s Profile", "/pets/#{pet.id}", class: "btn" %>
-          <%= link_to "Add #{pet.pet_name.capitalize}'s Record", new_pet_tracker_path(pet), class: "btn btn-warning", style: "background: #f8e4a8;" %>
+          <%= link_to "Add #{pet.pet_name.capitalize}'s Record", new_pet_tracker_path(pet), class: "btn btn-light", style: "background: #f8e4a8;" %>
+          <%= link_to "Show #{pet.pet_name.capitalize}'s Record", pet_trackers_path(pet), class: "btn btn-light", style: "background: #dbd9d3;" %>
         </li> 
       <% end %>
     </ol>
