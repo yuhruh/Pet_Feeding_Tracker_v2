@@ -54,10 +54,11 @@ class TrackersController < ApplicationController
 
   # DELETE /trackers/1 or /trackers/1.json
   def destroy
+    # @tracker = @pet.trackers.find(params[:id])
     @tracker.destroy!
 
     respond_to do |format|
-      format.html { redirect_to pet_trackers_path, status: :see_other, notice: "Tracker was successfully destroyed." }
+      format.html { redirect_to [@pet, :trackers], status: :see_other, notice: "Tracker was successfully destroyed." }
       format.json { head :no_content }
     end
   end

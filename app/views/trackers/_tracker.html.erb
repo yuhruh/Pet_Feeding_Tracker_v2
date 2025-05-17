@@ -17,9 +17,8 @@
     </tr>
   </thead>
   <tbody id="trackers">
-    <% @trackers.each_with_index do |pet_tracker, idx| %>
+    <% @pet.trackers.each_with_index do |pet_tracker, idx| %>
       <tr>
-      <%=pet_tracker.id%>
         <th scope="row"><%= idx+1 %></th>
         <td><%= pet_tracker.date.strftime("%Y-%m-%d") %></td>
         <td><%= JSON(pet_tracker.feeding_time).split(' ')[1] %></td>
@@ -32,7 +31,7 @@
         <td><%= ((pet_tracker.amount).to_f - (pet_tracker.left_amount).to_f).round(3) %></td>
         <td><%= pet_tracker.favorite_score %></td>
         <td><%= link_to (image_tag("icon_edit.png", width:"18px")), edit_pet_tracker_path(@pet, pet_tracker) %></td>
-        <td><%= link_to (image_tag("icon_delete.png", width:"18px")) , pet_tracker_path(@pet, pet_tracker), data: { "turbo-method": :delete, 'turbo-confirm': 'Are you sure?' } %></td>
+        <td><%= link_to (image_tag("icon_delete.png", width:"18px")), pet_tracker_path(@pet, pet_tracker), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %></td>
       </tr>
     <% end %>
   </tbody>
