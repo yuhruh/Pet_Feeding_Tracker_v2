@@ -22,7 +22,6 @@
   <tbody id="trackers">
     <% @pet.trackers.each_with_index do |pet_tracker, idx| %>
       <tr>
-      <%= pet_tracker.hungry_extend %>
         <th scope="row"><%= idx+1 %></th>
         <td><%= pet_tracker.date.strftime("%Y-%m-%d") %></td>
         <td><%= JSON(pet_tracker.feeding_time).split(' ')[1] %></td>
