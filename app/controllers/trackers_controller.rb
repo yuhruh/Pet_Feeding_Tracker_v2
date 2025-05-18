@@ -54,7 +54,6 @@ class TrackersController < ApplicationController
 
   # DELETE /trackers/1 or /trackers/1.json
   def destroy
-    # @tracker = @pet.trackers.find(params[:id])
     @tracker.destroy!
 
     respond_to do |format|
@@ -75,6 +74,6 @@ class TrackersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def tracker_params
-      params.expect(tracker: [ :pet_id, :date, :feeding_time, :time_of_eat_back_and_forth, :food_type, :brand, :description, :amount, :left_amount, :favorite_score ])
+      params.expect(tracker: [ :pet_id, :date, :feeding_time, :time_of_eat_back_and_forth, :food_type, :brand, :description, :amount, :left_amount, :favorite_score, :note, :hungry_extend, :result, :weight ])
     end
 end

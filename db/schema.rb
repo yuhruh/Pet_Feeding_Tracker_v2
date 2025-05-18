@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_05_15_023937) do
+ActiveRecord::Schema[8.0].define(version: 2025_05_18_110929) do
   create_table "pets", force: :cascade do |t|
     t.string "pet_name"
     t.datetime "birthday"
@@ -35,6 +35,10 @@ ActiveRecord::Schema[8.0].define(version: 2025_05_15_023937) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "food_type"
+    t.decimal "weight", precision: 4, scale: 2
+    t.string "note"
+    t.string "hungry_extend"
+    t.string "result"
   end
 
   create_table "users", force: :cascade do |t|

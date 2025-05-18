@@ -1,6 +1,80 @@
 <h1 class="text-center mt-4">Editing tracker</h1>
 
-<%= render "form", tracker: @tracker %>
+<div class="container">
+  <%= form_with(model: [@pet, @tracker]) do |form| %>
+    <div class="d-flex justify-content-center">
+       <%= render 'shared/errors', obj: @tracker %>
+    </div>
+
+      <div class="row mb-3 justify-content-center">
+        <%= form.label :date, class: "col-sm-3 col-form-label", style: "color: #515a5a; font-weight: bold" %>
+        <div class="col-sm-4">
+          <%= form.date_field :date, class: "form-control", value: Date.current, max: Date.current %>
+        </div>
+      </div>
+
+      <div class="row mb-3 justify-content-center">
+        <%= form.label "When you prepare food, does he/she wait for the food?", class: "col-sm-3 col-form-label", style: "color: #515a5a; font-weight: bold" %>
+        <div class="col-sm-4">
+          <%= form.select :hungry_extend, [["Yes"], ["Ate A Little"], ["No"]], { prompt: "Is he/she hungry? Please choose..." }, class: "form-control" %>
+        </div>
+      </div>
+
+      <div class="row mb-3 justify-content-center">
+        <%= form.label :feeding_time, class: "col-sm-3 col-form-label", style: "color: #515a5a; font-weight: bold" %>
+        <div class="col-sm-4">
+          <%= form.time_field :feeding_time, class: "form-control", value: Time.now.to_fs(:time), max: (Time.now + 5.minutes).to_fs(:time) %>
+        </div>
+      </div>
+
+      <div class="row mb-3 justify-content-center">
+        <%= form.label "Come Back to Eat(time record)", class: "col-sm-3 col-form-label", style: "color: #515a5a; font-weight: bold" %>
+        <div class="col-sm-4">
+          <%= form.text_field :time_of_eat_back_and_forth, class: "form-control", placeholder: "Please use ',' as a separations. Ex: 07:45, 10:33,..." %>
+        </div>
+      </div>
+
+      <div class="row mb-3 justify-content-center">
+        <%= form.label :food_type, class: "col-sm-3 col-form-label", style: "color: #515a5a; font-weight: bold" %>
+        <div class="col-sm-4">
+          <%= form.select :food_type, [["Dry"], ["Wet"], ["Other"]], { prompt: "Select Food Type" }, class: "form-control" %>
+        </div>
+      </div>
+
+      <div class="row mb-3 justify-content-center">
+        <%= form.label :brand, class: "col-sm-3 col-form-label", style: "color: #515a5a; font-weight: bold" %>
+        <div class="col-sm-4">
+          <%= form.text_field :brand, class: "form-control", value: @tracker.brand %>
+        </div>
+      </div>
+
+      <div class="row mb-3 justify-content-center">
+        <%= form.label :description, class: "col-sm-3 col-form-label", style: "color: #515a5a; font-weight: bold" %>
+        <div class="col-sm-4">
+          <%= form.text_field :description, class: "form-control" %>
+        </div>
+      </div>
+
+      <div class="row mb-3 justify-content-center">
+        <%= form.label :amount, class: "col-sm-3 col-form-label", style: "color: #515a5a; font-weight: bold" %>
+        <div class="col-sm-4">
+          <%= form.text_field :amount, class: "form-control floatingInput" %>
+        </div>
+      </div>
+
+      <div class="row mb-3 justify-content-center">
+        <%= form.label :left_amount, class: "col-sm-3 col-form-label", style: "color: #515a5a; font-weight: bold" %>
+        <div class="col-sm-4">
+          <%= form.text_field :left_amount, class: "form-control floatingInput" %>
+        </div>
+      </div>
+
+      <div class="d-flex justify-content-center">
+        <%= form.submit(@tracker.new_record? ? 'Add a new record' : "Modify Tracker", class: "btn", style: "color: #515a5a; font-weight: bold; background-color: #d5dbdb") %>
+      </div>
+    </div>
+  <% end %>
+</div>
 
 <br>
 

@@ -4,14 +4,17 @@
       <th scope="col">#</th>
       <th scope="col">Date</th>
       <th scope="col">Feeding Time</th>
-      <th scope='col'>Time of eat back and forth</th>
+      <th scope="col">Does he/she eat ASAP?</th>
+      <th scope='col'>Record Time (Come back to eat)</th>
       <th scope='col'>Food Type</th>
       <th scope="col">Brand</th>
       <th scope="col">Description</th>
       <th scope="col">Amount (g)</th>
       <th scope="col">Left Amount (g)</th>
       <th scope="col">Total Ate Amount (g)</th>
-      <th scope="col">Favorite Score</th>
+      <th scope="col">Result</th>
+      <th scope="col">Weight (kg)</th>
+      <th scope="col">Note</th>
       <th scope="col">Edit</th>
       <th scope="col">Delete</th>
     </tr>
@@ -19,9 +22,11 @@
   <tbody id="trackers">
     <% @pet.trackers.each_with_index do |pet_tracker, idx| %>
       <tr>
+      <%= pet_tracker.hungry_extend %>
         <th scope="row"><%= idx+1 %></th>
         <td><%= pet_tracker.date.strftime("%Y-%m-%d") %></td>
         <td><%= JSON(pet_tracker.feeding_time).split(' ')[1] %></td>
+        <td><%= pet_tracker.hungry_extend %></td>
         <td><%= pet_tracker.time_of_eat_back_and_forth %></td>
         <td><%= pet_tracker.food_type %></td>
         <td><%= pet_tracker.brand %></td>
@@ -29,7 +34,17 @@
         <td><%= pet_tracker.amount %></td>
         <td><%= pet_tracker.left_amount %></td>
         <td><%= ((pet_tracker.amount).to_f - (pet_tracker.left_amount).to_f).round(3) %></td>
-        <td><%= pet_tracker.favorite_score %></td>
+        <% if pet_tracker.hungry_extend == 'Yes' %>
+          <td><%= image_tag("heart.png", width: "20px") %> - </td>
+        <% elsif pet_tracker.hungry_extend == 'No' %>
+          <td><%= image_tag("x.png", width: "20px") %> - </td>
+        <% elsif pet_tracker.hungry_extend == 'Ate A Little' %>
+          <td><%= image_tag("triangle.png", width: "20px") %> - </td>
+        <% else %>
+          <td><%= pet_tracker.result %></td>
+        <% end %>
+        <td><%= pet_tracker.weight %></td>
+        <td><%= pet_tracker.note %></td>
         <td><%= link_to (image_tag("icon_edit.png", width:"18px")), edit_pet_tracker_path(@pet, pet_tracker) %></td>
         <td><%= link_to (image_tag("icon_delete.png", width:"18px")), pet_tracker_path(@pet, pet_tracker), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %></td>
       </tr>
