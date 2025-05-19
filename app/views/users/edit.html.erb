@@ -35,7 +35,7 @@
         <%= form.label :time_zone, class: "col-sm-3 col-form-label", style: "color: #515a5a; font-weight: bold" %>
         <div class="col-sm-4">
           <fieldset disabled>
-            <%= form.text_field :time_zone, data: { "time_zone_target"=> "tz" }, id: "disabledTextInput", class: "form-control" %>
+            <%= form.text_field :time_zone, data: @user.time_zone, id: "disabledTextInput", class: "form-control" %>
           </fieldset>
         </div>
       </div>

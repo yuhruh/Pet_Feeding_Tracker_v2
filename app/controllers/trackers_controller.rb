@@ -26,7 +26,6 @@ class TrackersController < ApplicationController
   # POST /trackers or /trackers.json
   def create
     @tracker = @pet.trackers.build(tracker_params)
-    Time.zone = current_user.time_zone
     # @tracker = Tracker.new(tracker_params)
 
     respond_to do |format|

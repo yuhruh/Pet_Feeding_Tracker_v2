@@ -21,10 +21,8 @@
       <div class="row mb-3 justify-content-center" data-controller="time-zone">
         <%= form.label :feeding_time, class: "col-sm-3 col-form-label", style: "color: #515a5a; font-weight: bold" %>
         <div class="col-sm-4">
-          <%= form.time_field :feeding_time, class: "form-control", value: Time.now.to_fs(:time), max: (Time.now + 5.minutes).to_fs(:time) %>
+          <%= form.time_field :feeding_time, class: "form-control", value: set_current_time.to_fs(:time), max: (set_current_time + 5.minutes).to_fs(:time) %>
         </div>
-        <%= Time.current %> |
-        <%= current_user.time_zone%>
       </div>
 
 
