@@ -14,7 +14,7 @@ class User < ApplicationRecord
                     length: { maximum: 105 },
                     format: { with: VALID_EMAIL_REGEX }
   validates :password, presence: true,
-                       length: { minimum: 8 }
+                       length: { minimum: 5 }
   validates :password_confirmation, presence: { message: "Upper and lower case should be the same."}
   validates :time_zone, presence: true, 
                       inclusion: {
