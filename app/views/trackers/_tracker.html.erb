@@ -20,7 +20,7 @@
     </tr>
   </thead>
   <tbody id="trackers">
-    <% @pet.trackers.each_with_index do |pet_tracker, idx| %>
+    <% @pet.trackers.order(date: 'asc').each_with_index do |pet_tracker, idx| %>
       <tr>
         <th scope="row"><%= idx+1 %></th>
         <td><%= pet_tracker.date.strftime("%Y-%m-%d") %></td>
@@ -32,7 +32,7 @@
         <td><%= pet_tracker.description %></td>
         <td><%= pet_tracker.amount %></td>
         <td><%= pet_tracker.left_amount %></td>
-        <td><%= ((pet_tracker.amount).to_f - (pet_tracker.left_amount).to_f).round(3) %></td>
+        <td><%= pet_tracker.total_ate_amount %></td>
         <% if pet_tracker.hungry_extend == 'Yes' %>
           <td><%= image_tag("heart.png", width: "20px") %> - </td>
         <% elsif pet_tracker.hungry_extend == 'No' %>

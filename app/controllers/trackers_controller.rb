@@ -41,6 +41,9 @@ class TrackersController < ApplicationController
 
   # PATCH/PUT /trackers/1 or /trackers/1.json
   def update
+    @tracker.total_ate_amount = @tracker.amount - @tracker.left_amount
+    @tracker.transformed_time = @tracker.date.strftime('%Y-%m-%d')
+
     respond_to do |format|
       if @tracker.update(tracker_params)
         format.html { redirect_to pet_trackers_path, notice: "Tracker was successfully updated." }

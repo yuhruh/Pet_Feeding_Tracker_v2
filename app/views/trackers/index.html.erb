@@ -7,3 +7,8 @@
 </div>
 
 <%= render 'tracker' %>
+
+<%= @pet.trackers.any?{|tracker| tracker.transformed_time.nil? } %>
+<%= column_chart [{name: "wet ate total amount", data: @pet.trackers.where(food_type: "Wet").group(:transformed_time).sum(:total_ate_amount)}, 
+  {name: "dry ate total amount", data: @pet.trackers.where(food_type: "Dry").group(:transformed_time).sum(:total_ate_amount)},
+  {name: "other ate total amount", data: @pet.trackers.where(food_type: "Other").group(:transformed_time).sum(:total_ate_amount)}], stacked: true %>
