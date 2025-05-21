@@ -1,11 +1,12 @@
 <h1 class="text-center mt-4"><%= @user.name.capitalize %>'s profile</h1>
+
 <div class="text-center m-4">
   <%= link_to "Edit your profile", edit_user_path(@user), class: "btn btn-outline-success btn-sm mb-4" %>
   <%= link_to "Delete your Profile", user_path(@user), class: "btn btn-outline-danger btn-sm mb-4 text-danger", data: {"turbo-confirm":  "Are you sure to delete this user account? The user and associated trackers will all gone..", "turbo-method": :delete } %>
 </div>
 
 
-<div class="d-flex justify-content-center">
+<div class="d-flex justify-content-center text-center">
   <h4>
     <%= @user.name.capitalize %> has <%= @user.pets.count %> pets: 
     <ol class="list-group list-group-numbered">
@@ -17,8 +18,5 @@
         </li> 
       <% end %>
     </ol>
-  </h4>
+  </h4> 
 </div>
-
-
-<h3 class="text-center mt-4"><%= ((@user.name).split(" ").map(&:capitalize)).join(' ') %>'s Tracker Records</h3>
