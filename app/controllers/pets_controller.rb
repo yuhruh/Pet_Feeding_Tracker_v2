@@ -4,7 +4,7 @@ class PetsController < ApplicationController
 
   # GET /pets or /pets.json
   def index
-    @pets = Pet.all
+     @pets = current_user.pets
   end
 
   # GET /pets/1 or /pets/1.json
@@ -23,7 +23,7 @@ class PetsController < ApplicationController
 
   # POST /pets or /pets.json
   def create
-    @pet = Pet.new(pet_params)
+    # @pet = @user.pets.build(pet_params)
     @pet.user = current_user
 
     respond_to do |format|
