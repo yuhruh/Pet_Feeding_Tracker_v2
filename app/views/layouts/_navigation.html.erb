@@ -8,72 +8,75 @@
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="/home">Home</a>
         </li>
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/favorites">TOP 5 Favorites</a>
-          </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/pets"><%= current_user.name.capitalize %>'s Pets List</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/favorites">TOP 5 Favorites</a>
+        </li>
 
           
-          <% if logged_in? %>
-            <% if current_user.pets.count != 0 %>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Pet(s) Profile
-                </a>
-                <ul class="dropdown-menu">
-                  <% current_user.pets.each do |pet| %>
-                    <li>
-                      <%= link_to "View #{pet.pet_name}'s Profile", "/pets/#{pet.id}", class: "dropdown-item" %>
-                    </li>
-                  <% end %>
-                </ul>
-              </li>
-            
-      
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Tracker Records
-                </a>
-                <ul class="dropdown-menu">
-                  <% current_user.pets.each do |pet| %>
-                    <li>
-                      <%= link_to "View #{pet.pet_name}'s Records", "/pets/#{pet.id}/trackers", class: "dropdown-item" %>
-                    </li>
-                  <% end %>
-                </ul>
-              </li>
-            <% end %>
-
+        <% if logged_in? %>
+          <% if current_user.pets.count != 0 %>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                <%= "(Admin)" if current_user.admin %> Profile <%= current_user.name.split(" ").map(&:capitalize).join(' ') %>
+                Pet(s) Profile
               </a>
               <ul class="dropdown-menu">
-                <li>
-                  <%= link_to "Add Pet", new_pet_path, class: "dropdown-item" %>
-                </li>
-                <li>
-                  <%= link_to "View Profile", user_path(current_user), class: "dropdown-item" %>
-                </li>
-                <li>
-                  <%= link_to "Edit Profile", edit_user_path(current_user), class: "dropdown-item" %>
-                </li>
-                <li>
-                  <%= link_to "Delete Profile", user_path(current_user), class: "dropdown-item text-danger", data: {"turbo-confirm": "Are you sure to delete your account? The whole data you created will gone...", "turbo-method": :delete } %>
-                </li>
+                <% current_user.pets.each do |pet| %>
+                  <li>
+                    <%= link_to "View #{pet.pet_name}'s Profile", "/pets/#{pet.id}", class: "dropdown-item" %>
+                  </li>
+                <% end %>
               </ul>
             </li>
-
-            <li class="nav-item">
-              <%= link_to "Log Out", logout_path, class: "nav-link", method: :delete %>
-            </li>
-          <% else %>
-            <li class="nav-item">
-              <a class="nav-link" href="/login">Log In</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="/signup">Sign Up</a>
+          
+    
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Tracker Records
+              </a>
+              <ul class="dropdown-menu">
+                <% current_user.pets.each do |pet| %>
+                  <li>
+                    <%= link_to "View #{pet.pet_name}'s Records", "/pets/#{pet.id}/trackers", class: "dropdown-item" %>
+                  </li>
+                <% end %>
+              </ul>
             </li>
           <% end %>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <%= "(Admin)" if current_user.admin %> Profile <%= current_user.name.split(" ").map(&:capitalize).join(' ') %>
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <%= link_to "Add Pet", new_pet_path, class: "dropdown-item" %>
+              </li>
+              <li>
+                <%= link_to "View Profile", user_path(current_user), class: "dropdown-item" %>
+              </li>
+              <li>
+                <%= link_to "Edit Profile", edit_user_path(current_user), class: "dropdown-item" %>
+              </li>
+              <li>
+                <%= link_to "Delete Profile", user_path(current_user), class: "dropdown-item text-danger", data: {"turbo-confirm": "Are you sure to delete your account? The whole data you created will gone...", "turbo-method": :delete } %>
+              </li>
+            </ul>
+          </li>
+
+          <li class="nav-item">
+            <%= link_to "Log Out", logout_path, class: "nav-link", method: :delete %>
+          </li>
+        <% else %>
+          <li class="nav-item">
+            <a class="nav-link" href="/login">Log In</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="/signup">Sign Up</a>
+          </li>
+        <% end %>
       </ul>
     </div>
   </div>
