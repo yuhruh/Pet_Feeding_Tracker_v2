@@ -41,11 +41,12 @@ class TrackersController < ApplicationController
 
   # PATCH/PUT /trackers/1 or /trackers/1.json
   def update
+    @tracker.update!(params.expect(tracker: [:amount, :left_amount]))
     @tracker.total_ate_amount = @tracker.amount - @tracker.left_amount
     @tracker.transformed_time = @tracker.date.strftime('%Y-%m-%d')
 
     respond_to do |format|
-      if @tracker.update(tracker_params)
+      if @tracker.update(params.expect(tracker: [ :pet_id, :date, :feeding_time, :time_of_eat_back_and_forth, :food_type, :brand, :description, :amount, :left_amount, :favorite_score, :note, :hungry_extend, :result, :weight, :total_ate_amount ]))
         format.html { redirect_to pet_trackers_path, notice: "Tracker was successfully updated." }
         format.json { render :show, status: :ok, location: pet_trackers_path }
       else
@@ -77,6 +78,6 @@ class TrackersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def tracker_params
-      params.expect(tracker: [ :pet_id, :date, :feeding_time, :time_of_eat_back_and_forth, :food_type, :brand, :description, :amount, :left_amount, :favorite_score, :note, :hungry_extend, :result, :weight ])
+      params.expect(tracker: [ :pet_id, :date, :feeding_time, :time_of_eat_back_and_forth, :food_type, :brand, :description, :amount, :favorite_score, :note, :hungry_extend, :result, :weight ])
     end
 end
