@@ -7,7 +7,7 @@
 </div>
 
 <fieldset>
-  <%= link_to "Download to CSV", pet_trackers_path(format: :csv), class:"d-flex justify-content-center mb-5", style: "color: #515a5a; font-weight: bold;", download: [@pet.pet_name.capitalize, "trackers", Date.today].join('_') %>
+  <%= link_to "#{image_tag('download.png', width:'25px', height: '25px')} Download to CSV".html_safe, pet_trackers_path(format: :csv), class:"d-flex justify-content-center mb-5", style: "color: #515a5a; font-weight: bold;", download: [@pet.pet_name.capitalize, "trackers", Date.today].join('_') %>
 </fieldset>
 
 <%= render 'tracker' %>

@@ -21,32 +21,63 @@
   </thead>
   <tbody id="trackers">
     <% @pet.trackers.order(date: 'asc').each_with_index do |pet_tracker, idx| %>
-      <tr>
-        <th scope="row"><%= idx+1 %></th>
-        <td><%= pet_tracker.date.strftime("%Y-%m-%d") %></td>
-        <td><%= JSON(pet_tracker.feeding_time).split(' ')[1] %></td>
-        <td><%= pet_tracker.hungry_extend %></td>
-        <td><%= pet_tracker.time_of_eat_back_and_forth %></td>
-        <td><%= pet_tracker.food_type %></td>
-        <td><%= pet_tracker.brand %></td>
-        <td><%= pet_tracker.description %></td>
-        <td><%= pet_tracker.amount %></td>
-        <td><%= pet_tracker.left_amount %></td>
-        <td><%= pet_tracker.total_ate_amount %></td>
-        <% if pet_tracker.hungry_extend == 'Yes' %>
-          <td><%= image_tag("heart.png", width: "20px") %> - </td>
-        <% elsif pet_tracker.hungry_extend == 'No' %>
-          <td><%= image_tag("x.png", width: "20px") %> - </td>
-        <% elsif pet_tracker.hungry_extend == 'Ate A Little' %>
-          <td><%= image_tag("triangle.png", width: "20px") %> - </td>
-        <% else %>
-          <td><%= pet_tracker.result %></td>
-        <% end %>
-        <td><%= pet_tracker.weight %></td>
-        <td><%= pet_tracker.note %></td>
-        <td><%= link_to (image_tag("icon_edit.png", width:"18px")), edit_pet_tracker_path(@pet, pet_tracker) %></td>
-        <td><%= link_to (image_tag("icon_delete.png", width:"18px")), pet_tracker_path(@pet, pet_tracker), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %></td>
-      </tr>
+      <% if pet_tracker.total_ate_amount.nil? %>
+        <tr class="table-danger">
+          <th scope="row"><%= idx+1 %></th>
+          <td><%= pet_tracker.date.strftime("%Y-%m-%d") %></td>
+          <td><%= JSON(pet_tracker.feeding_time).split(' ')[1] %></td>
+          <td><%= pet_tracker.hungry_extend %></td>
+          <td><%= pet_tracker.time_of_eat_back_and_forth %></td>
+          <td><%= pet_tracker.food_type %></td>
+          <td><%= pet_tracker.brand %></td>
+          <td><%= pet_tracker.description %></td>
+          <td><%= pet_tracker.amount %></td>
+          <td><%= pet_tracker.left_amount %></td>
+          <td><%= pet_tracker.total_ate_amount %></td>
+          <% if pet_tracker.hungry_extend == 'Yes' %>
+            <td><%= image_tag("heart.png", width: "20px") %> - </td>
+          <% elsif pet_tracker.hungry_extend == 'No' %>
+            <td><%= image_tag("x.png", width: "20px") %> - </td>
+          <% elsif pet_tracker.hungry_extend == 'Ate A Little' %>
+            <td><%= image_tag("triangle.png", width: "20px") %> - </td>
+          <% else %>
+            <td><%= pet_tracker.result %></td>
+          <% end %>
+          <td><%= pet_tracker.weight %></td>
+          <td><%= pet_tracker.note %></td>
+          <td><%= link_to "#{image_tag("icon_edit.png", width:"18px")} Update Left Amount".html_safe, edit_pet_tracker_path(@pet, pet_tracker), 
+          class:'link-danger', style:'font-family: Lucida Handwriting, cursive;' %></td>
+          <td><%= link_to (image_tag("icon_delete.png", width:"18px")), pet_tracker_path(@pet, pet_tracker), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %></td>
+        </tr>
+      <% else %>
+        <tr>
+          <th scope="row"><%= idx+1 %></th>
+          <td><%= pet_tracker.date.strftime("%Y-%m-%d") %></td>
+          <td><%= JSON(pet_tracker.feeding_time).split(' ')[1] %></td>
+          <td><%= pet_tracker.hungry_extend %></td>
+          <td><%= pet_tracker.time_of_eat_back_and_forth %></td>
+          <td><%= pet_tracker.food_type %></td>
+          <td><%= pet_tracker.brand %></td>
+          <td><%= pet_tracker.description %></td>
+          <td><%= pet_tracker.amount %></td>
+          <td><%= pet_tracker.left_amount %></td>
+          <td><%= pet_tracker.total_ate_amount %></td>
+          <% if pet_tracker.hungry_extend == 'Yes' %>
+            <td><%= image_tag("heart.png", width: "20px") %> - </td>
+          <% elsif pet_tracker.hungry_extend == 'No' %>
+            <td><%= image_tag("x.png", width: "20px") %> - </td>
+          <% elsif pet_tracker.hungry_extend == 'Ate A Little' %>
+            <td><%= image_tag("triangle.png", width: "20px") %> - </td>
+          <% else %>
+            <td><%= pet_tracker.result %></td>
+          <% end %>
+          <td><%= pet_tracker.weight %></td>
+          <td><%= pet_tracker.note %></td>
+          <td><%= link_to (image_tag("icon_edit.png", width:"18px")), edit_pet_tracker_path(@pet, pet_tracker) %></td>
+          <td><%= link_to (image_tag("icon_delete.png", width:"18px")), pet_tracker_path(@pet, pet_tracker), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %></td>
+        </tr>
+      <% end %>
+
     <% end %>
   </tbody>
 </table>
