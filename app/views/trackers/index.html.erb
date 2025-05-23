@@ -6,6 +6,10 @@
   <%= link_to "#{image_tag('icon_add.png', width:'18px', height: '18px')}  Adding #{@pet.pet_name.capitalize}'s New Record".html_safe, new_pet_tracker_path %>
 </div>
 
+<fieldset>
+  <%= link_to "Download to CSV", pet_trackers_path(format: :csv), class:"d-flex justify-content-center mb-5", style: "color: #515a5a; font-weight: bold;", download: [@pet.pet_name.capitalize, "trackers", Date.today].join('_') %>
+</fieldset>
+
 <%= render 'tracker' %>
 
 <%= column_chart [{name: "wet ate total amount", data: @pet.trackers.where(food_type: "Wet").where.not(total_ate_amount: nil).order(:transformed_time).group(:transformed_time).sum(:total_ate_amount)}, 

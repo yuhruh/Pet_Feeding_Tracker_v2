@@ -7,6 +7,10 @@ class TrackersController < ApplicationController
   def index
     @trackers = @pet.trackers
     # @trackers = Tracker.all
+    respond_to do |format|
+      format.html
+      format.csv
+    end
   end
 
   # GET /trackers/1 or /trackers/1.json
