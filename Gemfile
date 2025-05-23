@@ -25,7 +25,7 @@ gem "jbuilder"
 gem 'will_paginate', '~> 3.1', '>= 3.1.6'
 gem "chartkick"
 gem "groupdate"
-gem 'byebug', '~> 11.1', '>= 11.1.3'
+gem 'byebug', '~> 12.0'
 gem "csv"
 
 gem 'rails-i18n'
