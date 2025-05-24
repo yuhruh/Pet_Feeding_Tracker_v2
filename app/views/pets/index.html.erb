@@ -4,6 +4,10 @@
 
 <h1 class='text-center' style="font-family: fantasy;"><%= current_user.name.capitalize %>'s Pets</h1>
 
+<div class="d-flex justify-content-center mb-5">
+  <%= link_to "#{image_tag('add_pet.png', width:'25px', height:'25px')} Add new Pet".html_safe, new_pet_path %>
+</div>
+
 <div id="pets" class='d-flex justify-content-center'>
   <% @pets.each do |pet| %>
     <div class="card" style="width: 40rem; background: #f2f4f6">
@@ -13,8 +17,4 @@
       </p>
     </div>
   <% end %>
-</div>
-
-<div class="d-flex justify-content-center">
-  <%= link_to "New pet", new_pet_path %>
 </div>
