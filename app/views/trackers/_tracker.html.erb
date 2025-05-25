@@ -1,12 +1,11 @@
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Date</th>
-      <th scope="col">Feeding Time</th>
-      <th scope="col">Does he/she eat ASAP?</th>
-      <th scope='col'>Record Time (Come back to eat)</th>
-      <th scope='col'>Eat Frequency</th>
+<table class="table table-bordered" style="width:100%">
+  <thead class="table-dark">
+    <tr class='text-center justify-content-center'>
+      <th scope="col" style="width:1%">#</th>
+      <th scope="col" style="width:5%">Date</th>
+      <th scope="col" style="width:6%">Feeding Time</th>
+      <th scope="col" style="width:8%">Does he/she eat ASAP?</th>
+      <th scope='col' style="width:10%">Record Time (Come back to eat)</th>
       <th scope='col'>Food Type</th>
       <th scope="col">Brand</th>
       <th scope="col">Description</th>
@@ -20,7 +19,7 @@
       <th scope="col">Delete</th>
     </tr>
   </thead>
-  <tbody id="trackers">
+  <tbody class="table-group-divider" id="trackers">
     <% @pet.trackers.order(date: 'asc').each_with_index do |pet_tracker, idx| %>
       <% if pet_tracker.total_ate_amount.nil? %>
         <tr class="table-danger">
@@ -29,7 +28,6 @@
           <td><%= JSON(pet_tracker.feeding_time).split(' ')[1] %></td>
           <td><%= pet_tracker.hungry_extend %></td>
           <td><%= pet_tracker.time_of_eat_back_and_forth %></td>
-          <td><%= pet_tracker.frequency %></td>
           <td><%= pet_tracker.food_type %></td>
           <td><%= pet_tracker.brand %></td>
           <td><%= pet_tracker.description %></td>
@@ -58,7 +56,6 @@
           <td><%= JSON(pet_tracker.feeding_time).split(' ')[1] %></td>
           <td><%= pet_tracker.hungry_extend %></td>
           <td><%= pet_tracker.time_of_eat_back_and_forth %></td>
-          <td><%= pet_tracker.frequency %></td>
           <td><%= pet_tracker.food_type %></td>
           <td><%= pet_tracker.brand %></td>
           <td><%= pet_tracker.description %></td>
@@ -87,7 +84,6 @@
           <td><%= JSON(pet_tracker.feeding_time).split(' ')[1] %></td>
           <td><%= pet_tracker.hungry_extend %></td>
           <td><%= pet_tracker.time_of_eat_back_and_forth %></td>
-          <td><%= pet_tracker.frequency %></td>
           <td><%= pet_tracker.food_type %></td>
           <td><%= pet_tracker.brand %></td>
           <td><%= pet_tracker.description %></td>
@@ -95,11 +91,23 @@
           <td><%= pet_tracker.left_amount %></td>
           <td><%= pet_tracker.total_ate_amount %></td>
           <% if pet_tracker.hungry_extend == 'Yes' %>
-            <td><%= image_tag("heart.png", width: "15px") %> - <%=image_tag(pet_tracker.love_extend.to_s, width:'15px')%></td>
+            <% if pet_tracker.frequency > 2 %>
+              <td><%= image_tag("heart.png", width: "15px") %> - <%=image_tag(pet_tracker.love_extend.to_s, width:'15px')%><%= image_tag("heart.png", width: "15px") %></td>
+            <% else %>
+              <td><%= image_tag("heart.png", width: "15px") %> - <%=image_tag(pet_tracker.love_extend.to_s, width:'15px')%></td>
+            <% end %>
           <% elsif pet_tracker.hungry_extend == 'No' %>
-            <td><%= image_tag("x.png", width: "15px") %> - <%=image_tag(pet_tracker.love_extend.to_s, width:'15px')%></td>
+            <% if pet_tracker.frequency > 2 %>
+              <td><%= image_tag("x.png", width: "15px") %> - <%=image_tag(pet_tracker.love_extend.to_s, width:'15px')%><%= image_tag("heart.png", width: "15px") %></td>
+            <% else %>
+              <td><%= image_tag("x.png", width: "15px") %> - <%=image_tag(pet_tracker.love_extend.to_s, width:'15px')%></td>
+            <% end %>
           <% elsif pet_tracker.hungry_extend == 'Ate A Little' %>
-            <td><%= image_tag("triangle.png", width: "15px") %> - <%=image_tag(pet_tracker.love_extend.to_s, width:'15px')%></td>
+            <% if pet_tracker.frequency > 2 %>
+              <td><%= image_tag("triangle.png", width: "15px") %> - <%=image_tag(pet_tracker.love_extend.to_s, width:'15px')%><%= image_tag("heart.png", width: "15px") %></td>
+            <% else %>
+              <td><%= image_tag("triangle.png", width: "15px") %> - <%=image_tag(pet_tracker.love_extend.to_s, width:'15px')%></td>
+            <% end %>
           <% else %>
             <td><%= pet_tracker.result %></td>
           <% end %>
