@@ -24,8 +24,8 @@
       <div class="row mb-3 justify-content-center">
       <%= form.label "weight (kg)", class: "col-sm-3 col-form-label", style: "color: #515a5a; font-weight: bold" %>
       <div class="col-sm-3">
-        <%= form.text_field :weight, class: "form-control", placeholder: "Enter cat's weight" %>
-      </div> 
+        <%= form.text_field :weight, class: "form-control", placeholder: "Enter cat's weight", max: 100, min: 0.0 %>
+      </div>
     </div>
 
     <div class="col-12">
