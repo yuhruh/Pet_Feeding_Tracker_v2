@@ -70,6 +70,13 @@
       </div>
 
       <div class="row mb-3 justify-content-center">
+        <%= form.label :love_extend, class: "col-sm-3 col-form-label", style: "color: #515a5a; font-weight: bold" %>
+        <div class="col-sm-4">
+          <%= form.select :love_extend, [["Love it So Much"], ["So so"], ["Not Like it"]], { prompt: "Does she/he love this food?" }, class: "form-control" %>
+        </div>
+      </div>
+
+      <div class="row mb-3 justify-content-center">
         <%= form.label :weight, class: "col-sm-3 col-form-label", style: "color: #515a5a; font-weight: bold" %>
         <div class="col-sm-4">
           <%= form.number_field :weight, class: "form-control floatingInput", max: 100, min: 0.0 %>

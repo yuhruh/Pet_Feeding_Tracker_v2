@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_05_21_032947) do
+ActiveRecord::Schema[8.0].define(version: 2025_05_25_043319) do
   create_table "pets", force: :cascade do |t|
     t.string "pet_name"
     t.datetime "birthday"
@@ -41,6 +41,8 @@ ActiveRecord::Schema[8.0].define(version: 2025_05_21_032947) do
     t.string "result"
     t.decimal "total_ate_amount", precision: 5, scale: 2
     t.date "transformed_time"
+    t.integer "frequency"
+    t.string "love_extend"
   end
 
   create_table "users", force: :cascade do |t|

@@ -45,13 +45,14 @@ class TrackersController < ApplicationController
 
   # PATCH/PUT /trackers/1 or /trackers/1.json
   def update
-    @tracker.update!(params.expect(tracker: [:amount, :left_amount, :hungry_extend, :time_of_eat_back_and_forth]))
+    @tracker.update!(params.expect(tracker: [:amount, :left_amount, :hungry_extend, :time_of_eat_back_and_forth, :love_extend]))
     @tracker.total_ate_amount = @tracker.amount - @tracker.left_amount
     @tracker.transformed_time = @tracker.date.strftime('%Y-%m-%d')
-    @tracker.note = @tracker.time_of_eat_back_and_forth.split(', ').count
+    @tracker.frequency = @tracker.time_of_eat_back_and_forth.split(', ').count
+    @tracker.love_extend = love_choose
 
     respond_to do |format|
-      if @tracker.update(params.expect(tracker: [ :pet_id, :date, :feeding_time, :time_of_eat_back_and_forth, :food_type, :brand, :description, :amount, :left_amount, :favorite_score, :hungry_extend, :result, :weight, :total_ate_amount ]))
+      if @tracker.update(params.expect(tracker: [ :pet_id, :date, :feeding_time, :time_of_eat_back_and_forth, :food_type, :brand, :description, :amount, :left_amount, :favorite_score, :hungry_extend, :result, :weight, :total_ate_amount, :note ]))
         format.html { redirect_to pet_trackers_path, notice: "Tracker was successfully updated." }
         format.json { render :show, status: :ok, location: pet_trackers_path }
       else
@@ -84,5 +85,15 @@ class TrackersController < ApplicationController
     # Only allow a list of trusted parameters through.
     def tracker_params
       params.expect(tracker: [ :pet_id, :date, :feeding_time, :time_of_eat_back_and_forth, :food_type, :brand, :description, :amount, :favorite_score, :note, :hungry_extend, :result, :weight ])
+    end
+
+    def love_choose
+      if @tracker.love_extend == "Love it So Much"
+        "heart.png"
+      elsif @tracker.love_extend == "So so"
+        "triangle.png"
+      elsif @tracker.love_extend == "Not Like it"
+        "x.png"
+      end
     end
 end
