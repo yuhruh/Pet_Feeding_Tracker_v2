@@ -31,6 +31,8 @@ class TrackersController < ApplicationController
   # POST /trackers or /trackers.json
   def create
     @tracker = @pet.trackers.build(tracker_params)
+    @tracker.brand = @tracker.brand.downcase!
+    @tracker.description = @tracker.description.downcase!
     # @tracker = Tracker.new(tracker_params)
 
     respond_to do |format|
@@ -46,14 +48,15 @@ class TrackersController < ApplicationController
 
   # PATCH/PUT /trackers/1 or /trackers/1.json
   def update
-    @tracker.update!(params.expect(tracker: [:amount, :left_amount, :hungry_extend, :time_of_eat_back_and_forth, :love_extend]))
+    @tracker.update!(params.expect(tracker: [:amount, :left_amount, :hungry_extend, :time_of_eat_back_and_forth, :love_extend, :favorite_score]))
     @tracker.total_ate_amount = @tracker.amount - @tracker.left_amount
     @tracker.transformed_time = @tracker.date.strftime('%Y-%m-%d')
     @tracker.frequency = @tracker.time_of_eat_back_and_forth.split(', ').count
     @tracker.love_extend = love_choose
+    @tracker.favorite_score = calculate_love_score + freq_score
 
     respond_to do |format|
-      if @tracker.update(params.expect(tracker: [ :pet_id, :date, :feeding_time, :time_of_eat_back_and_forth, :food_type, :brand, :description, :amount, :left_amount, :favorite_score, :hungry_extend, :result, :weight, :total_ate_amount, :note ]))
+      if @tracker.update(params.expect(tracker: [ :pet_id, :date, :feeding_time, :time_of_eat_back_and_forth, :food_type, :brand, :description, :amount, :left_amount, :hungry_extend, :result, :weight, :total_ate_amount, :note ]))
         format.html { redirect_to pet_trackers_path, notice: "Tracker was successfully updated." }
         format.json { render :show, status: :ok, location: pet_trackers_path }
       else
@@ -95,6 +98,26 @@ class TrackersController < ApplicationController
         "triangle.png"
       elsif @tracker.love_extend == "Not Like it"
         "x.png"
+      end
+    end
+
+    def calculate_love_score
+      if @tracker.love_extend == "heart.png"
+        10
+      elsif @tracker.love_extend == "triangle.png"
+        5
+      elsif @tracker.love_extend == "x.png"
+        1
+      end
+    end
+
+    def freq_score
+      if @tracker.frequency > 2
+        (@tracker.frequency - 2) * 2 + 2
+      elsif @tracker.frequency <= 2
+        @tracker.frequency * 1
+      else
+        0
       end
     end
 end

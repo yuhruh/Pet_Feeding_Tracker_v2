@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root 'pages#home'
   resources :pets do
     resources :trackers
+    get "/favotites", to: 'trackers#favorite'
   end
   resources :users, except: [:new]
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
@@ -10,16 +11,12 @@ Rails.application.routes.draw do
   # Can be used by load balancers and uptime monitors to verify that the app is live.
   get "up" => "rails/health#show", as: :rails_health_check
   get "/home", to: "pages#home"
-  get "/favorites", to: "pages#favorites"
+  get "/about", to: "pages#about"
   get "signup", to: 'users#new'
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create'
   get 'logout', to: 'sessions#destroy'
-  # get "/pets/#{:pet_id}/trackers", to: 'trackers#index'
-  # post "/pets/#{:pet_id}/trackers", to: 'trackers#create'
-  # get "/pets/#{:id}/trackers/new", to: 'trackers#new'
-
-  # get "/pets/#{:pet_id}/trackers/:id/edit", to: 'trackers#edit'
+ 
   # get "/pets/#{:pet_id}/trackers/:id", to: 'trackers#show'
   # patch "/pets/#{:pet_id}/trackers/:id", to: 'trackers#update'
   # put "/pets/#{:pet_id}/trackers/:id", to: 'trackers#update'
