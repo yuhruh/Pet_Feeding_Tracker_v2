@@ -5,12 +5,13 @@ class TrackersController < ApplicationController
 
   # GET /trackers or /trackers.json
   def index
-    @trackers = @pet.trackers
-    # @trackers = Tracker.all
+    @trackers = @pet.trackers.paginate(page: params[:page], per_page: 10)
+
     respond_to do |format|
       format.html
       format.csv
     end
+    # @trackers = Tracker.all
   end
 
   # GET /trackers/1 or /trackers/1.json

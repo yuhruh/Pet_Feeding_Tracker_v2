@@ -20,7 +20,7 @@
     </tr>
   </thead>
   <tbody class="table-group-divider" id="trackers">
-    <% @pet.trackers.order(date: 'asc').each_with_index do |pet_tracker, idx| %>
+    <% @trackers.order(date: 'asc').each_with_index do |pet_tracker, idx| %>
       <% if pet_tracker.total_ate_amount.nil? %>
         <tr class="table-danger">
           <th scope="row"><%= idx+1 %></th>
@@ -117,7 +117,6 @@
           <td><%= link_to (image_tag("icon_delete.png", width:"18px")), pet_tracker_path(@pet, pet_tracker), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %></td>
         </tr>
       <% end %>
-
     <% end %>
   </tbody>
 </table>

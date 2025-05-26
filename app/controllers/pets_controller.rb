@@ -4,7 +4,7 @@ class PetsController < ApplicationController
 
   # GET /pets or /pets.json
   def index
-     @pets = current_user.pets
+    @pets = current_user.pets.paginate(page: params[:page], per_page: 5)
   end
 
   # GET /pets/1 or /pets/1.json
