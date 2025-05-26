@@ -1,14 +1,16 @@
+<h1 class="text-center mt-4" style="font-family: fantasy;"><%= @pet.pet_name.capitalize %>'s Top <%= @pet.trackers.order(favorite_score: 'desc').limit(5).count%> Favorite Food</h1>
+
 <table class="table table-bordered" style="width:100%">
   <thead class="table-dark">
     <tr class='text-center justify-content-center'>
       <th scope="col" style="width:1%">#</th>
       <th scope="col" style="width:10%">Brand</th>
       <th scope="col" style="width:10%">Description</th>
-      <th scope="col" style="width:8%">Link</th>
+      <th scope="col" style="width:8%">Favorite Score</th>
     </tr>
   </thead>
   <tbody class="table-group-divider" id="trackers">
-    <% @pet.trackers.order(favorite_score: 'desc').each_with_index do |pet_tracker, idx| %>
+    <% @pet.trackers.order(favorite_score: 'desc').limit(5).each_with_index do |pet_tracker, idx| %>
         <tr class='text-center justify-content-center'>
           <th scope="row"><%= idx+1 %></th>
           <td><%= pet_tracker.brand %></td>
