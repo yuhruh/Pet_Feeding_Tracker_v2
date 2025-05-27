@@ -13,7 +13,7 @@ class TrackersController < ApplicationController
     end
     # @trackers = Tracker.all
   end
-
+  
   # GET /trackers/1 or /trackers/1.json
   def show
   end

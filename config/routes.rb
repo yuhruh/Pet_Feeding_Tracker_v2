@@ -2,7 +2,6 @@ Rails.application.routes.draw do
   root 'pages#home'
   resources :pets do
     resources :trackers
-    get "/favotites", to: 'trackers#favorite'
   end
   resources :users, except: [:new]
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
@@ -17,7 +16,7 @@ Rails.application.routes.draw do
   post 'login', to: 'sessions#create'
   get 'logout', to: 'sessions#destroy'
  
-  # get "/pets/#{:pet_id}/trackers/:id", to: 'trackers#show'
+  get "/pets/:pet_id/favorites", to: 'trackers#favorites'
   # patch "/pets/#{:pet_id}/trackers/:id", to: 'trackers#update'
   # put "/pets/#{:pet_id}/trackers/:id", to: 'trackers#update'
   # delete "/pets/:pet_id/trackers/:id", to: 'trackers#destroy'
