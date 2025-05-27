@@ -36,14 +36,14 @@
       <div class="row mb-3 justify-content-center">
         <%= form.label :brand, class: "col-sm-3 col-form-label", style: "color: #515a5a; font-weight: bold" %>
         <div class="col-sm-4">
-          <%= form.text_field :brand, class: "form-control", value: tracker.brand %>
+          <%= form.text_field :brand, class: "form-control", value: tracker.brand, requried: true %>
         </div>
       </div>
 
       <div class="row mb-3 justify-content-center">
         <%= form.label :description, class: "col-sm-3 col-form-label", style: "color: #515a5a; font-weight: bold" %>
         <div class="col-sm-4">
-          <%= form.text_field :description, class: "form-control" %>
+          <%= form.text_field :description, class: "form-control", value: tracker.description, requried: true %>
         </div>
       </div>
 

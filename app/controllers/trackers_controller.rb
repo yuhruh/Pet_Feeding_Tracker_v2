@@ -31,8 +31,6 @@ class TrackersController < ApplicationController
   # POST /trackers or /trackers.json
   def create
     @tracker = @pet.trackers.build(tracker_params)
-    @tracker.brand = @tracker.brand.downcase!
-    @tracker.description = @tracker.description.downcase!
     # @tracker = Tracker.new(tracker_params)
 
     respond_to do |format|
