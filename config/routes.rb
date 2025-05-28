@@ -11,12 +11,22 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
   get "/home", to: "pages#home"
   get "/about", to: "pages#about"
+  get "/started", to:"pages#started"
   get "signup", to: 'users#new'
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create'
-  get 'logout', to: 'sessions#destroy'
+  get 'logout', to: 'sessions#destroy', as: :logout
  
   get "/pets/:pet_id/favorites", to: 'trackers#favorites'
+
+  # get '/auth/:provider/callback', to: 'sessions#omniauth'
+  # get '/auth/failure', to: redirect('/') # Handle authentication failures
+
+  # # Route for initiating Google login (optional, but good practice)
+  # get '/auth/google_oauth2', as: :google_login
+
+  # Route for logout
+  # delete '/logout', to: 'sessions#destroy', as: :logout
   # patch "/pets/#{:pet_id}/trackers/:id", to: 'trackers#update'
   # put "/pets/#{:pet_id}/trackers/:id", to: 'trackers#update'
   # delete "/pets/:pet_id/trackers/:id", to: 'trackers#destroy'

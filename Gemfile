@@ -28,6 +28,9 @@ gem "groupdate"
 gem 'byebug', '~> 11.1', '>= 11.1.3'
 gem "csv"
 
+gem 'omniauth-rails_csrf_protection' # Recommended for CSRF protection with OmniAuth
+gem 'omniauth-google-oauth2'
+
 gem 'rails-i18n', '~> 8.0.0'
 
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]

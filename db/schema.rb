@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_05_25_043319) do
+ActiveRecord::Schema[8.0].define(version: 2025_05_28_121235) do
   create_table "pets", force: :cascade do |t|
     t.string "pet_name"
     t.datetime "birthday"
@@ -53,5 +53,8 @@ ActiveRecord::Schema[8.0].define(version: 2025_05_25_043319) do
     t.boolean "admin", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "provider"
+    t.string "uid"
+    t.index ["provider", "uid"], name: "index_users_on_provider_and_uid", unique: true
   end
 end
