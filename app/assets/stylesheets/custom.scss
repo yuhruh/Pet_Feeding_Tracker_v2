@@ -32,6 +32,16 @@
   background-color: whitesmoke;
 }
 
+.required:after {
+    content:"\00a0\*\00a0";
+    color:red;
+}
+
+.optional:after {
+    content:"\00a0\(OPTIONAL)\00a0";
+    color:grey;
+}
+
 /* pagination styling */
 .digg_pagination {
   background: white;

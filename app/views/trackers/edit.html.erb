@@ -1,4 +1,4 @@
-<h1 class="text-center mt-4">Editing tracker</h1>
+<h1 class="text-center mt-4">Editing <%= @pet.pet_name.capitalize %>'s tracker</h1>
 
 <div class="container">
   <%= form_with(model: [@pet, @tracker]) do |form| %>
@@ -8,86 +8,88 @@
 
       <div class="row mb-3 justify-content-center">
         <%= form.label :date, class: "col-sm-3 col-form-label", style: "color: #515a5a; font-weight: bold" %>
-        <div class="col-sm-4">
+        <div class="col-sm-5">
           <%= form.date_field :date, class: "form-control", value: @tracker.date, max: @tracker.date %>
         </div>
       </div>
 
       <div class="row mb-3 justify-content-center">
         <%= form.label "When you prepare food, does he/she wait for the food?", class: "col-sm-3 col-form-label", style: "color: #515a5a; font-weight: bold" %>
-        <div class="col-sm-4">
+        <div class="col-sm-5">
           <%= form.select :hungry_extend, [["Yes"], ["Ate A Little"], ["No"]], { prompt: "Is he/she hungry? Please choose..." }, class: "form-control" %>
         </div>
       </div>
 
       <div class="row mb-3 justify-content-center">
         <%= form.label :feeding_time, class: "col-sm-3 col-form-label", style: "color: #515a5a; font-weight: bold" %>
-        <div class="col-sm-4">
+        <div class="col-sm-5">
           <%= form.time_field :feeding_time, class: "form-control", value: Time.now.to_fs(:time), max: (Time.now + 5.minutes).to_fs(:time) %>
         </div>
       </div>
 
       <div class="row mb-3 justify-content-center">
-        <%= form.label "Come Back to Eat(time record)", class: "col-sm-3 col-form-label", style: "color: #515a5a; font-weight: bold" %>
-        <div class="col-sm-4">
+        <%= form.label "Come Back to Eat(time record)", class: "col-sm-3 col-form-label optional", style: "color: #515a5a; font-weight: bold" %>
+        <div class="col-sm-5">
           <%= form.text_field :time_of_eat_back_and_forth, class: "form-control", placeholder: "Please use ',' as a separations. Ex: 07:45, 10:33,..." %>
+          <div id="time_of_eat_back_and_forthHelpBlock" class="form-text">Record time as 07:45, 09:34. If the cat did not came back to eat, you can mark as "-"</div>
         </div>
       </div>
 
       <div class="row mb-3 justify-content-center">
-        <%= form.label :food_type, class: "col-sm-3 col-form-label", style: "color: #515a5a; font-weight: bold" %>
-        <div class="col-sm-4">
+        <%= form.label :food_type, class: "col-sm-3 col-form-label required", style: "color: #515a5a; font-weight: bold" %>
+        <div class="col-sm-5">
           <%= form.select :food_type, [["Dry"], ["Wet"], ["Other"]], { prompt: "Select Food Type" }, class: "form-control" %>
         </div>
       </div>
 
       <div class="row mb-3 justify-content-center">
-        <%= form.label :brand, class: "col-sm-3 col-form-label", style: "color: #515a5a; font-weight: bold" %>
-        <div class="col-sm-4">
+        <%= form.label :brand, class: "col-sm-3 col-form-label required", style: "color: #515a5a; font-weight: bold" %>
+        <div class="col-sm-5">
           <%= form.text_field :brand, class: "form-control", value: @tracker.brand %>
         </div>
       </div>
 
       <div class="row mb-3 justify-content-center">
-        <%= form.label :description, class: "col-sm-3 col-form-label", style: "color: #515a5a; font-weight: bold" %>
-        <div class="col-sm-4">
+        <%= form.label :description, class: "col-sm-3 col-form-label required", style: "color: #515a5a; font-weight: bold" %>
+        <div class="col-sm-5">
           <%= form.text_field :description, class: "form-control" %>
         </div>
       </div>
 
       <div class="row mb-3 justify-content-center">
-        <%= form.label :amount, class: "col-sm-3 col-form-label", style: "color: #515a5a; font-weight: bold" %>
-        <div class="col-sm-4">
+        <%= form.label :amount, class: "col-sm-3 col-form-label required", style: "color: #515a5a; font-weight: bold" %>
+        <div class="col-sm-5">
           <%= form.number_field :amount, step: :any, class: "form-control floatingInput" %>
         </div>
       </div>
 
       <div class="row mb-3 justify-content-center">
-        <%= form.label :left_amount, class: "col-sm-3 col-form-label", style: "color: #515a5a; font-weight: bold" %>
-        <div class="col-sm-4">
+        <%= form.label :left_amount, class: "col-sm-3 col-form-label required", style: "color: #515a5a; font-weight: bold" %>
+        <div class="col-sm-5">
           <%= form.number_field :left_amount, step: :any, class: "form-control floatingInput", required: true, max: @tracker.amount, min: 0 %>
         </div>
       </div>
 
       <div class="row mb-3 justify-content-center">
-        <%= form.label :love_extend, class: "col-sm-3 col-form-label", style: "color: #515a5a; font-weight: bold" %>
-        <div class="col-sm-4">
+        <%= form.label :love_extend, class: "col-sm-3 col-form-label optional", style: "color: #515a5a; font-weight: bold" %>
+        <div class="col-sm-5">
           <%= form.select :love_extend, [["Love it So Much"], ["So so"], ["Not Like it"]], { prompt: "Does she/he love this food?" }, class: "form-control" %>
         </div>
       </div>
 
       <div class="row mb-3 justify-content-center">
-        <%= form.label "weight (kg)", class: "col-sm-3 col-form-label", style: "color: #515a5a; font-weight: bold" %>
-        <div class="col-sm-4">
+        <%= form.label "weight (kg)", class: "col-sm-3 col-form-label optional", style: "color: #515a5a; font-weight: bold" %>
+        <div class="col-sm-5">
           <%= form.number_field :weight, class: "form-control floatingInput", max: 100, min: 0.0 %>
           <div id="weightHelpBlock" class="form-text">You can weigh Cat's Weight every 2~3 weeks, and record it.</div>
         </div>
       </div>
 
       <div class="row mb-3 justify-content-center">
-        <%= form.label :note, class: "col-sm-3 col-form-label", style: "color: #515a5a; font-weight: bold" %>
-        <div class="col-sm-4">
+        <%= form.label :note, class: "col-sm-3 col-form-label optional", style: "color: #515a5a; font-weight: bold" %>
+        <div class="col-sm-5">
           <%= form.text_field :note, class: "form-control floatingInput" %>
+          <div id="noteHelpBlock" class="form-text">You can add whatever you want to record, such as when the cat vomit 🤮</div>
         </div>
       </div>
 

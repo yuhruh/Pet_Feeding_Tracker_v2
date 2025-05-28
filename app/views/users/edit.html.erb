@@ -16,7 +16,7 @@
 
     <div class="col-12">
       <div class="row mb-3 justify-content-center">
-        <%= form.label :password, class: "col-sm-3 col-form-label", style: "color: #515a5a; font-weight: bold" %>
+        <%= form.label :password, class: "col-sm-3 col-form-label required", style: "color: #515a5a; font-weight: bold" %>
         <div class="col-sm-4">
           <%= form.password_field :password, class: "form-control", placeholder: "New password", :required => true %>
       </div>
@@ -24,7 +24,7 @@
 
     <div class="col-12">
       <div class="row mb-3 justify-content-center">
-        <%= form.label :password_confirmation, class: "col-sm-3 col-form-label", style: "color: #515a5a; font-weight: bold" %>
+        <%= form.label :password_confirmation, class: "col-sm-3 col-form-label required", style: "color: #515a5a; font-weight: bold" %>
         <div class="col-sm-4">
         <%= form.password_field :password_confirmation, class: "form-control", placeholder: "Please type your new password again", :required => true %>
       </div>

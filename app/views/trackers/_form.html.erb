@@ -12,7 +12,7 @@
       </div>
 
       <div class="row mb-3 justify-content-center">
-        <%= form.label "When you put the food, does he/she eat ASAP?", class: "col-sm-3 col-form-label", style: "color: #515a5a; font-weight: bold" %>
+        <%= form.label "When you put the food, does he/she eat ASAP?", class: "col-sm-3 col-form-label optional", style: "color: #515a5a; font-weight: bold" %>
         <div class="col-sm-4">
           <%= form.select :hungry_extend, [["Yes"], ["Ate A Little"], ["No"]], { prompt: "Is he/she hungry? Please choose..." }, class: "form-control" %>
         </div>
@@ -27,30 +27,32 @@
 
 
       <div class="row mb-3 justify-content-center">
-        <%= form.label :food_type, class: "col-sm-3 col-form-label", style: "color: #515a5a; font-weight: bold" %>
+        <%= form.label :food_type, class: "col-sm-3 col-form-label required", style: "color: #515a5a; font-weight: bold;" %>
         <div class="col-sm-4">
           <%= form.select :food_type, [["Dry"], ["Wet"], ["Other"]], { prompt: "Select Food Type" }, class: "form-control" %>
         </div>
       </div>
 
       <div class="row mb-3 justify-content-center">
-        <%= form.label :brand, class: "col-sm-3 col-form-label", style: "color: #515a5a; font-weight: bold" %>
+        <%= form.label :brand, class: "col-sm-3 col-form-label required", style: "color: #515a5a; font-weight: bold" %>
         <div class="col-sm-4">
           <%= form.text_field :brand, class: "form-control", value: tracker.brand, requried: true %>
         </div>
       </div>
 
       <div class="row mb-3 justify-content-center">
-        <%= form.label :description, class: "col-sm-3 col-form-label", style: "color: #515a5a; font-weight: bold" %>
+        <%= form.label :description, class: "col-sm-3 col-form-label required", style: "color: #515a5a; font-weight: bold" %>
         <div class="col-sm-4">
           <%= form.text_field :description, class: "form-control", value: tracker.description, requried: true %>
+          <div id="descriptionHelpBlock" class="form-text">Input food's flavor or serial number for easy to track</div>
         </div>
       </div>
 
       <div class="row mb-3 justify-content-center">
-        <%= form.label :amount, class: "col-sm-3 col-form-label", style: "color: #515a5a; font-weight: bold" %>
+        <%= form.label "Amount (g)", class: "col-sm-3 col-form-label required", style: "color: #515a5a; font-weight: bold" %>
         <div class="col-sm-4">
           <%= form.text_field :amount, class: "form-control floatingInput" %>
+          <div id="amountHelpBlock" class="form-text">Input number/float number only without unit</div>
         </div>
       </div>
 
