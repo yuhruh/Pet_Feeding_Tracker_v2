@@ -28,6 +28,7 @@ gem "groupdate"
 gem 'byebug', '~> 11.1', '>= 11.1.3'
 gem "csv"
 
+gem "omniauth"
 gem 'omniauth-rails_csrf_protection' # Recommended for CSRF protection with OmniAuth
 gem 'omniauth-google-oauth2'
 
