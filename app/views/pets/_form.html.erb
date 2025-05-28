@@ -4,40 +4,40 @@
   </div>
 
   <div class="col-12">
-    <div class="row mb-3 justify-content-center">
-    <%= form.label :pet_name, class: "col-sm-1 col-form-label required", style: "color: #515a5a; font-weight: bold" %>
+    <div class="row mb-4 justify-content-center">
+    <%= form.label :pet_name, class: "col-sm-2 col-form-label required", style: "color: #515a5a; font-weight: bold" %>
     <div class="col-sm-3">
       <%= form.text_field :pet_name, class: "form-control", placeholder: "Enter cat's name" %>
     </div> 
   </div>
 
   <div class="col-12">
-    <div class="row mb-3 justify-content-center">
-    <%= form.label :birthday, class: "col-sm-1 col-form-label optional", style: "color: #515a5a; font-weight: bold" %>
+    <div class="row mb-4 justify-content-center">
+    <%= form.label :birthday, class: "col-sm-2 col-form-label optional", style: "color: #515a5a; font-weight: bold" %>
     <div class="col-sm-3">
       <%= form.date_field :birthday, class: "form-control", max: Date.today %>
     </div> 
   </div>
 
   <div class="col-12">
-    <div class="row mb-3 justify-content-center">
-    <%= form.label "weight (kg)", class: "col-sm-1 col-form-label required", style: "color: #515a5a; font-weight: bold" %>
+    <div class="row mb-4 justify-content-center">
+    <%= form.label "weight (kg)", class: "col-sm-2 col-form-label required", style: "color: #515a5a; font-weight: bold" %>
     <div class="col-sm-3">
       <%= form.text_field :weight, class: "form-control", placeholder: "Enter cat's weight", max: 100, min: 0.0 %>
     </div>
   </div>
 
   <div class="col-12">
-    <div class="row mb-3 justify-content-center">
-    <%= form.label :gender, class: "col-sm-1 col-form-label required", style: "color: #515a5a; font-weight: bold" %>
+    <div class="row mb-4 justify-content-center">
+    <%= form.label :gender, class: "col-sm-2 col-form-label required", style: "color: #515a5a; font-weight: bold" %>
     <div class="col-sm-3">
       <%= form.select :gender, [["Male"], ["Female"], ["Rather Not To Answer"]], { prompt: "Choose Cat's gender" }, class: "form-control" %>
     </div> 
   </div>
 
   <div class="col-12">
-    <div class="row mb-3 justify-content-center">
-    <%= form.label :breed, class: "col-sm-1 col-form-label optional", style: "color: #515a5a; font-weight: bold" %>
+    <div class="row mb-4 justify-content-center">
+    <%= form.label :breed, class: "col-sm-2 col-form-label optional", style: "color: #515a5a; font-weight: bold" %>
     <div class="col-sm-3">
       <%= form.text_field :breed, class: "form-control", placeholder: "Enter cat's breed" %>
     </div> 
