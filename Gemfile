@@ -28,7 +28,7 @@ gem "groupdate"
 gem 'byebug', '~> 11.1', '>= 11.1.3'
 gem "csv"
 
-gem 'rails-i18n'
+gem 'rails-i18n', '~> 8.0.0'
 
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
 gem "bcrypt", "~> 3.1.7"
