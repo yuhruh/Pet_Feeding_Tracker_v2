@@ -6,7 +6,11 @@
 
   <p>
     <strong>Birthday:</strong>
-    <%= pet.birthday.strftime("%Y-%m-%d") %>
+    <% if pet.birthday.nil? %>
+      <%= "Not registered yet" %>
+    <% else %>
+      <%= pet.birthday.strftime("%Y-%m-%d") %>
+    <% end %>
   </p>
 
   <p>
