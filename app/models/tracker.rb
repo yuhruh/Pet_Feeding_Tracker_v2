@@ -6,5 +6,5 @@ class Tracker < ApplicationRecord
   validates :food_type, presence: true
   validates :brand, presence: true, length: {minimum: 1, maximum: 50}
   validates :description, presence: true, length: {minimum: 2, maximum: 100}
-  validates :amount, numericality: true, comparison: { greater_than: 0 }
+  validates :amount, numericality: true, comparison: { greater_than: 0, less_than_or_equal_to: 500 }
 end

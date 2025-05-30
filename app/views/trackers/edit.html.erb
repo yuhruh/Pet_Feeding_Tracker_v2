@@ -66,14 +66,14 @@
       <div class="row mb-3 justify-content-center">
         <%= form.label :left_amount, class: "col-sm-3 col-form-label required", style: "color: #515a5a; font-weight: bold" %>
         <div class="col-sm-5">
-          <%= form.number_field :left_amount, step: :any, class: "form-control floatingInput", required: true, max: @tracker.amount, min: 0 %>
+          <%= form.number_field :left_amount, step: :any, class: "form-control floatingInput", required: true, max: 500, min: 0 %>
         </div>
       </div>
 
       <div class="row mb-3 justify-content-center">
-        <%= form.label :love_extend, class: "col-sm-3 col-form-label optional", style: "color: #515a5a; font-weight: bold" %>
+        <%= form.label :love_extend, class: "col-sm-3 col-form-label required", style: "color: #515a5a; font-weight: bold" %>
         <div class="col-sm-5">
-          <%= form.select :love_extend, [["Love it So Much"], ["So so"], ["Not Like it"]], { prompt: "Does she/he love this food?" }, class: "form-control" %>
+          <%= form.select :love_extend, [["Love it So Much"], ["So so"], ["Not Like it"]], { prompt: "Does she/he love this food?" }, class: "form-control", required: true %>
         </div>
       </div>
 

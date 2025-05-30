@@ -29,7 +29,7 @@
       <div class="row mb-3 justify-content-center">
         <%= form.label :food_type, class: "col-sm-3 col-form-label required", style: "color: #515a5a; font-weight: bold;" %>
         <div class="col-sm-4">
-          <%= form.select :food_type, [["Dry"], ["Wet"], ["Other"]], { prompt: "Select Food Type" }, class: "form-control" %>
+          <%= form.select :food_type, [["Dry"], ["Wet"], ["Other"]], { prompt: "Select Food Type" }, class: "form-control", required: true %>
         </div>
       </div>
 
@@ -51,7 +51,7 @@
       <div class="row mb-3 justify-content-center">
         <%= form.label "Amount (g)", class: "col-sm-3 col-form-label required", style: "color: #515a5a; font-weight: bold" %>
         <div class="col-sm-4">
-          <%= form.text_field :amount, class: "form-control floatingInput" %>
+          <%= form.text_field :amount, class: "form-control floatingInput", placeholder: "Please enter a number of range 0~500", required: true, max: 500, min: 0 %>
           <div id="amountHelpBlock" class="form-text">Input number/float number only without unit</div>
         </div>
       </div>
