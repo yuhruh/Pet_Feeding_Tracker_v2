@@ -1,15 +1,21 @@
-<div class="container">
+<h1 class="text-center mt-4">Users</h1>
 
-  <p style="color: green"><%= notice %></p>
+<div class="d-flex digg_pagination justify-content-center">
+  <div class="page_info">
+    <%= page_entries_info @users %>
+  </div>
+</div>
+<div class="d-flex digg_pagination justify-content-center mb-4">
+  <%= will_paginate @users, :container => false %>
+</div>
 
-  <h1 class="text-center mt-4">Users</h1>
-
-  <div id="users" class="d-flex justify-content-center">
-    <% @users.each do |user| %>
+<div id="users" class="d-flex justify-content-center">
+  <% @users.each do |user| %>
+    <div class="card mb-3" style="width: 40rem; background: #f2f4f6">
       <%= render user %>
-      <p>
+      <p class="text-center">
         <%= link_to "Show this user", user %>
       </p>
-    <% end %>
-  </div>
+    </div>
+  <% end %>
 </div>
