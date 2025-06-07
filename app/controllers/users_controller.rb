@@ -57,7 +57,7 @@ class UsersController < ApplicationController
     session[:user_id] = nil if @user == current_user
 
     respond_to do |format|
-      format.html { redirect_to users_path, status: :see_other, alert: "#{@user.name} and all associated records were successfully deleted." }
+      format.html { redirect_to '/home', status: :see_other, alert: "#{@user.name} and all associated records were successfully deleted." }
       format.json { head :no_content }
     end
   end

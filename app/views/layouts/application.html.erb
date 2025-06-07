@@ -44,14 +44,10 @@
     window.Stimulus = Application.start()
 
     Stimulus.register("time-zone", class extends Controller {
-      static targets = [ "tz", "button.btn" ];
+      static targets = [ "tz" ];
       
       initialize() {
         this.tzTarget.value = Intl.DateTimeFormat().resolvedOptions().timeZone;
-      }
-
-      systemTimeZone() {
-        console.log(this.tzTarget.value);
       }
     })
   </script>
