@@ -9,7 +9,44 @@
     <div class="d-flex justify-content-center mb-5">
       <%= image_tag("chart.png", width:"1200px", alt: "Chart of tracking", class: "rounded-4 shadow-lg")%>
     </div>
-  </h4>
+    <h4 class="text mb-5", style="color: #515a5a; font-weight: bold"> Version 1 vs Version 2 </h4>
+      <table class="table table-striped-columns shadow-lg text-center mb-5">
+        <thead>
+          <tr>
+            <th scope="col" style="width:35%"></th>
+            <th scope="col">Version 1</th>
+            <th scope="col">Version 2</th>
+          </tr>
+        </thead>
+        <tbody class="table-group-divider">
+          <tr>
+            <th scope="row">Multi Cat Supports</th>
+            <td><%= image_tag("not1.png", width:"30px")%></td>
+            <td><%= image_tag("v.png", width:"30px")%></td>
+          </tr>
+          <tr>
+            <th scope="row">Tracker Chart Visualization</th>
+            <td><%= image_tag("v.png", width:"30px")%></td>
+            <td><%= image_tag("v.png", width:"30px")%></td>
+          </tr>
+          <tr>
+            <th scope="row">Automatically Set Time Zone</th>
+            <td><%= image_tag("not1.png", width:"30px")%></td>
+            <td><%= image_tag("v.png", width:"30px")%></td>
+          </tr>
+          <tr>
+            <th scope="row">Visual Reminder</th>
+            <td><%= image_tag("not1.png", width:"30px")%></td>
+            <td><%= image_tag("v.png", width:"30px")%></td>
+          </tr>
+          <tr>
+            <th scope="row">Show Top 5-10 Favorite Foods</th>
+            <td><%= image_tag("not1.png", width:"30px")%></td>
+            <td><%= image_tag("v.png", width:"30px")%></td>
+          </tr>
+        </tbody>
+      </table>
+
 </div>
 
 <div class="container">
