@@ -1,4 +1,4 @@
-<h1 class="text-center mt-4">Editing <%= @pet.pet_name.capitalize %>'s tracker</h1>
+<h1 class="text-center mt-4" style="font-weight: bold;">Editing <%= @pet.pet_name.capitalize %>'s tracker</h1>
 
 <div class="container">
   <%= form_with(model: [@pet, @tracker]) do |form| %>

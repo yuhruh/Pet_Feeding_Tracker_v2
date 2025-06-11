@@ -1,6 +1,6 @@
 <div class="d-flex justify-content-center">
   <div class="card" style="width: 40rem; background: #f2f4f6">
-    <h1 class="text-center mt-4"><%= (@pet.pet_name).capitalize %>'s Profile</h1>
+    <h1 class="text-center mt-4", style="font-weight: bold;"><%= (@pet.pet_name).capitalize %>'s Profile</h1>
     <div class="container">
       <div class="d-flex justify-content-center mb-4">
         <% if @pet.gender == 'Female' || @pet.gender == 'F' %>

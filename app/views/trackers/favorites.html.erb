@@ -1,4 +1,4 @@
-<h1 class="text-center mt-4" style="font-family: fantasy;"><%= @pet.pet_name.capitalize %>'s Top <%= @pet.trackers.order(favorite_score: 'desc').limit(5).count%> Favorite Food</h1>
+<h1 class="text-center mt-4" style="font-weight: bold;"><%= @pet.pet_name.capitalize %>'s Top <%= @pet.trackers.order(favorite_score: 'desc').limit(5).count%> Favorite Food</h1>
 
 <table class="table table-bordered" style="width:100%">
   <thead class="table-dark">
