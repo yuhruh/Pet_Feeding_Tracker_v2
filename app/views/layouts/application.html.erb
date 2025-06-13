@@ -51,4 +51,13 @@
       }
     })
   </script>
+
+  <script type="text/javascript">
+    setTimeout(function() {
+      const errorMessages = document.querySelectorAll('.error')
+      errorMessages.forEach((message) => {
+        message.style.display = 'none';
+      })
+    }, 3000);
+  </script>
 </html>
