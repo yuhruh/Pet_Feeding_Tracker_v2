@@ -55,3 +55,29 @@ en:
       note: "If you're interested in learning more about cat eating behavior, 
       I highly recommend consulting a professional. I personally found great insights from "
       petbuddy: "Pet Buddy Cat Behavior, LLC"
+    doc:
+      document: "🐾 Document 🐾"
+      para1: "The Cat Feeding Tracker V2 is a web-based application designed to help cat owners meticulously monitor cats' feeding habits. 
+      The app offers a clear, visualized approach to tracking dietary intake, catering to multiple indoor cats. 
+      Built with modern web technologies, this app emphasizes user-friendly data entry, automated timekeeping, 
+      and visual charts to ensure accurate and complete feeding logs."
+      intro: "1. Introduction & Overview"
+      ver: "Version 1 vs Version 2"
+      col: "Version 1"
+      col2: "Version 2"
+      row: "Multi Cat Supports"
+      row2: "Tracker Chart Visualization"
+      row3: "Automatically Set Time Zone"
+      row4: "Visual Reminder"
+      row5: "Show Top 5-10 Favorite Foods"
+      key_features: "2. Key Features"
+      feature: "Multi-Cat Support: "
+      feature_2: "Intuitive Data Entry with Visual Reminders: "
+      feature_3: "Automatic Date & Time Stamping:"
+      feature_4: "Configurable Time Zones:"
+      feature_5: "Comprehensive CRUD Operations:"
+      feature_6: "Data Visualization: "
+      feature_7: "Favorite Foods List:"
+      tech: "3. Technical Stack & Deployment"
+      stack: "The Cat Feeding Tracker V2 leverages a robust and modern set of technologies: "
+      benefit: " 4. Benefits"

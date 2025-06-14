@@ -1,46 +1,43 @@
-<h1 class="text-center mb-4", style="font-weight: bold;">🐾 Document 🐾</h1>
+<h1 class="text-center mb-4", style="font-weight: bold;"><%= t '.document' %></h1>
 
 <div class="container">
-  <h3 class="text", style="font-weight: bold"> 1. Introduction & Overview </h3>
-    <h5 class="mb-4", style="color: #919097; font-weight: bold">The Cat Feeding Tracker V2 is a web-based application designed to help cat owners meticulously monitor cats' feeding habits. 
-    The app offers a clear, visualized approach to tracking dietary intake, catering to multiple indoor cats. 
-    Built with modern web technologies, this app emphasizes user-friendly data entry, automated timekeeping, 
-    and visual charts to ensure accurate and complete feeding logs. </h5>
+  <h3 class="text", style="font-weight: bold"><%= t '.intro' %></h3>
+    <h5 class="mb-4", style="color: #919097; font-weight: bold"><%= t '.para1' %></h5>
     <div class="d-flex justify-content-center mb-5">
       <%= image_tag("chart.png", width:"1200px", alt: "Chart of tracking", class: "rounded-4 shadow-lg")%>
     </div>
-    <h4 class="text mb-5", style="color: #515a5a; font-weight: bold"> Version 1 vs Version 2 </h4>
+    <h4 class="text mb-5", style="color: #515a5a; font-weight: bold"><%= t '.ver' %></h4>
       <table class="table table-striped-columns shadow-lg text-center mb-5">
         <thead>
           <tr>
             <th scope="col" style="width:35%"></th>
-            <th scope="col">Version 1</th>
-            <th scope="col">Version 2</th>
+            <th scope="col"><%= t '.col' %></th>
+            <th scope="col"><%= t '.col2' %></th>
           </tr>
         </thead>
         <tbody class="table-group-divider">
           <tr>
-            <th scope="row">Multi Cat Supports</th>
+            <th scope="row"><%= t '.row' %></th>
             <td><%= image_tag("not1.png", width:"30px")%></td>
             <td><%= image_tag("v.png", width:"30px")%></td>
           </tr>
           <tr>
-            <th scope="row">Tracker Chart Visualization</th>
+            <th scope="row"><%= t '.row2' %></th>
             <td><%= image_tag("v.png", width:"30px")%></td>
             <td><%= image_tag("v.png", width:"30px")%></td>
           </tr>
           <tr>
-            <th scope="row">Automatically Set Time Zone</th>
+            <th scope="row"><%= t '.row3' %></th>
             <td><%= image_tag("not1.png", width:"30px")%></td>
             <td><%= image_tag("v.png", width:"30px")%></td>
           </tr>
           <tr>
-            <th scope="row">Visual Reminder</th>
+            <th scope="row"><%= t '.row4' %></th>
             <td><%= image_tag("not1.png", width:"30px")%></td>
             <td><%= image_tag("v.png", width:"30px")%></td>
           </tr>
           <tr>
-            <th scope="row">Show Top 5-10 Favorite Foods</th>
+            <th scope="row"><%= t '.row5' %></th>
             <td><%= image_tag("not1.png", width:"30px")%></td>
             <td><%= image_tag("v.png", width:"30px")%></td>
           </tr>
@@ -50,8 +47,8 @@
 </div>
 
 <div class="container">
-  <h3 class="text", style="font-weight: bold"> 2. Key Features<h3>
-    <h4 class="text", style="color: #515a5a; font-weight: bold"> Multi-Cat Support: </h4>
+  <h3 class="text", style="font-weight: bold"><%= t '.key_features' %><h3>
+    <h4 class="text", style="color: #515a5a; font-weight: bold"><%= t '.feature' %></h4>
       <h5 class="text mb-4", style="color: #919097; font-weight: bold">
       Multi-Cat Support: Manage feeding data for "multiple-cats" and "single-cat" within a single user account, 
       allowing individual tracking for each pet.</h5>
@@ -63,7 +60,7 @@
         <%= image_tag("petlist.png", width:"1200px", alt: "Chart of tracking", class: "rounded-4 shadow-lg")%>
       </div>
 
-    <h4 class="text", style="color: #515a5a; font-weight: bold">Intuitive Data Entry with Visual Reminders: </h4>
+    <h4 class="text", style="color: #515a5a; font-weight: bold"><%= t '.feature_2' %></h4>
       <h5 class="text mb-4", style="color: #919097; font-weight: bold">Red Background Reminder: Raw data entries will display with a red background color as a visual alert, prompting the user to fill 
       out the "left amount" of food. </h5>
 
@@ -78,21 +75,21 @@
         <%= image_tag("yellow.png", width:"1200px", alt: "Chart of tracking", class: "rounded-4 shadow-lg")%>
       </div>
 
-    <h4 class="text", style="color: #515a5a; font-weight: bold">Automatic Date & Time Stamping:
+    <h4 class="text", style="color: #515a5a; font-weight: bold"><%= t '.feature_3' %></h4>
       <h5 class="text mb-4", style="color: #919097; font-weight: bold"> The date and time is default set for local time for each feeding entry, streamlining the logging process. </h5>
 
-    <h4 class="text", style="color: #515a5a; font-weight: bold"> Configurable Time Zones:</h4> 
+    <h4 class="text", style="color: #515a5a; font-weight: bold"><%= t '.feature_4' %></h4> 
      <h5 class="text mb-4", style="color: #919097; font-weight: bold"> Upon user sign-up, the app sets up the correct time zone, ensuring accurate chronological data regardless of the user's location. </h5>
 
-    <h4 class="text", style="color: #515a5a; font-weight: bold">Comprehensive CRUD Operations: </h4>
+    <h4 class="text", style="color: #515a5a; font-weight: bold"><%= t '.feature_5' %></h4>
       <h5 class="text mb-4", style="color: #919097; font-weight: bold"> Users have full control over their data, as below: </h5>
       <h5 class="text mb-3", style="color: #919097; font-weight: bold"> (1) Trackers: Individual feeding records can be added, edited/updated, and deleted. </h5>
       <h5 class="text mb-3", style="color: #919097; font-weight: bold"> (2) Pets: Cat profiles can be added, edited/updated, and deleted.</h5>
       <h5 class="text mb-3", style="color: #919097; font-weight: bold"> (3) User Information: User account details can be managed except timezone, including editing and deleting user profiles.</h5>
       <h5 class="text mb-5", style="color: #919097; font-weight: bold"> (4) Data Visualization: The app includes charting capabilities to help users visualize feeding patterns/trends and make informed decisions about their cats' next meal.</h5>
-    <h4 class="text", style="color: #515a5a; font-weight: bold">Data Visualization: </h4>
+    <h4 class="text", style="color: #515a5a; font-weight: bold"><%= t '.feature_6' %></h4>
       <h5 class="text mb-5", style="color: #919097; font-weight: bold">The app includes charting capabilities to help users visualize feeding patterns and trends, aiding in making informed decisions about their cats' next meals.</h5>
-    <h4 class="text", style="color: #515a5a; font-weight: bold">Favorite Foods List:</h4>
+    <h4 class="text", style="color: #515a5a; font-weight: bold"><%= t '.feature_7' %></h4>
       <h5 class="text mb-5", style="color: #919097; font-weight: bold">Maintain a list of your each cat's favorite foods, including brand and flavor. This feature helps you keep track of dietary preferences and ensures your pet enjoys their meals. </h5>
 
       <div class="d-flex justify-content-center mb-5">
@@ -100,15 +97,15 @@
       </div>
   </h3>
 
-  <h3 class="text", style="font-weight: bold"> 3. Technical Stack & Deployment </h3>
-    <h4 class="text", style="color: #515a5a; font-weight: bold">The Cat Feeding Tracker V2 leverages a robust and modern set of technologies: </h4>
+  <h3 class="text", style="font-weight: bold"><%= t '.tech' %></h3>
+    <h4 class="text", style="color: #515a5a; font-weight: bold"><%= t '.stack' %></h4>
 
     <h5 class="text mb-3", style="color: #919097; font-weight: bold">Backend Framework: Ruby on Rails (RoR 8) </h5>
     <h5 class="text mb-3", style="color: #919097; font-weight: bold">Frontend Frameworks/Libraries: Bootstrap (for responsive design and styling), Stimulus (for modest JavaScript), and Turbo (for fast page navigation). </h5>
     <h5 class="text mb-3", style="color: #919097; font-weight: bold">Database: PostgreSQL (for reliable data storage). </h5>
     <h5 class="text mb-5", style="color: #919097; font-weight: bold">Deployment Platform: Heroku (for cloud hosting and application delivery). </h5>
 
-  <h3 class="text", style="font-weight: bold">  4. Benefits </h3>
+  <h3 class="text", style="font-weight: bold"><%= t '.benefit' %></h3>
     <h5 class="text mb-3", style="color: #919097; font-weight: bold">Improved Cat Health Monitoring: Provides a clear record of feeding habits, helping owners notice cat's appetite changes to result from potential health issues.</h5>
     <h5 class="text mb-3", style="color: #919097; font-weight: bold">Reduced Manual Effort: Automated date/time stamps, total ate amount and visual reminders simplify the data entry process.</h5>
     <h5 class="text mb-3", style="color: #919097; font-weight: bold">Enhanced Organization: Centralized tracking for multiple cats keeps all feeding information neatly organized.</h5>
