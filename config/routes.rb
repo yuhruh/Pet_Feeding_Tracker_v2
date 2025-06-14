@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
-  root 'pages#home'
+  scope "(:locale)", locale: /en|zh-TW/ do
+    root 'pages#home'
+    get "/home", to:"pages#home"
+    get "/about", to:"pages#about"
+    get "/doc", to: "pages#doc"
+    get "/started", to:"pages#started"
+    resources :pets, :trackers, :users
+  end
+
   resources :pets do
     resources :trackers
   end
@@ -9,10 +17,6 @@ Rails.application.routes.draw do
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
   # Can be used by load balancers and uptime monitors to verify that the app is live.
   get "up" => "rails/health#show", as: :rails_health_check
-  get "/home", to: "pages#home"
-  get "/doc", to: "pages#doc"
-  get "/started", to:"pages#started"
-   get "/about", to:"pages#about"
   get "signup", to: 'users#new'
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create'

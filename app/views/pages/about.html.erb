@@ -5,30 +5,21 @@
       <div class="d-flex justify-content-center mb-3">
         <%= image_tag("aji.jpg", width:"750px", class:"figure-img img-fluid rounded")%>
       </div>
-      <h3 class="card-title mb-5 text-center">About</h3>
+      <h3 class="card-title mb-5 text-center"><%= t '.about_aji' %></h3>
       <h4 class="card-text mb-3">
-        This app was inspired by my mischievous cat, Aji — a ginger-and-white furball with a surprisingly picky palate. 
-        Unlike most ginger cats, Aji has his own unique favorites. For example, he loves chicken more than tuna or salmon.
+        <%= t '.paragraph1' %>
       </h4>
       <h4 class="card-text mb-3">
-        How do I know? I used to track his meals in an Excel sheet, and over time, I started noticing patterns. 
-        If I served him something he didn’t like… he’d skip the meal entirely (me: 😅).
+        <%= t '.paragraph2' %>
       </h4>
       <h4 class="card-text mb-3">
-        You might say I spoil him — and you'd be absolutely right. I love Aji, and I want him to enjoy every single meal.
-        But using Excel was tedious — every input was manual, and there was no easy way to visualize trends over time. 
-        So, I built this app: a smarter way to track meals, spot preferences, and keep Aji well-fed and happy.
+        <%= t '.paragraph3' %>
       </h4>
       <h4 class="card-text mb-3">
-        ✨ Want to join me? Sign up and try it yourself:  
+        <%= t '.paragraph4' %> 
       </h4>
-      <h5 class="card-text mb-3">👉 <a href="https://feeding-tracker-v2-3e86df55d613.herokuapp.com/signup" class="btn btn-secondary">Sign Up</a></h5>
-      <h5>If you're interested in learning more about cat eating behavior, 
-      I highly recommend consulting a professional. I personally found great insights from 
-      <a href="https://www.petbuddytraining.com/">Pet Buddy Cat Behavior, LLC
-
-</a>.
-      </h5>
+      <h5 class="card-text mb-3">👉 <a href="https://feeding-tracker-v2-3e86df55d613.herokuapp.com/signup" class="btn btn-secondary"><%= t '.signup' %></a></h5>
+      <h5><%= t '.note' %><a href="https://www.petbuddytraining.com/" target="_blank"><%= t '.petbuddy' %></a></h5>
     </div>
   </div>
 </div>

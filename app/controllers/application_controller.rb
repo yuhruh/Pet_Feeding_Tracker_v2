@@ -22,4 +22,16 @@ class ApplicationController < ActionController::Base
       redirect_to login_path
     end
   end
+
+  before_action :set_locale
+
+  def default_url_options
+    { locale: I18n.locale }
+  end
+
+  private
+
+  def set_locale
+    I18n.locale = params[:locale] || I18n.default_locale
+  end
 end
