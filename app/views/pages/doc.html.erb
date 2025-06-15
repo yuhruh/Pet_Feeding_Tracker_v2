@@ -49,48 +49,42 @@
 <div class="container">
   <h3 class="text", style="font-weight: bold"><%= t '.key_features' %><h3>
     <h4 class="text", style="color: #515a5a; font-weight: bold"><%= t '.feature' %></h4>
-      <h5 class="text mb-4", style="color: #919097; font-weight: bold">
-      Multi-Cat Support: Manage feeding data for "multiple-cats" and "single-cat" within a single user account, 
-      allowing individual tracking for each pet.</h5>
-      <h5 class="text mb-4", style="color: #919097; font-weight: bold">
-      Dedicated Tracking & Chart Columns: For each pet, the app provides its own dedicated tracking 
-      interface and a visualization column and charts to display feeding trends and data over time. </h5>
+      <h5 class="text mb-4", style="color: #919097; font-weight: bold"><%= t '.content_1' %></h5>
+      <h5 class="text mb-4", style="color: #919097; font-weight: bold"><%= t '.content_2' %></h5>
 
       <div class="d-flex justify-content-center mb-5">
         <%= image_tag("petlist.png", width:"1200px", alt: "Chart of tracking", class: "rounded-4 shadow-lg")%>
       </div>
 
     <h4 class="text", style="color: #515a5a; font-weight: bold"><%= t '.feature_2' %></h4>
-      <h5 class="text mb-4", style="color: #919097; font-weight: bold">Red Background Reminder: Raw data entries will display with a red background color as a visual alert, prompting the user to fill 
-      out the "left amount" of food. </h5>
+      <h5 class="text mb-4", style="color: #919097; font-weight: bold"><%= t '.content_3' %></h5>
 
       <div class="d-flex justify-content-center mb-5">
         <%= image_tag("red.png", width:"1200px", alt: "Chart of tracking", class: "rounded-4 shadow-lg")%>
       </div>
 
-      <h5 class="text mb-5", style="color: #919097; font-weight: bold">Yellow Background Reminder: 
-      Data entries will display with a yellow background color as a visual notice, reminding the user to fill out the column of "Time Record(Come back to eat)"</h5>
+      <h5 class="text mb-5", style="color: #919097; font-weight: bold"><%= t '.content_4' %></h5>
 
       <div class="d-flex justify-content-center mb-5">
         <%= image_tag("yellow.png", width:"1200px", alt: "Chart of tracking", class: "rounded-4 shadow-lg")%>
       </div>
 
     <h4 class="text", style="color: #515a5a; font-weight: bold"><%= t '.feature_3' %></h4>
-      <h5 class="text mb-4", style="color: #919097; font-weight: bold"> The date and time is default set for local time for each feeding entry, streamlining the logging process. </h5>
+      <h5 class="text mb-4", style="color: #919097; font-weight: bold"><%= t '.content_5' %></h5>
 
     <h4 class="text", style="color: #515a5a; font-weight: bold"><%= t '.feature_4' %></h4> 
-     <h5 class="text mb-4", style="color: #919097; font-weight: bold"> Upon user sign-up, the app sets up the correct time zone, ensuring accurate chronological data regardless of the user's location. </h5>
+     <h5 class="text mb-4", style="color: #919097; font-weight: bold"><%= t '.content_6' %></h5>
 
     <h4 class="text", style="color: #515a5a; font-weight: bold"><%= t '.feature_5' %></h4>
-      <h5 class="text mb-4", style="color: #919097; font-weight: bold"> Users have full control over their data, as below: </h5>
-      <h5 class="text mb-3", style="color: #919097; font-weight: bold"> (1) Trackers: Individual feeding records can be added, edited/updated, and deleted. </h5>
-      <h5 class="text mb-3", style="color: #919097; font-weight: bold"> (2) Pets: Cat profiles can be added, edited/updated, and deleted.</h5>
-      <h5 class="text mb-3", style="color: #919097; font-weight: bold"> (3) User Information: User account details can be managed except timezone, including editing and deleting user profiles.</h5>
-      <h5 class="text mb-5", style="color: #919097; font-weight: bold"> (4) Data Visualization: The app includes charting capabilities to help users visualize feeding patterns/trends and make informed decisions about their cats' next meal.</h5>
+      <h5 class="text mb-4", style="color: #919097; font-weight: bold"><%= t '.content_7' %></h5>
+      <h5 class="text mb-3", style="color: #919097; font-weight: bold"><%= t '.content_8' %></h5>
+      <h5 class="text mb-3", style="color: #919097; font-weight: bold"><%= t '.content_9' %></h5>
+      <h5 class="text mb-3", style="color: #919097; font-weight: bold"><%= t '.content_10' %></h5>
+      <h5 class="text mb-5", style="color: #919097; font-weight: bold"><%= t '.content_11' %></h5>
     <h4 class="text", style="color: #515a5a; font-weight: bold"><%= t '.feature_6' %></h4>
-      <h5 class="text mb-5", style="color: #919097; font-weight: bold">The app includes charting capabilities to help users visualize feeding patterns and trends, aiding in making informed decisions about their cats' next meals.</h5>
+      <h5 class="text mb-5", style="color: #919097; font-weight: bold"><%= t '.content_12' %></h5>
     <h4 class="text", style="color: #515a5a; font-weight: bold"><%= t '.feature_7' %></h4>
-      <h5 class="text mb-5", style="color: #919097; font-weight: bold">Maintain a list of your each cat's favorite foods, including brand and flavor. This feature helps you keep track of dietary preferences and ensures your pet enjoys their meals. </h5>
+      <h5 class="text mb-5", style="color: #919097; font-weight: bold"><%= t '.content_13' %></h5>
 
       <div class="d-flex justify-content-center mb-5">
         <%= image_tag("favorite.png", width:"1200px", alt: "Chart of tracking", class: "rounded-4 shadow-lg")%>
@@ -100,18 +94,17 @@
   <h3 class="text", style="font-weight: bold"><%= t '.tech' %></h3>
     <h4 class="text", style="color: #515a5a; font-weight: bold"><%= t '.stack' %></h4>
 
-    <h5 class="text mb-3", style="color: #919097; font-weight: bold">Backend Framework: Ruby on Rails (RoR 8) </h5>
-    <h5 class="text mb-3", style="color: #919097; font-weight: bold">Frontend Frameworks/Libraries: Bootstrap (for responsive design and styling), Stimulus (for modest JavaScript), and Turbo (for fast page navigation). </h5>
-    <h5 class="text mb-3", style="color: #919097; font-weight: bold">Database: PostgreSQL (for reliable data storage). </h5>
-    <h5 class="text mb-5", style="color: #919097; font-weight: bold">Deployment Platform: Heroku (for cloud hosting and application delivery). </h5>
+    <h5 class="text mb-3", style="color: #919097; font-weight: bold"><%= t '.tech_2' %></h5>
+    <h5 class="text mb-3", style="color: #919097; font-weight: bold"><%= t '.tech_3' %></h5>
+    <h5 class="text mb-3", style="color: #919097; font-weight: bold"><%= t '.tech_4' %></h5>
+    <h5 class="text mb-5", style="color: #919097; font-weight: bold"><%= t '.tech_5' %></h5>
 
   <h3 class="text", style="font-weight: bold"><%= t '.benefit' %></h3>
-    <h5 class="text mb-3", style="color: #919097; font-weight: bold">Improved Cat Health Monitoring: Provides a clear record of feeding habits, helping owners notice cat's appetite changes to result from potential health issues.</h5>
-    <h5 class="text mb-3", style="color: #919097; font-weight: bold">Reduced Manual Effort: Automated date/time stamps, total ate amount and visual reminders simplify the data entry process.</h5>
-    <h5 class="text mb-3", style="color: #919097; font-weight: bold">Enhanced Organization: Centralized tracking for multiple cats keeps all feeding information neatly organized.</h5>
-    <h5 class="text mb-3", style="color: #919097; font-weight: bold">Data-Driven Decisions: Visualizations empower users to understand trends and adjust feeding schedules or amounts as needed.</h5>
-    <h5 class="text mb-5", style="color: #919097; font-weight: bold">Personalized Feeding Experience: The Favorite Foods List feature allows owners to tailor meals to their cats' preferences, enhancing satisfaction and well-being.</h5>
+    <h5 class="text mb-3", style="color: #919097; font-weight: bold"><%= t '.bene_1' %></h5>
+    <h5 class="text mb-3", style="color: #919097; font-weight: bold"><%= t '.bene_2' %></h5>
+    <h5 class="text mb-3", style="color: #919097; font-weight: bold"><%= t '.bene_3' %></h5>
+    <h5 class="text mb-3", style="color: #919097; font-weight: bold"><%= t '.bene_4' %></h5>
+    <h5 class="text mb-5", style="color: #919097; font-weight: bold"><%= t '.bene_5' %></h5>
 
-  <h3 class="text mb-5", style="font-weight: bold"> By incorporating the Favorite Foods feature, Pet Feeding Tracker V2 not only helps you monitor 
-  feeding schedules but also ensures your cat's dietary preferences are met, contributing to their overall health and happiness.</h3>
+  <h3 class="text mb-5", style="font-weight: bold"><%= t '.final' %></h3>
 </div>

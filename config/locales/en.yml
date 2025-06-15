@@ -72,12 +72,47 @@ en:
       row5: "Show Top 5-10 Favorite Foods"
       key_features: "2. Key Features"
       feature: "Multi-Cat Support: "
+      content_1: "Multi-Cat Support: Manage feeding data for 'multiple-cats' and 'single-cat' within a single user account, 
+      allowing individual tracking for each pet."
+      content_2: "Dedicated Tracking & Chart Columns: For each pet, the app provides its own dedicated tracking 
+      interface and a visualization column and charts to display feeding trends and data over time. "
       feature_2: "Intuitive Data Entry with Visual Reminders: "
+      content_3: "Red Background Reminder: Raw data entries will display with a red background color as a visual alert, prompting the user to fill 
+      out the 'left amount' of food." 
+      content_4: "Yellow Background Reminder: 
+      Data entries will display with a yellow background color as a visual notice, reminding the user to fill out the column of
+       'Time Record(Come back to eat)'"
       feature_3: "Automatic Date & Time Stamping:"
+      content_5: "The date and time is default set for local time for each feeding entry, streamlining the logging process."
       feature_4: "Configurable Time Zones:"
+      content_6: "Upon user sign-up, the app sets up the correct time zone, ensuring accurate chronological data regardless of the user's location."
       feature_5: "Comprehensive CRUD Operations:"
+      content_7: "Users have full control over their data, as below:"
+      content_8: "(1) Trackers: Individual feeding records can be added, edited/updated, and deleted."
+      content_9: "(2) Pets: Cat profiles can be added, edited/updated, and deleted."
+      content_10: "(3) User Information: User account details can be managed except timezone, including editing and deleting user profiles."
+      content_11: "(4) Data Visualization: The app includes charting capabilities to help users visualize feeding patterns/trends and 
+      make informed decisions about their cats' next meal."
       feature_6: "Data Visualization: "
+      content_12: "The app includes charting capabilities to help users visualize feeding patterns and trends, aiding in making informed
+       decisions about their cats' next meals."
       feature_7: "Favorite Foods List:"
+      content_13: "Maintain a list of your each cat's favorite foods, including brand and flavor. This feature helps you keep track of dietary 
+      preferences and ensures your pet enjoys their meals."
       tech: "3. Technical Stack & Deployment"
+      tech_2: "Backend Framework: Ruby on Rails (RoR 8)"
+      tech_3: "Frontend Frameworks/Libraries: Bootstrap (for responsive design and styling), Stimulus (for modest JavaScript), 
+      and Turbo (for fast page navigation)."
+      tech_4: "Database: PostgreSQL (for reliable data storage)."
+      tech_5: "Deployment Platform: Heroku (for cloud hosting and application delivery). "
       stack: "The Cat Feeding Tracker V2 leverages a robust and modern set of technologies: "
       benefit: " 4. Benefits"
+      bene_1: "Improved Cat Health Monitoring: Provides a clear record of feeding habits, 
+      helping owners notice cat's appetite changes to result from potential health issues."
+      bene_2: "Reduced Manual Effort: Automated date/time stamps, total ate amount and visual reminders simplify the data entry process."
+      bene_3: "Enhanced Organization: Centralized tracking for multiple cats keeps all feeding information neatly organized."
+      bene_4: "Data-Driven Decisions: Visualizations empower users to understand trends and adjust feeding schedules or amounts as needed."
+      bene_5: "Personalized Feeding Experience: The Favorite Foods List feature allows owners to tailor meals to their cats' preferences, 
+      enhancing satisfaction and well-being."
+      final: "By incorporating the Favorite Foods feature, Pet Feeding Tracker V2 not only helps you monitor 
+      feeding schedules but also ensures your cat's dietary preferences are met, contributing to their overall health and happiness."
