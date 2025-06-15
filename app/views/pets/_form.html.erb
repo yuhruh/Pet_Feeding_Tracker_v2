@@ -5,15 +5,15 @@
 
   <div class="col-12">
     <div class="row mb-4 justify-content-center">
-    <%= form.label :pet_name, class: "col-sm-2 col-form-label required", style: "color: #515a5a; font-weight: bold" %>
+    <%= form.label t('.name'), class: "col-sm-2 col-form-label required", style: "color: #515a5a; font-weight: bold" %>
     <div class="col-sm-3">
-      <%= form.text_field :pet_name, class: "form-control", placeholder: "Enter cat's name" %>
+      <%= form.text_field :pet_name, class: "form-control", placeholder: t('.placeholder') %>
     </div> 
   </div>
 
   <div class="col-12">
     <div class="row mb-4 justify-content-center">
-    <%= form.label :birthday, class: "col-sm-2 col-form-label optional", style: "color: #515a5a; font-weight: bold" %>
+    <%= form.label t('.birthday'), class: "col-sm-2 col-form-label optional", style: "color: #515a5a; font-weight: bold" %>
     <div class="col-sm-3">
       <%= form.date_field :birthday, class: "form-control", max: Date.today %>
     </div> 
@@ -21,32 +21,32 @@
 
   <div class="col-12">
     <div class="row mb-4 justify-content-center">
-    <%= form.label "weight (kg)", class: "col-sm-2 col-form-label required", style: "color: #515a5a; font-weight: bold" %>
+    <%= form.label t('.weight'), class: "col-sm-2 col-form-label required", style: "color: #515a5a; font-weight: bold" %>
     <div class="col-sm-3">
-      <%= form.number_field :weight, step: :any, class: "form-control", placeholder: "Enter cat's weight", max: 100, min: 0.0, required: true %>
+      <%= form.number_field :weight, step: :any, class: "form-control", placeholder: t('.placeholder_weight'), max: 100, min: 0.0, required: true %>
     </div>
   </div>
 
   <div class="col-12">
     <div class="row mb-4 justify-content-center">
-    <%= form.label :gender, class: "col-sm-2 col-form-label required", style: "color: #515a5a; font-weight: bold" %>
+    <%= form.label t('.gender'), class: "col-sm-2 col-form-label required", style: "color: #515a5a; font-weight: bold" %>
     <div class="col-sm-3">
-      <%= form.select :gender, [["Male"], ["Female"], ["Rather Not To Answer"]], { prompt: "Choose Cat's gender" }, class: "form-control" %>
+      <%= form.select :gender, [[t('.male')], [t('.female')], [t('.not_answer')]], { prompt: t('.prompt_gender') }, class: "form-control" %>
     </div> 
   </div>
 
   <div class="col-12">
     <div class="row mb-4 justify-content-center">
-    <%= form.label :breed, class: "col-sm-2 col-form-label optional", style: "color: #515a5a; font-weight: bold" %>
+    <%= form.label t('.breed'), class: "col-sm-2 col-form-label optional", style: "color: #515a5a; font-weight: bold" %>
     <div class="col-sm-3">
-      <%= form.text_field :breed, class: "form-control", placeholder: "Enter cat's breed" %>
+      <%= form.text_field :breed, class: "form-control", placeholder: t('.placeholder_breed') %>
     </div> 
   </div>
 
   <div class="col-8">
     <div class="d-grid gap-3 d-md-flex justify-content-end">
-      <%= form.submit(@pet.new_record? ? 'Add a Pet' : "Modify Pet's Information", class: "btn", style: "color: #515a5a; font-weight: bold; background-color: #d5dbdb") %>
-      <%= link_to "Add pet later....", pets_path, class: "btn btn-secondary", style: "font-weight: bold" %>
+      <%= form.submit(@pet.new_record? ? t('.button_add') : t('.button_modify'), class: "btn", style: "color: #515a5a; font-weight: bold; background-color: #d5dbdb") %>
+      <%= link_to t('.button_later'), pets_path, class: "btn btn-secondary", style: "font-weight: bold" %>
     </div>
   </div>
 <% end %>

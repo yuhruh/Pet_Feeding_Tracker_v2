@@ -1,11 +1,11 @@
 <div class="d-flex justify-content-center">
-  <div class="card" style="width: 40rem; background: #f2f4f6">
-    <h1 class="text-center mt-4", style="font-weight: bold;"><%= (@pet.pet_name).capitalize %>'s Profile</h1>
+  <div class="card" style="width: 50rem; background: #f2f4f6">
+    <h1 class="text-center mt-4", style="font-weight: bold;"><%= (@pet.pet_name).capitalize %><%= t '.title' %></h1>
     <div class="container">
       <div class="d-flex justify-content-center mb-4">
-        <% if @pet.gender == 'Female' || @pet.gender == 'F' %>
+        <% if @pet.gender == 'Female' || @pet.gender == '女性' %>
           <%= image_tag("stitch_female_cat-Photoroom.png", width: "150px", class:"figure-img img-fluid rounded") %>
-        <% elsif @pet.gender == 'Male' || @pet.gender == 'M' %>
+        <% elsif @pet.gender == 'Male' || @pet.gender == '男性' %>
           <%= image_tag("stitch_male_cat-Photoroom.png", width: "150px", class:"figure-img img-fluid rounded") %>
         <% else %>
           <%= image_tag("do_not_want_answer.png", width: "150px", class:"figure-img img-fluid rounded") %>
@@ -17,10 +17,10 @@
       </div>
       
       <div class="text-center m-4">
-        <%= link_to "Add #{@pet.pet_name.capitalize}'s Record", "/pets/#{@pet.id}/trackers/new", class: "btn btn-outline-primary btn-sm mb-4" %>
-        <%= link_to "Show #{@pet.pet_name.capitalize}'s Record", pet_trackers_path(@pet), class: "btn btn-outline-secondary btn-sm mb-4" %>
-        <%= link_to "Edit #{@pet.pet_name.capitalize}'s Profile", edit_pet_path(@pet), class: "btn btn-outline-success btn-sm mb-4" %>
-        <%= link_to "Delete #{@pet.pet_name.capitalize}'s Profile", pet_path(@pet), class: "btn btn-outline-danger btn-sm mb-4", data: {"turbo-confirm": "Are you sure to delete the pet? ", "turbo-method": :delete } %>
+        <%= link_to t('.add_records', pet: @pet.pet_name.capitalize).html_safe, "/pets/#{@pet.id}/trackers/new", class: "btn btn-outline-primary btn-sm mb-4" %>
+        <%= link_to t('.show_records', pet: @pet.pet_name.capitalize).html_safe, pet_trackers_path(@pet), class: "btn btn-outline-secondary btn-sm mb-4" %>
+        <%= link_to t('.edit_records', pet: @pet.pet_name.capitalize).html_safe, edit_pet_path(@pet), class: "btn btn-outline-success btn-sm mb-4" %>
+        <%= link_to t('.delete_pet', pet: @pet.pet_name.capitalize).html_safe, pet_path(@pet), class: "btn btn-outline-danger btn-sm mb-4", data: {"turbo-confirm": "Are you sure to delete the pet? ", "turbo-method": :delete } %>
       </div>
     </div>
   </div>

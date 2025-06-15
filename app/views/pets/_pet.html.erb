@@ -1,35 +1,35 @@
 <div id="<%= dom_id pet %>" class='text-center'>
   <p>
-    <strong>Pet name:</strong>
+    <strong><%= t '.name' %></strong>
     <%= pet.pet_name %>
   </p>
 
   <p>
-    <strong>Birthday:</strong>
+    <strong><%= t '.birthday' %></strong>
     <% if pet.birthday.nil? %>
-      <%= "Not registered yet" %>
+      <%= t('.registered') %>
     <% else %>
       <%= pet.birthday.strftime("%Y-%m-%d") %>
     <% end %>
   </p>
 
   <p>
-    <strong>Weight (kg) :</strong>
+    <strong><%= t '.weight' %></strong>
     <%= pet.weight %>
   </p>
 
   <p>
-    <strong>Gender:</strong>
+    <strong><%= t '.gender' %></strong>
     <%= pet.gender %>
   </p>
 
   <p>
-    <strong>Breed:</strong>
+    <strong><%= t '.breed' %></strong>
     <%= pet.breed %>
   </p>
 
   <p>
-    <strong>Owner:</strong>
+    <strong><%= t '.owner' %></strong>
     <%= current_user.name.capitalize %>
   </p>
 
