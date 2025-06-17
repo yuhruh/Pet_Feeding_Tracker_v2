@@ -83,6 +83,14 @@ zh-TW:
       bene_4: "數據導向的決定: 視覺化可使使用戶了解貓咪的飲食趨勢並根據需要調整餵食時間或數量。"
       bene_5: "貓咪本貓化的餵食體驗: 最喜歡的5-10種食物清單功能，使主人根據貓的喜好量身定制飲食，提高惡魔貓貓的滿意度和幸福感。"
       final: "透過加入「最愛食物列表」功能，寵物餵食追蹤器-第二版不僅可以幫助主人監控餵食時間表，還能確保滿足貓咪的飲食偏好，從而促進它們的整體健康和快樂。"
+  sessions:
+    new:
+      title: "登入飲食記錄APP"
+      name: "使用者名稱"
+      name_placeholder: "輸入使用者名稱"
+      password: "使用者密碼"
+      password_placeholder: "輸入使用者密碼"
+      submit: "登入"
   pets:
     form:
       name: "寵物姓名"
@@ -117,3 +125,24 @@ zh-TW:
       show_records: "顯示%{pet}的餵食紀錄"
       edit_records: "修改%{pet}本喵的資料"
       delete_pet: "刪除%{pet}本喵的資料"
+    edit:
+      title: "編輯 %{pet}本喵的資料"
+      birthday: "本喵生日"
+      weight: "本喵體重 (kg)"
+      placeholder_weight: "輸入本喵體重, 數字需介於0-100之間"
+      gender: "性別"
+      male: "男性"
+      female: "女性"
+      not_answer: "不方便回答"
+      prompt_gender: "請選擇愛貓的性別"
+      breed: "品種 "
+      placeholder_breed: "更新愛貓的品種, 如：米克斯, 布偶..."
+      button_add: "新增寵物"
+      button_modify: "修改寵物資訊"
+      show: "顯示本喵資料"
+      back: "返回寵物列表"
+    index:
+      title: "的寵物列表"
+      button_add: "新增寵物"
+      h5_1: "你還沒有任何一隻寵物, 何不現在增加一隻呢？ 請按以上貓貓"
+      h5_2: " 的按鈕 "

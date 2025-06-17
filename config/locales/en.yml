@@ -129,6 +129,14 @@ en:
       enhancing satisfaction and well-being."
       final: "By incorporating the Favorite Foods feature, Pet Feeding Tracker V2 not only helps you monitor 
       feeding schedules but also ensures your cat's dietary preferences are met, contributing to their overall health and happiness."
+  sessions:
+    new:
+      title: "Log in for Pet Trackers App"
+      name: "Name"
+      name_placeholder: "Enter a username"
+      password: "Password"
+      password_placeholder: "Enter your password"
+      submit: "Log in"
   pets:
     form:
       name: "Pet name"
@@ -163,3 +171,24 @@ en:
       show_records: "Show %{pet}'s Record"
       edit_records: "Edit %{pet}'s Profile"
       delete_pet: "Delete %{pet}'s Profile"
+    edit:
+      title: "Editing %{pet}'s Profile"
+      birthday: "Birthday"
+      weight: "Weight (kg)"
+      placeholder_weight: "Enter cat's weight, the number should be range 0~100"
+      gender: "Gender"
+      male: "Male"
+      female: "Female"
+      not_answer: "Rather Not To Answer"
+      prompt_gender: "Choose Cat's gender"
+      breed: "Breed"
+      placeholder_breed: "Update cat's breed, ex: Mixed, Ragdoll..."
+      button_add: "Add a Pet"
+      button_modify: "Modify Pet's Information"
+      show: "Show this pet"
+      back: "Back to pets"
+    index:
+      title: "'s Pets"
+      button_add: "Add new Pet"
+      h5_1: "You do not have any pets yet. Why would you add it right now? Press above "
+      h5_2: " button "
