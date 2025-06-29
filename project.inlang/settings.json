@@ -1,0 +1,10 @@
+{
+  "$schema": "https://inlang.com/schema/project-settings",
+  "baseLocale": "en",
+  "locales": [
+    "en",
+    "zh-TW"
+  ],
+  "modules": ["https://cdn.jsdelivr.net/npm/@inlang/plugin-t-function-matcher@latest/dist/index.js"],
+  "settings": {}
+}

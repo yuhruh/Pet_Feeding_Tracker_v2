@@ -1,194 +1,200 @@
-# Files in the config/locales directory are used for internationalization and
-# are automatically loaded by Rails. If you want to use locales other than
-# English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t "hello"
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t("hello") %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# To learn more about the API, please read the Rails Internationalization guide
-# at https://guides.rubyonrails.org/i18n.html.
-#
-# Be aware that YAML interprets the following case-insensitive strings as
-# booleans: `true`, `false`, `on`, `off`, `yes`, `no`. Therefore, these strings
-# must be quoted to be interpreted as strings. For example:
-#
-#     en:
-#       "yes": yup
-#       enabled: "ON"
-
+---
 en:
+  about: About
   activerecord:
     attributes:
-  
-  home: "Home"
-  about: "About"
-  doc: "Doc"
-  started: "Get Started"
-  log_in: "Log In"
-  logout: "Log Out"
-  signup: "Sign Up"
-  pets_profile: "Pet(s) Profile"
-  view_pets: "View %{pet}'s Profile"
-  food_list: "Favorite Food Lists"
-  view_favorite_list: "View %{pet}'s Favorite Lists"
-  tracker_record: "Tracker Records"
-  view_records: "View %{pet}'s Records"
-  pet_list: "'s Pets List"
-  user_profile: " Profile "
-  add_pet: "Add Pet"
-  view_user_profile: "View Profile"
-  edit_user_profile: "Edit Profile"
-  delete_user: "Delete Profile"
+  add_pet: Add Pet
+  delete_user: Delete Profile
+  doc: Doc
+  edit_user_profile: Edit Profile
+  food_list: Favorite Food Lists
+  home: Home
+  log_in: Log In
+  logout: Log Out
   pages:
-    home:
-      welcome: " Welcome to Cat Feeding Tracker App"
-      services_html: "🐾 Track your cat's eating 🐾"
-    about: 
-      about_aji: "About"
-      paragraph1: "This app was inspired by my mischievous cat, Aji — a ginger-and-white furball with a surprisingly picky palate. 
-        Unlike most ginger cats, Aji has his own unique favorites. For example, he loves chicken more than tuna or salmon."
-      paragraph2: "How do I know? I used to track his meals in an Excel sheet, and over time, I started noticing patterns. 
-        If I served him something he didn’t like… he’d skip the meal entirely (me: 😅)."
-      paragraph3: "You might say I spoil him — and you'd be absolutely right. I love Aji, and I want him to enjoy every single meal.
-        But using Excel was tedious — every input was manual, and there was no easy way to visualize trends over time. 
-        So, I built this app: a smarter way to track meals, spot preferences, and keep Aji well-fed and happy."
+    about:
+      about_aji: About
+      note: 'If you''re interested in learning more about cat eating behavior, I highly
+        recommend consulting a professional. I personally found great insights from '
+      paragraph1: This app was inspired by my mischievous cat, Aji — a ginger-and-white
+        furball with a surprisingly picky palate. Unlike most ginger cats, Aji has
+        his own unique favorites. For example, he loves chicken more than tuna or
+        salmon.
+      paragraph2: "How do I know? I used to track his meals in an Excel sheet, and
+        over time, I started noticing patterns. If I served him something he didn’t
+        like… he’d skip the meal entirely (me: 😅)."
+      paragraph3: 'You might say I spoil him — and you''d be absolutely right. I love
+        Aji, and I want him to enjoy every single meal. But using Excel was tedious
+        — every input was manual, and there was no easy way to visualize trends over
+        time. So, I built this app: a smarter way to track meals, spot preferences,
+        and keep Aji well-fed and happy.'
       paragraph4: "✨ Want to join me? Sign up and try it yourself: "
-      signup: 'Sign Up'
-      note: "If you're interested in learning more about cat eating behavior, 
-      I highly recommend consulting a professional. I personally found great insights from "
-      petbuddy: "Pet Buddy Cat Behavior, LLC"
+      petbuddy: Pet Buddy Cat Behavior, LLC
+      signup: Sign Up
     doc:
-      document: "🐾 Document 🐾"
-      para1: "The Cat Feeding Tracker V2 is a web-based application designed to help cat owners meticulously monitor cats' feeding habits. 
-      The app offers a clear, visualized approach to tracking dietary intake, catering to multiple indoor cats. 
-      Built with modern web technologies, this app emphasizes user-friendly data entry, automated timekeeping, 
-      and visual charts to ensure accurate and complete feeding logs."
-      intro: "1. Introduction & Overview"
-      ver: "Version 1 vs Version 2"
-      col: "Version 1"
-      col2: "Version 2"
-      row: "Multi Cat Supports"
-      row2: "Tracker Chart Visualization"
-      row3: "Automatically Set Time Zone"
-      row4: "Visual Reminder"
-      row5: "Show Top 5-10 Favorite Foods"
-      key_features: "2. Key Features"
-      feature: "Multi-Cat Support: "
-      content_1: "Multi-Cat Support: Manage feeding data for 'multiple-cats' and 'single-cat' within a single user account, 
-      allowing individual tracking for each pet."
-      content_2: "Dedicated Tracking & Chart Columns: For each pet, the app provides its own dedicated tracking 
-      interface and a visualization column and charts to display feeding trends and data over time. "
-      feature_2: "Intuitive Data Entry with Visual Reminders: "
-      content_3: "Red Background Reminder: Raw data entries will display with a red background color as a visual alert, prompting the user to fill 
-      out the 'left amount' of food." 
-      content_4: "Yellow Background Reminder: 
-      Data entries will display with a yellow background color as a visual notice, reminding the user to fill out the column of
-       'Time Record(Come back to eat)'"
-      feature_3: "Automatic Date & Time Stamping:"
-      content_5: "The date and time is default set for local time for each feeding entry, streamlining the logging process."
-      feature_4: "Configurable Time Zones:"
-      content_6: "Upon user sign-up, the app sets up the correct time zone, ensuring accurate chronological data regardless of the user's location."
-      feature_5: "Comprehensive CRUD Operations:"
-      content_7: "Users have full control over their data, as below:"
-      content_8: "(1) Trackers: Individual feeding records can be added, edited/updated, and deleted."
-      content_9: "(2) Pets: Cat profiles can be added, edited/updated, and deleted."
-      content_10: "(3) User Information: User account details can be managed except timezone, including editing and deleting user profiles."
-      content_11: "(4) Data Visualization: The app includes charting capabilities to help users visualize feeding patterns/trends and 
-      make informed decisions about their cats' next meal."
-      feature_6: "Data Visualization: "
-      content_12: "The app includes charting capabilities to help users visualize feeding patterns and trends, aiding in making informed
-       decisions about their cats' next meals."
-      feature_7: "Favorite Foods List:"
-      content_13: "Maintain a list of your each cat's favorite foods, including brand and flavor. This feature helps you keep track of dietary 
-      preferences and ensures your pet enjoys their meals."
-      tech: "3. Technical Stack & Deployment"
-      tech_2: "Backend Framework: Ruby on Rails (RoR 8)"
-      tech_3: "Frontend Frameworks/Libraries: Bootstrap (for responsive design and styling), Stimulus (for modest JavaScript), 
-      and Turbo (for fast page navigation)."
-      tech_4: "Database: PostgreSQL (for reliable data storage)."
-      tech_5: "Deployment Platform: Heroku (for cloud hosting and application delivery). "
-      stack: "The Cat Feeding Tracker V2 leverages a robust and modern set of technologies: "
+      bene_1: 'Improved Cat Health Monitoring: Provides a clear record of feeding
+        habits, helping owners notice cat''s appetite changes to result from potential
+        health issues.'
+      bene_2: 'Reduced Manual Effort: Automated date/time stamps, total ate amount
+        and visual reminders simplify the data entry process.'
+      bene_3: 'Enhanced Organization: Centralized tracking for multiple cats keeps
+        all feeding information neatly organized.'
+      bene_4: 'Data-Driven Decisions: Visualizations empower users to understand trends
+        and adjust feeding schedules or amounts as needed.'
+      bene_5: 'Personalized Feeding Experience: The Favorite Foods List feature allows
+        owners to tailor meals to their cats'' preferences, enhancing satisfaction
+        and well-being.'
       benefit: " 4. Benefits"
-      bene_1: "Improved Cat Health Monitoring: Provides a clear record of feeding habits, 
-      helping owners notice cat's appetite changes to result from potential health issues."
-      bene_2: "Reduced Manual Effort: Automated date/time stamps, total ate amount and visual reminders simplify the data entry process."
-      bene_3: "Enhanced Organization: Centralized tracking for multiple cats keeps all feeding information neatly organized."
-      bene_4: "Data-Driven Decisions: Visualizations empower users to understand trends and adjust feeding schedules or amounts as needed."
-      bene_5: "Personalized Feeding Experience: The Favorite Foods List feature allows owners to tailor meals to their cats' preferences, 
-      enhancing satisfaction and well-being."
-      final: "By incorporating the Favorite Foods feature, Pet Feeding Tracker V2 not only helps you monitor 
-      feeding schedules but also ensures your cat's dietary preferences are met, contributing to their overall health and happiness."
+      col: Version 1
+      col2: Version 2
+      content_1: 'Multi-Cat Support: Manage feeding data for ''multiple-cats'' and
+        ''single-cat'' within a single user account, allowing individual tracking
+        for each pet.'
+      content_10: "(3) User Information: User account details can be managed except
+        timezone, including editing and deleting user profiles."
+      content_11: "(4) Data Visualization: The app includes charting capabilities
+        to help users visualize feeding patterns/trends and make informed decisions
+        about their cats' next meal."
+      content_12: The app includes charting capabilities to help users visualize feeding
+        patterns and trends, aiding in making informed decisions about their cats'
+        next meals.
+      content_13: Maintain a list of your each cat's favorite foods, including brand
+        and flavor. This feature helps you keep track of dietary preferences and ensures
+        your pet enjoys their meals.
+      content_2: 'Dedicated Tracking & Chart Columns: For each pet, the app provides
+        its own dedicated tracking interface and a visualization column and charts
+        to display feeding trends and data over time. '
+      content_3: 'Red Background Reminder: Raw data entries will display with a red
+        background color as a visual alert, prompting the user to fill out the ''left
+        amount'' of food.'
+      content_4: 'Yellow Background Reminder: Data entries will display with a yellow
+        background color as a visual notice, reminding the user to fill out the column
+        of ''Time Record(Come back to eat)'''
+      content_5: The date and time is default set for local time for each feeding
+        entry, streamlining the logging process.
+      content_6: Upon user sign-up, the app sets up the correct time zone, ensuring
+        accurate chronological data regardless of the user's location.
+      content_7: 'Users have full control over their data, as below:'
+      content_8: "(1) Trackers: Individual feeding records can be added, edited/updated,
+        and deleted."
+      content_9: "(2) Pets: Cat profiles can be added, edited/updated, and deleted."
+      document: "🐾 Document 🐾"
+      feature: 'Multi-Cat Support: '
+      feature_2: 'Intuitive Data Entry with Visual Reminders: '
+      feature_3: 'Automatic Date & Time Stamping:'
+      feature_4: 'Configurable Time Zones:'
+      feature_5: 'Comprehensive CRUD Operations:'
+      feature_6: 'Data Visualization: '
+      feature_7: 'Favorite Foods List:'
+      final: By incorporating the Favorite Foods feature, Pet Feeding Tracker V2 not
+        only helps you monitor feeding schedules but also ensures your cat's dietary
+        preferences are met, contributing to their overall health and happiness.
+      intro: 1. Introduction & Overview
+      key_features: 2. Key Features
+      para1: The Cat Feeding Tracker V2 is a web-based application designed to help
+        cat owners meticulously monitor cats' feeding habits. The app offers a clear,
+        visualized approach to tracking dietary intake, catering to multiple indoor
+        cats. Built with modern web technologies, this app emphasizes user-friendly
+        data entry, automated timekeeping, and visual charts to ensure accurate and
+        complete feeding logs.
+      row: Multi Cat Supports
+      row2: Tracker Chart Visualization
+      row3: Automatically Set Time Zone
+      row4: Visual Reminder
+      row5: Show Top 5-10 Favorite Foods
+      stack: 'The Cat Feeding Tracker V2 leverages a robust and modern set of technologies: '
+      tech: 3. Technical Stack & Deployment
+      tech_2: 'Backend Framework: Ruby on Rails (RoR 8)'
+      tech_3: 'Frontend Frameworks/Libraries: Bootstrap (for responsive design and
+        styling), Stimulus (for modest JavaScript), and Turbo (for fast page navigation).'
+      tech_4: 'Database: PostgreSQL (for reliable data storage).'
+      tech_5: 'Deployment Platform: Heroku (for cloud hosting and application delivery). '
+      ver: Version 1 vs Version 2
+    home:
+      services_html: "🐾 Track your cat's eating 🐾"
+      welcome: " Welcome to Cat Feeding Tracker App"
+  pet_list: "'s Pets List"
+  pets:
+    edit:
+      back: Back to pets
+      birthday: Birthday
+      breed: Breed
+      button_add: Add a Pet
+      button_modify: Modify Pet's Information
+      female: Female
+      gender: Gender
+      male: Male
+      not_answer: Rather Not To Answer
+      placeholder_breed: 'Update cat''s breed, ex: Mixed, Ragdoll...'
+      placeholder_weight: Enter cat's weight, the number should be range 0~100
+      prompt_gender: Choose Cat's gender
+      show: Show this pet
+      title: Editing %{pet}'s Profile
+      weight: Weight (kg)
+    form:
+      birthday: Birthday
+      breed: Breed
+      button_add: Add a Pet
+      button_later: Add pet later....
+      button_modify: Modify Pet's Information
+      female: Female
+      gender: Gender
+      male: Male
+      name: Pet name
+      not_answer: Rather Not To Answer
+      placeholder: Enter cat's name
+      placeholder_breed: 'Enter cat''s breed, ex: Mixed, Ragdoll...'
+      placeholder_weight: Enter cat's weight
+      prompt_gender: Choose Cat's gender
+      weight: weight (kg)
+    index:
+      button_add: Add new Pet
+      h5_1: 'You do not have any pets yet. Why would you add it right now? Press above '
+      h5_2: " button "
+      title: "'s Pets"
+    new:
+      back_to_pets: Back to pets
+      title: "🐾 Add for a pet🐾"
+    pet:
+      birthday: 'Birthday: '
+      breed: 'Breed: '
+      gender: 'Gender: '
+      name: 'Pet name: '
+      owner: 'Owner: '
+      registered: Not registered yet
+      weight: 'Weight (kg): '
+    show:
+      add_records: Add %{pet}'s Record
+      delete_pet: Delete %{pet}'s Profile
+      edit_records: Edit %{pet}'s Profile
+      show_records: Show %{pet}'s Record
+      title: "'s Profile"
+  pets_profile: Pet(s) Profile
   sessions:
     new:
-      title: "Log in for Pet Trackers App"
-      name: "Name"
-      name_placeholder: "Enter a username"
-      password: "Password"
-      password_placeholder: "Enter your password"
-      submit: "Log in"
-  pets:
-    form:
-      name: "Pet name"
-      placeholder: "Enter cat's name"
-      birthday: "Birthday"
-      weight: "weight (kg)"
-      placeholder_weight: "Enter cat's weight"
-      gender: "Gender"
-      prompt_gender: "Choose Cat's gender"
-      male: "Male"
-      female: "Female"
-      not_answer: "Rather Not To Answer"
-      breed: "Breed"
-      placeholder_breed: "Enter cat's breed, ex: Mixed, Ragdoll..."
-      button_add: "Add a Pet"
-      button_later: "Add pet later...."
-      button_modify: "Modify Pet's Information"
-    new:
-      title: "🐾 Add for a pet🐾"
-      back_to_pets: "Back to pets"
-    pet:
-      name: "Pet name: "
-      birthday: "Birthday: "
-      registered: "Not registered yet"
-      weight: "Weight (kg): "
-      gender: "Gender: "
-      breed: "Breed: "
-      owner: "Owner: "
-    show:
-      title: "'s Profile"
-      add_records: "Add %{pet}'s Record"
-      show_records: "Show %{pet}'s Record"
-      edit_records: "Edit %{pet}'s Profile"
-      delete_pet: "Delete %{pet}'s Profile"
+      name: Name
+      name_placeholder: Enter a username
+      password: Password
+      password_placeholder: Enter your password
+      submit: Log in
+      title: Log in for Pet Trackers App
+  signup: Sign Up
+  started: Get Started
+  tracker_record: Tracker Records
+  trackers:
     edit:
-      title: "Editing %{pet}'s Profile"
-      birthday: "Birthday"
-      weight: "Weight (kg)"
-      placeholder_weight: "Enter cat's weight, the number should be range 0~100"
-      gender: "Gender"
-      male: "Male"
-      female: "Female"
-      not_answer: "Rather Not To Answer"
-      prompt_gender: "Choose Cat's gender"
-      breed: "Breed"
-      placeholder_breed: "Update cat's breed, ex: Mixed, Ragdoll..."
-      button_add: "Add a Pet"
-      button_modify: "Modify Pet's Information"
-      show: "Show this pet"
-      back: "Back to pets"
+    favorites:
+    form:
+      date: date
+      dry: Dry
+      other: Other
+      select: When you put the food, does he/she eat ASAP?
+      wet: Wet
     index:
-      title: "'s Pets"
-      button_add: "Add new Pet"
-      h5_1: "You do not have any pets yet. Why would you add it right now? Press above "
-      h5_2: " button "
+    new:
+    tracker:
+  user_profile: " Profile "
+  view_favorite_list: View %{pet}'s Favorite Lists
+  view_pets: View %{pet}'s Profile
+  view_records: View %{pet}'s Records
+  view_user_profile: View Profile

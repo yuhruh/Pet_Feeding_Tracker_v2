@@ -1,148 +1,159 @@
-
+---
 zh-TW:
+  about: 關於
   activerecord:
     attributes:
-  home: "首頁"
-  about: "關於"
-  doc: "文件"
-  started: "開始使用"
-  log_in: "登入"
-  logout: "登出"
-  signup: "註冊"
-  pets_profile: "寵物資料"
-  view_pets: "查看 %{pet} 的資料"
-  food_list: "喜愛食物列表"
-  view_favorite_list: "查看 %{pet} 的喜愛食物列表"
-  tracker_record: "餵食紀錄"
-  view_records: "查看 %{pet} 的餵食紀錄"
-  pet_list: " 的寵物列表"
-  user_profile: " 使用者 "
-  add_pet: "新增寵物"
-  view_user_profile: "查看使用者資訊"
-  edit_user_profile: "編輯使用者資訊"
-  delete_user: "刪除使用者"
+  add_pet: 新增寵物
+  delete_user: 刪除使用者
+  doc: 文件
+  edit_user_profile: 編輯使用者資訊
+  food_list: 喜愛食物列表
+  home: 首頁
+  log_in: 登入
+  logout: 登出
   pages:
-    home: 
-      welcome: " 歡迎使用貓咪餵食飲食記錄"
-      services_html: "🐾 追蹤你的愛貓的飲食 🐾"
-    about: 
-      about_aji: "關於阿吉飲食記錄"
-      paragraph1: "這個應用程式的靈感來自於調皮的阿吉 —— 一隻橘白相間、口味超挑的可愛惡魔貓。和大多數的橘貓不同，阿吉有自己獨特的偏好。例如，比起鮪魚或鮭魚,他更愛雞肉。"
+    about:
+      about_aji: 關於阿吉飲食記錄
+      note: '如果你對貓咪的飲食行為有興趣，想了解更多，請諮詢專業人士: '
+      paragraph1: 這個應用程式的靈感來自於調皮的阿吉 —— 一隻橘白相間、口味超挑的可愛惡魔貓。和大多數的橘貓不同，阿吉有自己獨特的偏好。例如，比起鮪魚或鮭魚,他更愛雞肉。
       paragraph2: "我怎麼知道的呢？我目前用Excel記錄阿吉的每一餐，我慢慢發現阿吉一些飲食上的模式及喜好。如果我給他他不喜歡或不愛的食物……他寧願不吃一直喵喵叫（我：😅）。"
-      paragraph3: "你可能會說我寵壞阿吉了 —— 沒錯，我就是這麼愛阿吉。我希望阿吉每一餐都能開心地吃飯，但用Excel太過麻煩而且每筆都得手動輸入，
-      也無法輕易看出長期的飲食趨勢。於是我自己動手做了這個應用程式：一個更有效率的方式來記錄餐點、找出喜好，並確保阿吉每餐都可以吃得開心又健康。"
+      paragraph3: 你可能會說我寵壞阿吉了 —— 沒錯，我就是這麼愛阿吉。我希望阿吉每一餐都能開心地吃飯，但用Excel太過麻煩而且每筆都得手動輸入，
+        也無法輕易看出長期的飲食趨勢。於是我自己動手做了這個應用程式：一個更有效率的方式來記錄餐點、找出喜好，並確保阿吉每餐都可以吃得開心又健康。
       paragraph4: "✨ 想加入我一起記錄你家貓咪的吃貨日常嗎？立即註冊試用看看吧："
-      signup: '註冊'
-      note: "如果你對貓咪的飲食行為有興趣，想了解更多，請諮詢專業人士: "
-      petbuddy: "貼心毛寶:貓行為諮商與訓練"
+      petbuddy: 貼心毛寶:貓行為諮商與訓練
+      signup: 註冊
     doc:
-      document: "🐾 文件 🐾"
-      intro: "1. 簡介與概述"
-      para1: "貓咪餵食追蹤器-第二版 是一款基於網頁的應用程序，目的在幫助貓咪主人能夠精準地監控貓咪的飲食習慣。
-      此應用程式提供清晰直觀的飲食追蹤方法，可同時追蹤多隻貓咪的飲食攝取量。
-      這款應用程式利用現代網頁技術構建，著重使用者友善的數據輸入、自動帶入輸入時的時間及可視化圖表，以確保餵食日誌的準確性和完整性。(如下圖呈現)"
-      ver: "第一版 vs 第二版"
-      col: "第一版"
-      col2: "第二版"
-      row: "支援多貓"
-      row2: "餵食圖表"
-      row3: "自動帶入當時餵食時間"
-      row4: "視覺化提醒"
-      row5: "顯示最愛的5-10款食物"
-      key_features: "2. 主要特點"
-      feature: "支援多貓： "
-      content_1: "支援多貓：在單一使用者帳戶內可管理「多貓」或「單貓」的餵食數據，並可對每隻寵物進行單獨追蹤及紀錄。(如下圖)"
-      content_2: "專用追蹤及圖表欄：針對每隻寵物，該應用程式提供每隻專屬的追蹤介面以及視覺化圖表，以顯示一段時間內的餵食趨勢和數據。"
-      feature_2: "直觀地資料輸入與視覺提醒："
-      content_3: "紅色背景提醒：原始資料列會以紅色背景色顯示，提示使用者記得填寫「剩餘食物量」。(如下圖)" 
-      content_4: "黃色背景提醒：資料列會以黃色背景色顯示，提醒使用者填寫「時間記錄（來回吃飯）」欄。(如下圖)"
-      feature_3: "自動帶入餵食日期及時間"
-      content_5: "為了簡化紀錄過程，每個餵食紀錄的日期和時間預設為當地時間。"
-      feature_4: "自動抓取使用者時區"
-      content_6: "用戶註冊後，應用程式會抓取使用者註冊時的時區，以利使用者紀錄時既便在不同時區，應用程式仍會抓取註冊時的時區日期及時間，避免紀錄時時間錯亂。"
-      feature_5: "全面的 CRUD 操作："
-      content_7: "使用者可以完全操作自己的數據，如下所示："
-      content_8: "(1)餵食紀錄: 可以新增、編輯/更新和刪除單一餵食記錄。"
-      content_9: "(2)寵物: 可以新增、編輯/更新和刪除貓的資料。"
+      bene_1: '優化貓咪的健康監測: 提供清晰的餵食習慣記錄，幫助主人注意到貓的食慾變化是否由潛在的健康問題所引起。'
+      bene_2: '減少手動工作量: 自動帶入當地日期/時間、餵食總量及視覺提醒簡化了資料輸入過程。'
+      bene_3: '強化的餵食組織: 可對多隻貓進行餵食紀錄，使所有餵食資訊保持整齊有序。'
+      bene_4: '數據導向的決定: 視覺化可使使用戶了解貓咪的飲食趨勢並根據需要調整餵食時間或數量。'
+      bene_5: '貓咪本貓化的餵食體驗: 最喜歡的5-10種食物清單功能，使主人根據貓的喜好量身定制飲食，提高惡魔貓貓的滿意度和幸福感。'
+      benefit: " 4. 優點"
+      col: 第一版
+      col2: 第二版
+      content_1: 支援多貓：在單一使用者帳戶內可管理「多貓」或「單貓」的餵食數據，並可對每隻寵物進行單獨追蹤及紀錄。(如下圖)
       content_10: "(3)使用者資訊: 除時區以外，可以管理使用者帳戶的詳細信息，包括編輯和刪除使用者資料。"
       content_11: "(4)數據視覺化: 該應用程式包含圖表功能，可幫助用戶更直觀地了解餵食模式/趨勢，並對貓的下一餐做出聰明的決定。"
-      feature_6: "餵食紀錄視覺化"
-      content_12: "該應用程式包含圖表功能，可幫助用戶直觀地了解餵食模式和趨勢，從而幫助他們對貓的下一餐做出聰明的決定。"
-      feature_7: "喜愛食物列表"
-      content_13: "記錄每隻貓咪最愛的5-10種食物，包括品牌和口味。此功能可幫助您追蹤貓咪的飲食偏好，確保您的愛寵開心地享用美食。(如下圖所示)"
-      tech: "3. 使用技術"
-      tech_2: "後端框架: Ruby on Rails (RoR 8)"
-      tech_3: "前端框架/函式庫: Bootstrap(用於使用者介面設計和樣式)、Stimulus和 Turbo。"
-      tech_4: "資料庫: PostgreSQL(用於可靠的資料儲存)。"
-      tech_5: "部署平台: Heroku。"
-      stack: "貓餵食追蹤器-第二版 採用一套強大而現代的技術："
-      benefit: " 4. 優點"
-      bene_1: "優化貓咪的健康監測: 提供清晰的餵食習慣記錄，幫助主人注意到貓的食慾變化是否由潛在的健康問題所引起。"
-      bene_2: "減少手動工作量: 自動帶入當地日期/時間、餵食總量及視覺提醒簡化了資料輸入過程。"
-      bene_3: "強化的餵食組織: 可對多隻貓進行餵食紀錄，使所有餵食資訊保持整齊有序。"
-      bene_4: "數據導向的決定: 視覺化可使使用戶了解貓咪的飲食趨勢並根據需要調整餵食時間或數量。"
-      bene_5: "貓咪本貓化的餵食體驗: 最喜歡的5-10種食物清單功能，使主人根據貓的喜好量身定制飲食，提高惡魔貓貓的滿意度和幸福感。"
-      final: "透過加入「最愛食物列表」功能，寵物餵食追蹤器-第二版不僅可以幫助主人監控餵食時間表，還能確保滿足貓咪的飲食偏好，從而促進它們的整體健康和快樂。"
+      content_12: 該應用程式包含圖表功能，可幫助用戶直觀地了解餵食模式和趨勢，從而幫助他們對貓的下一餐做出聰明的決定。
+      content_13: 記錄每隻貓咪最愛的5-10種食物，包括品牌和口味。此功能可幫助您追蹤貓咪的飲食偏好，確保您的愛寵開心地享用美食。(如下圖所示)
+      content_2: 專用追蹤及圖表欄：針對每隻寵物，該應用程式提供每隻專屬的追蹤介面以及視覺化圖表，以顯示一段時間內的餵食趨勢和數據。
+      content_3: 紅色背景提醒：原始資料列會以紅色背景色顯示，提示使用者記得填寫「剩餘食物量」。(如下圖)
+      content_4: 黃色背景提醒：資料列會以黃色背景色顯示，提醒使用者填寫「時間記錄（來回吃飯）」欄。(如下圖)
+      content_5: 為了簡化紀錄過程，每個餵食紀錄的日期和時間預設為當地時間。
+      content_6: 用戶註冊後，應用程式會抓取使用者註冊時的時區，以利使用者紀錄時既便在不同時區，應用程式仍會抓取註冊時的時區日期及時間，避免紀錄時時間錯亂。
+      content_7: 使用者可以完全操作自己的數據，如下所示：
+      content_8: "(1)餵食紀錄: 可以新增、編輯/更新和刪除單一餵食記錄。"
+      content_9: "(2)寵物: 可以新增、編輯/更新和刪除貓的資料。"
+      document: "🐾 文件 🐾"
+      feature: '支援多貓： '
+      feature_2: 直觀地資料輸入與視覺提醒：
+      feature_3: 自動帶入餵食日期及時間
+      feature_4: 自動抓取使用者時區
+      feature_5: 全面的 CRUD 操作：
+      feature_6: 餵食紀錄視覺化
+      feature_7: 喜愛食物列表
+      final: 透過加入「最愛食物列表」功能，寵物餵食追蹤器-第二版不僅可以幫助主人監控餵食時間表，還能確保滿足貓咪的飲食偏好，從而促進它們的整體健康和快樂。
+      intro: 1. 簡介與概述
+      key_features: 2. 主要特點
+      para1: 貓咪餵食追蹤器-第二版 是一款基於網頁的應用程序，目的在幫助貓咪主人能夠精準地監控貓咪的飲食習慣。 此應用程式提供清晰直觀的飲食追蹤方法，可同時追蹤多隻貓咪的飲食攝取量。
+        這款應用程式利用現代網頁技術構建，著重使用者友善的數據輸入、自動帶入輸入時的時間及可視化圖表，以確保餵食日誌的準確性和完整性。(如下圖呈現)
+      row: 支援多貓
+      row2: 餵食圖表
+      row3: 自動帶入當時餵食時間
+      row4: 視覺化提醒
+      row5: 顯示最愛的5-10款食物
+      stack: 貓餵食追蹤器-第二版 採用一套強大而現代的技術：
+      tech: 3. 使用技術
+      tech_2: '後端框架: Ruby on Rails (RoR 8)'
+      tech_3: '前端框架/函式庫: Bootstrap(用於使用者介面設計和樣式)、Stimulus和 Turbo。'
+      tech_4: '資料庫: PostgreSQL(用於可靠的資料儲存)。'
+      tech_5: '部署平台: Heroku。'
+      ver: 第一版 vs 第二版
+    home:
+      services_html: "🐾 追蹤你的愛貓的飲食 🐾"
+      welcome: " 歡迎使用貓咪餵食飲食記錄"
+  pet_list: " 的寵物列表"
+  pets:
+    edit:
+      back: 返回寵物列表
+      birthday: 本喵生日
+      breed: '品種 '
+      button_add: 新增寵物
+      button_modify: 修改寵物資訊
+      female: 女性
+      gender: 性別
+      male: 男性
+      not_answer: 不方便回答
+      placeholder_breed: 更新愛貓的品種, 如：米克斯, 布偶...
+      placeholder_weight: 輸入本喵體重, 數字需介於0-100之間
+      prompt_gender: 請選擇愛貓的性別
+      show: 顯示本喵資料
+      title: 編輯 %{pet}本喵的資料
+      weight: 本喵體重 (kg)
+    form:
+      birthday: 生日
+      breed: 品種
+      button_add: 新增寵物
+      button_later: 待會新增...
+      button_modify: 修改寵物資訊
+      female: 女性
+      gender: 性別
+      male: 男性
+      name: 寵物姓名
+      not_answer: 不方便回答
+      placeholder: 請輸入愛貓的姓名
+      placeholder_breed: 請輸入愛貓的品種, 如：米克斯, 布偶...
+      placeholder_weight: 請輸入愛貓的體重(公斤)
+      prompt_gender: 請選擇愛貓的性別
+      weight: 體重 (公斤)
+    index:
+      button_add: 新增寵物
+      h5_1: 你還沒有任何一隻寵物, 何不現在增加一隻呢？ 請按以上貓貓
+      h5_2: " 的按鈕 "
+      title: 的寵物列表
+    new:
+      back_to_pets: 返回寵物列表
+      title: "🐾 新增寵物 🐾"
+    pet:
+      birthday: '生日: '
+      breed: '品種: '
+      gender: '性別: '
+      name: '寵物名字: '
+      owner: '奴才: '
+      registered: 還沒登錄
+      weight: '體重(公斤): '
+    show:
+      add_records: 新增%{pet}的餵食紀錄
+      delete_pet: 刪除%{pet}本喵的資料
+      edit_records: 修改%{pet}本喵的資料
+      show_records: 顯示%{pet}的餵食紀錄
+      title: 本喵的資訊
+  pets_profile: 寵物資料
   sessions:
     new:
-      title: "登入飲食記錄APP"
-      name: "使用者名稱"
-      name_placeholder: "輸入使用者名稱"
-      password: "使用者密碼"
-      password_placeholder: "輸入使用者密碼"
-      submit: "登入"
-  pets:
-    form:
-      name: "寵物姓名"
-      placeholder: "請輸入愛貓的姓名"
-      birthday: "生日"
-      weight: "體重 (公斤)"
-      placeholder_weight: "請輸入愛貓的體重(公斤)"
-      gender: "性別"
-      prompt_gender: "請選擇愛貓的性別"
-      male: "男性"
-      female: "女性"
-      not_answer: "不方便回答"
-      breed: "品種"
-      placeholder_breed: "請輸入愛貓的品種, 如：米克斯, 布偶..."
-      button_add: "新增寵物"
-      button_later: "待會新增..."
-      button_modify: "修改寵物資訊"
-    new:
-      title: "🐾 新增寵物 🐾"
-      back_to_pets: "返回寵物列表"
-    pet:
-      name: "寵物名字: "
-      birthday: "生日: "
-      registered: "還沒登錄"
-      weight: "體重(公斤): "
-      gender: "性別: "
-      breed: "品種: "
-      owner: "奴才: "
-    show:
-      title: "本喵的資訊"
-      add_records: "新增%{pet}的餵食紀錄"
-      show_records: "顯示%{pet}的餵食紀錄"
-      edit_records: "修改%{pet}本喵的資料"
-      delete_pet: "刪除%{pet}本喵的資料"
+      name: 使用者名稱
+      name_placeholder: 輸入使用者名稱
+      password: 使用者密碼
+      password_placeholder: 輸入使用者密碼
+      submit: 登入
+      title: 登入飲食記錄APP
+  signup: 註冊
+  started: 開始使用
+  tracker_record: 餵食紀錄
+  trackers:
     edit:
-      title: "編輯 %{pet}本喵的資料"
-      birthday: "本喵生日"
-      weight: "本喵體重 (kg)"
-      placeholder_weight: "輸入本喵體重, 數字需介於0-100之間"
-      gender: "性別"
-      male: "男性"
-      female: "女性"
-      not_answer: "不方便回答"
-      prompt_gender: "請選擇愛貓的性別"
-      breed: "品種 "
-      placeholder_breed: "更新愛貓的品種, 如：米克斯, 布偶..."
-      button_add: "新增寵物"
-      button_modify: "修改寵物資訊"
-      show: "顯示本喵資料"
-      back: "返回寵物列表"
+    favorites:
+    form:
+      date:
+      dry:
+      other:
+      select:
+      wet:
     index:
-      title: "的寵物列表"
-      button_add: "新增寵物"
-      h5_1: "你還沒有任何一隻寵物, 何不現在增加一隻呢？ 請按以上貓貓"
-      h5_2: " 的按鈕 "
+    new:
+    tracker:
+  user_profile: " 使用者 "
+  view_favorite_list: 查看 %{pet} 的喜愛食物列表
+  view_pets: 查看 %{pet} 的資料
+  view_records: 查看 %{pet} 的餵食紀錄
+  view_user_profile: 查看使用者資訊

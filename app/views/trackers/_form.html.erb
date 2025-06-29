@@ -5,14 +5,14 @@
     </div>
 
       <div class="row mb-3 justify-content-center">
-        <%= form.label :date, class: "col-sm-3 col-form-label", style: "color: #515a5a; font-weight: bold" %>
+        <%= form.label t('.date'), class: "col-sm-3 col-form-label", style: "color: #515a5a; font-weight: bold" %>
         <div class="col-sm-4">
           <%= form.date_field :date, class: "form-control", value: Date.current, max: Date.current, min: @pet.birthday %>
         </div>
       </div>
 
       <div class="row mb-3 justify-content-center">
-        <%= form.label "When you put the food, does he/she eat ASAP?", class: "col-sm-3 col-form-label optional", style: "color: #515a5a; font-weight: bold" %>
+        <%= form.label t('.select'), class: "col-sm-3 col-form-label optional", style: "color: #515a5a; font-weight: bold" %>
         <div class="col-sm-4">
           <%= form.select :hungry_extend, [["Yes"], ["Ate A Little"], ["No"]], { prompt: "Is he/she hungry? Please choose..." }, class: "form-control" %>
         </div>
@@ -29,7 +29,7 @@
       <div class="row mb-3 justify-content-center">
         <%= form.label :food_type, class: "col-sm-3 col-form-label required", style: "color: #515a5a; font-weight: bold;" %>
         <div class="col-sm-4">
-          <%= form.select :food_type, [["Dry"], ["Wet"], ["Other"]], { prompt: "Select Food Type" }, class: "form-control", required: true %>
+          <%= form.select :food_type, [[t('.dry')], [t('.wet')], [t('.other')]], { prompt: "Select Food Type" }, class: "form-control", required: true %>
         </div>
       </div>
 
