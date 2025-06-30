@@ -219,6 +219,11 @@ en:
   trackers:
     edit:
     favorites:
+      title_suffix: "'s Top %{count} Favorite Food"
+      index: "#"
+      brand: "Brand"
+      description: "Description"
+      score: "Favorite Score"
     form:
       date: date
       dry: Dry
