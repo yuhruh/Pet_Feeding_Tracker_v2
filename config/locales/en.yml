@@ -113,6 +113,41 @@ en:
     home:
       services_html: "🐾 Track your cat's eating 🐾"
       welcome: " Welcome to Cat Feeding Tracker App"
+    started:
+      get_started_title: "Get Started with Cat Feeding Tracker V2 🐾"
+      welcome_message: "Welcome to the Cat Feeding Tracker V2! Follow these simple steps to begin monitoring your cats' 😸 eating habits and gain valuable insights."
+      step1_title: "Step 1: Access the Application"
+      step1_description_html: "Open your web browser and navigate to the app's home page: "
+      step1_link: "Cat Feeding Tracker V2"
+      step2_title: "Step 2: Sign Up or Log In"
+      step2_description: "To start tracking, you'll need an account."
+      new_user_tip: "New Users: Look for a 'Sign Up' button/link on the navigation bar. 
+      Click it and follow the prompts to register a new account. This typically involves 
+      providing an email address and creating a password. Your time zone will likely be set during this process."
+      existing_user_tip: "Existing Users: Click on the 'Log In' button/link and enter your credentials to access your dashboard.(Shown as below image)"
+      step3_title: "Step 3: Add Your First Pet"
+      step3_description: "Once logged in, the first thing you might want to do is add your cat's profile. You can also skip this and add it later. 
+      The app supports tracking for multiple cats. Here is the pet adding form looks like:"
+      step3_dropdown_instruction: "On your dashboard or home screen, look for an dropdown 'Profile [your registered usernam]', 
+      first item 'Add Pet'. Click on it and enter the necessary details for your cat 
+      (e.g., name, birthday, gender, breed, wight....). Save the pet's profile."
+      step3_after_add: "After adding your first pet, you'll see related items appear in the nav bar."
+      step3_before_add: "Before adding any pet, the nav bar will look like this:"
+      step4_title: "Step 4: Log Your First Feeding"
+      step4_intro: "Once your cat’s profile is set up, you're ready to log their first meal."
+      step4_tracker_nav: "Navigate to your cat’s tracking page from the 'Tracker Records' dropdown and select their name."
+      auto_datetime: "Automatic Date & Time: These will likely be pre-filled for you."
+      feeding_details: "Enter Feeding Details: Input the amount of food and, if applicable, the time your cat returned to eat. Set a camera 📷 at the feeding spot helps."
+      visual_reminder: "(Visual Reminder!) Pay attention to the following cues:"
+      red_background: "A red background indicates you need to fill out the 'left amount'."
+      yellow_background: "A yellow background suggests you should enter the 'time they came back to eat'."
+      save_action: "Save: Click 'Save' or 'Add Feeding' to record the entry."
+      step5_title: "Step 5: Explore & Track!"
+      step5_log_more: "You've successfully logged your first feeding! Keep adding entries to build a record."
+      step5_explore: "Explore the charts to visualize your cat’s eating patterns and amount over time."
+      add_more_pets: "You can add more pets if you have them."
+      manage_info: "Manage your feeding records, pet profiles, or user information via 'Edit' and 'Delete' options."
+      closing: "Enjoy tracking your cat's journey to better health and diet management! 🐾🐾"
   pet_list: "'s Pets List"
   pets:
     edit:
@@ -198,3 +233,4 @@ en:
   view_pets: View %{pet}'s Profile
   view_records: View %{pet}'s Records
   view_user_profile: View Profile
+

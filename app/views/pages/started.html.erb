@@ -1,64 +1,47 @@
 <div class="container">
-  <h1 class="text mb-3" style="font-weight: bold">Get Started with Cat Feeding Tracker V2 🐾</h1>
-  <h2 class="text mb-5">Welcome to the Cat Feeding Tracker V2! Follow these simple steps to begin monitoring your cats' 😸 eating habits and gain valuable insights.</h2>
+  <h1 class="text mb-3" style="font-weight: bold"><%= t '.get_started_title' %></h1>
+  <h2 class="text mb-5"><%= t '.welcome_message' %></h2>
 
-    <h3 class="text", style="color: #515a5a; font-weight: bold">Step 1: Access the Application </h4>
-      <h4 class="text mb-5", style="color: #919097; font-weight: bold">Open your web browser and navigate to the app's home page: <a class="link-secondary" href=https://feeding-tracker-v2-3e86df55d613.herokuapp.com/home target="_blank">Cat Feeding Tracker V2</a> </h5>
-    <h3 class="text", style="color: #515a5a; font-weight: bold">Step 2: Sign Up or Log In </h3>
-      <h4 class="text mb-4", style="color: #919097; font-weight: bold">To start tracking, you'll need an account.</h4>
-        <h5 class="text", style="color: #6c6d70; font-weight: bold">New Users: Look for a "Sign Up" button/link on navigation bar.
-        Click it and follow the prompts to register a new account. This typically involves providing an email address and creating a password. Your time zone will likely be set during this process. </h5>
-        <div class="d-flex justify-content-center mb-5">
-          <%= image_tag("signup.png", width:"1200px", alt: "Chart of tracking", class: "rounded-4 shadow-lg")%>
-        </div>
+   <h3 class="text" style="color: #515a5a; font-weight: bold"><%= t '.step1_title' %></h3>
+  <h4 class="text mb-5" style="color: #919097; font-weight: bold">
+    <%= t '.step1_description_html' %>
+    <a class="link-secondary" href=https://feeding-tracker-v2-3e86df55d613.herokuapp.com/home target="_blank"><%= t ".step1_link" %></a>
+  </h4>
+  <h3 class="text" style="color: #515a5a; font-weight: bold"><%= t '.step2_title' %></h3>
+    <h4 class="text mb-4" style="color: #919097; font-weight: bold"><%= t '.step2_description' %></h4>
+    <h5 class="text" style="color: #6c6d70; font-weight: bold"><%= t '.new_user_tip' %></h5>
+    <div class="d-flex justify-content-center mb-5"><%= image_tag("signup.png", width:"1200px", alt: "Signup Screenshot", class: "rounded-4 shadow-lg")%></div>
+      <h5 class="text" style="color: #6c6d70; font-weight: bold"><%= t '.existing_user_tip' %></h5>
+    <div class="d-flex justify-content-center mb-5"><%= image_tag("signin.png", width:"1200px", alt: "Signin Screenshot", class: "rounded-4 shadow-lg")%></div>
 
-        <h5 class="text", style="color: #6c6d70; font-weight: bold">Existing Users: Click on the "Log In" button/link.
-        Enter your registered username and password to access your dashboard.</h5>
-        <div class="d-flex justify-content-center mb-5">
-          <%= image_tag("signin.png", width:"1200px", alt: "Chart of tracking", class: "rounded-4 shadow-lg")%>
-        </div>
-    <h3 class="text", style="color: #515a5a; font-weight: bold">Step 3: Add Your First Pet</h3>
-      <h5 class="text mb-3", style="color: #919097; font-weight: bold">Once logged in, the first thing you might want to do is add your cat's profile or You can skip it and add the cat's profile later. 
-      The app supports tracking for multiple cats. Here is the pet adding form looks like:</h5>
-        <div class="d-flex justify-content-center mb-5">
-          <%= image_tag("addpet.png", width:"1200px", alt: "Chart of tracking", class: "rounded-4 shadow-lg")%>
-        </div>
+  <h3 class="text" style="color: #515a5a; font-weight: bold"><%= t '.step3_title' %></h3>
+    <h5 class="text mb-3" style="color: #919097; font-weight: bold"><%= t '.step3_description' %></h5>
+    <div class="d-flex justify-content-center mb-5"><%= image_tag("addpet.png", width:"1200px", alt: "Add Pet Form", class: "rounded-4 shadow-lg")%></div>
 
-      <h5 class="text mb-4", style="color: #919097; font-weight: bold">On your dashboard or home screen, look for an dropdown "Profile 'your registered username'", first item "Add Pet".
-      Click on it and enter the necessary details for your cat (e.g., name, birthday, gender, breed, wight....). Save the pet's profile. <h5>
-        <div class="d-flex justify-content-center mb-5">
-          <%= image_tag("profile_firstitem.png", width:"1200px", alt: "Chart of tracking", class: "rounded-4 shadow-lg")%>
-        </div>
-        <div class="d-flex justify-content-center mb-5">
-          <%= image_tag("inputpet.png", width:"1200px", alt: "Chart of tracking", class: "rounded-4 shadow-lg")%>
-        </div>
-      <h5 class="text mb-4", style="color: #919097; font-weight: bold">After adding first pet, you will see related pet item in the nav bar.</h5>
-        <div class="d-flex justify-content-center mb-5">
-          <%= image_tag("afteradd.png", width:"1200px", alt: "Chart of tracking", class: "rounded-4 shadow-lg")%>
-        </div>
+    <h5 class="text mb-4" style="color: #919097; font-weight: bold"><%= t '.step3_dropdown_instruction' %></h5>
+      <div class="d-flex justify-content-center mb-5"><%= image_tag("profile_firstitem.png", width:"1200px", alt: "Profile Dropdown", class: "rounded-4 shadow-lg")%></div>
+      <div class="d-flex justify-content-center mb-5"><%= image_tag("inputpet.png", width:"1200px", alt: "Input Pet Info", class: "rounded-4 shadow-lg")%></div>
 
-      <h5 class="text mb-4", style="color: #919097; font-weight: bold">Before adding first pet, nav bar look like below image.</h5>
-        <div class="d-flex justify-content-center mb-5">
-          <%= image_tag("beforeadd.png", width:"1200px", alt: "Chart of tracking", class: "rounded-4 shadow-lg")%>
-        </div>
+      <h5 class="text mb-4" style="color: #919097; font-weight: bold"><%= t '.step3_after_add' %></h5>
+        <div class="d-flex justify-content-center mb-5"><%= image_tag("afteradd.png", width:"1200px", alt: "After Adding Pet", class: "rounded-4 shadow-lg")%></div>
+      <h5 class="text mb-4" style="color: #919097; font-weight: bold"><%= t '.step3_before_add' %></h5>
+        <div class="d-flex justify-content-center mb-5"><%= image_tag("beforeadd.png", width:"1200px", alt: "Before Adding Pet", class: "rounded-4 shadow-lg")%></div>
 
-    <h3 class="text", style="color: #515a5a; font-weight: bold">Step 4: Log Your First Feeding </h4>
-      <h5 class="text mb-3", style="color: #919097; font-weight: bold">While your cats' profile set up, you're ready to log their first meal. </h5>
+  <h3 class="text" style="color: #515a5a; font-weight: bold"><%= t '.step4_title' %></h3>
+      <h5 class="text mb-3" style="color: #919097; font-weight: bold"><%= t '.step4_intro' %></h5>
+      <h5 class="text mb-3" style="color: #919097; font-weight: bold"><%= t '.step4_tracker_nav' %></h5>
+      <h5 class="text mb-2" style="color: #6c6d70; font-weight: bold"><%= t '.auto_datetime' %></h5>
+      <h5 class="text mb-2" style="color: #6c6d70; font-weight: bold"><%= t '.feeding_details' %></h5>
+    <h4 class="text mb-4" style="color: #919097; font-weight: bold"><%= t '.visual_reminder' %></h4>
+      <h5 class="text" style="color: #6c6d70; font-weight: bold"><%= t '.red_background' %></h5>
+      <h5 class="text" style="color: #6c6d70; font-weight: bold"><%= t '.yellow_background' %></h5>
+    <h4 class="text mb-4" style="color: #919097; font-weight: bold"><%= t '.save_action' %></h4>
 
-      <h5 class="text mb-3", style="color: #919097; font-weight: bold">Navigate to your pet's individual tracking page (look for a dropdown "Tracker Records" and select the cat's name's record, it will lead you to the cat's record).
-       <h5 class="text mb-2", style="color: #6c6d70; font-weight: bold">Automatic Date & Time: Notice that the date and time will likely be pre-filled for you.</h6>
-       <h5 class="text mb-2", style="color: #6c6d70; font-weight: bold">Enter Feeding Details: </h6>
-       <h5 class="text mb-4", style="color: #6c6d70; font-weight: bold">Input the amount of food given. If applicable, enter the time of the cat come back to eat the food, 
-       therefore, you have to set up a camera near the spot where the food put.</h6>
-      <h4 class="text mb-4", style="color: #919097; font-weight: bold">  (Visual Reminder!) Pay attention to any visual cues:</h4>
-       <h5 class="text", style="color: #6c6d70; font-weight: bold">A red background might indicate you need to fill out the "left amount." </h5>
-       <h5 class="text", style="color: #6c6d70; font-weight: bold">A yellow background might prompt you to enter the "time of come back to eat."</h5>
-      <h4 class="text mb-4", style="color: #919097; font-weight: bold">Save: Click "Save" or "Add Feeding" to record the entry.</h4>
+  <h3 class="text" style="color: #515a5a; font-weight: bold"><%= t '.step5_title' %></h3>
+    <h4 class="text mb-4" style="color: #919097; font-weight: bold"><%= t '.step5_log_more' %></h4>
+    <h4 class="text mb-4" style="color: #919097; font-weight: bold"><%= t '.step5_explore' %></h4>
+  <h3 class="text" style="color: #515a5a; font-weight: bold"><%= t '.add_more_pets' %></h3>
+  <h3 class="text mb-5" style="color: #515a5a; font-weight: bold"><%= t '.manage_info' %></h3>
 
-    <h3 class="text", style="color: #515a5a; font-weight: bold"> Step 5: Explore & Track! </h3>
-      <h4 class="text mb-4", style="color: #919097; font-weight: bold">You've successfully logged your first feeding! Now you can: Continue adding more feeding entries.</h4>
-      <h4 class="text mb-4", style="color: #919097; font-weight: bold">Explore the charts to see your cat's eating patterns and amount trend over time. </h4>
-    <h3 class="text", style="color: #515a5a; font-weight: bold"> You can add more pets if you have them. </h3>
-    <h3 class="text mb-5", style="color: #515a5a; font-weight: bold">Manage your existing feeding records, pet profiles, or user information by using the "Edit" and "Delete" options. </h3>
-  <h2 class="text mb-5", style="font-weight: bold">Enjoy tracking your cat's journey to better health and diet management! 🐾🐾</h2>
+  <h2 class="text mb-5" style="font-weight: bold"><%= t '.closing' %></h2>
 </div>
