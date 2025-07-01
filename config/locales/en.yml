@@ -290,4 +290,41 @@ en:
   view_pets: View %{pet}'s Profile
   view_records: View %{pet}'s Records
   view_user_profile: View Profile
+  users:
+    form:
+      name: "Name"
+      name_placeholder: "Enter a username"
+      email: "Email"
+      email_placeholder: "Enter your email address"
+      password: "Password"
+      password_placeholder: "Create password"
+      password_hint: "Password should contain at least 5 characters"
+      password_confirmation: "Confirm Password"
+      password_confirmation_placeholder: "Please type your password again"
+      submit: "Create New User"
+    new:
+      title: "Sing Up for Cat Trackers App 🐾🐾"
+    edit:
+      edit_title: "Edit %{name}'s Profile"
+      name: "Username"
+      password: "Password"
+      password_placeholder: "New password"
+      password_confirmation: "Password Confirmation"
+      password_confirmation_placeholder: "Please type your new password again"
+      time_zone: "Time Zone"
+      submit:
+        create: "Sign Up"
+        update: "Update account"
+    show:
+      title: "%{name}'s Profile"
+      edit: "Edit your profile"
+      delete: "Delete your Profile"
+      delete_confirm: "Are you sure to delete this user account? The user and associated trackers will all be gone."
+      pet_count: "%{name} has %{count} pets:"
+      pet_profile: "%{name}'s Profile"
+      add_record: "Add %{name}'s Record"
+      show_record: "Show %{name}'s Record"
+
+
+
 

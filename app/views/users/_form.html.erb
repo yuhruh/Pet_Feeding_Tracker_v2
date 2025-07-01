@@ -5,34 +5,34 @@
 
   <div class="col-12">
     <div class="row mb-3 justify-content-center" id="user_name">
-    <%= form.label :name, class: "col-sm-2 col-form-label required", style: "color: #515a5a; font-weight: bold" %>
+    <%= form.label t('.name'), class: "col-sm-2 col-form-label required", style: "color: #515a5a; font-weight: bold" %>
     <div class="col-sm-3">
-      <%= form.text_field :name, class: "form-control", placeholder: "Enter a username", :required => true %>
+      <%= form.text_field :name, class: "form-control", placeholder: t(".name_placeholder"), :required => true %>
       </div> 
   </div>
 
   <div class="col-12">
     <div class="row mb-3 justify-content-center">
-    <%= form.label :email, class: "col-sm-2 col-form-label required", style: "color: #515a5a; font-weight: bold" %>
+    <%= form.label t('.email'), class: "col-sm-2 col-form-label required", style: "color: #515a5a; font-weight: bold" %>
     <div class="col-sm-3">
-      <%= form.email_field :email, class: "form-control", placeholder: "Enter your email address", :required => true %>
+      <%= form.email_field :email, class: "form-control", placeholder: t(".email_placeholder"), :required => true %>
     </div>
   </div>
 
   <div class="col-12">
     <div class="row mb-3 justify-content-center">
-      <%= form.label :password, class: "col-sm-2 col-form-label required", style: "color: #515a5a; font-weight: bold" %>
+      <%= form.label t('.password'), class: "col-sm-2 col-form-label required", style: "color: #515a5a; font-weight: bold" %>
       <div class="col-sm-3">
-        <%= form.password_field :password, class: "form-control", placeholder: "Create password", minlength: 5, :required => true %>
-        <div id="passwordHelpBlock" class="form-text">Password should contain at least 5 characters</div>
+        <%= form.password_field :password, class: "form-control", placeholder:  t(".password_placeholder"), minlength: 5, :required => true %>
+        <div id="passwordHelpBlock" class="form-text"><%= t(".password_hint") %></div>
     </div>
   </div>
 
   <div class="col-12">
     <div class="row mb-3 justify-content-center">
-      <%= form.label :password_confirmation, class: "col-sm-2 col-form-label required", style: "color: #515a5a; font-weight: bold" %>
+      <%= form.label t('.password_confirmation'), class: "col-sm-2 col-form-label required", style: "color: #515a5a; font-weight: bold" %>
       <div class="col-sm-3">
-      <%= form.password_field :password_confirmation, class: "form-control", placeholder: "Please type your password again", :required => true %>
+      <%= form.password_field :password_confirmation, class: "form-control", placeholder: t(".password_confirmation_placeholder"), :required => true %>
     </div>
   </div>
 
@@ -41,6 +41,6 @@
   </div>
 
   <div class="d-flex justify-content-center">
-    <%= form.submit "Create New User" %>
+    <%= form.submit t(".submit") %>
   </div>
 <% end %>

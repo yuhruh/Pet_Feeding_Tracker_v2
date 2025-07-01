@@ -249,3 +249,39 @@ zh-TW:
   view_pets: 查看 %{pet} 的資料
   view_records: 查看 %{pet} 的餵食紀錄
   view_user_profile: 查看使用者資訊
+  users:
+    form:
+      name: "使用者名稱"
+      name_placeholder: "請輸入使用者名稱"
+      email: "電子郵件"
+      email_placeholder: "請輸入電子郵件地址"
+      password: "密碼"
+      password_placeholder: "建立密碼"
+      password_hint: "密碼至少需要 5 個字元"
+      password_confirmation: "確認密碼"
+      password_confirmation_placeholder: "請再次輸入密碼"
+      submit: "建立新使用者"
+    new:
+      title: "註冊貓咪餵食紀錄應用程式  🐾🐾"
+    edit:
+      edit_title: "編輯 %{name} 的個人資料"
+      name: "使用者名稱"
+      password: "密碼"
+      password_placeholder: "新密碼"
+      password_confirmation: "確認密碼"
+      password_confirmation_placeholder: "請再次輸入新密碼"
+      time_zone: "時區"
+      submit:
+        create: "註冊"
+        update: "更新帳戶"
+    show:
+      title: "%{name} 的個人資料"
+      edit: "編輯個人資料"
+      delete: "刪除個人資料"
+      delete_confirm: "您確定要刪除此使用者帳戶嗎？此使用者及其所有追蹤紀錄將會被刪除。"
+      pet_count: "%{name} 有 %{count} 隻寵物如下："
+      pet_profile: "%{name} 的檔案"
+      add_record: "新增 %{name} 的紀錄"
+      show_record: "查看 %{name} 的紀錄"
+
+

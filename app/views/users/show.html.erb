@@ -1,20 +1,20 @@
-<h1 class="text-center mt-4" style="font-weight: bold;"><%= @user.name.capitalize %>'s profile</h1>
+<h1 class="text-center mt-4" style="font-weight: bold;"><%= t("users.show.title", name: @user.name.capitalize) %></h1>
 
 <div class="text-center m-4">
-  <%= link_to "Edit your profile", edit_user_path(@user), class: "btn btn-outline-success btn-sm mb-4" %>
-  <%= link_to "Delete your Profile", user_path(@user), class: "btn btn-outline-danger btn-sm mb-4 text-danger", data: {"turbo-confirm":  "Are you sure to delete this user account? The user and associated trackers will all gone..", "turbo-method": :delete } %>
+  <%= link_to t(".edit"), edit_user_path(@user), class: "btn btn-outline-success btn-sm mb-4" %>
+  <%= link_to t(".delete"), user_path(@user), class: "btn btn-outline-danger btn-sm mb-4 text-danger", data: {"turbo-confirm":  "Are you sure to delete this user account? The user and associated trackers will all gone..", "turbo-method": :delete } %>
 </div>
 
 
 <div class="d-flex justify-content-center text-center">
   <h4>
-    <%= @user.name.capitalize %> has <%= @user.pets.count %> pets: 
+    <%= t(".pet_count", name: @user.name.capitalize, count: @user.pets.count) %> 
     <ol class="list-group list-group-numbered">
       <% current_user.pets.each do |pet| %>
         <li class="list-group-item">
-          <%= link_to "#{pet.pet_name}'s Profile", "/pets/#{pet.id}", class: "btn" %>
-          <%= link_to "Add #{pet.pet_name.capitalize}'s Record", new_pet_tracker_path(pet), class: "btn btn-light", style: "background: #f8e4a8;" %>
-          <%= link_to "Show #{pet.pet_name.capitalize}'s Record", pet_trackers_path(pet), class: "btn btn-light", style: "background: #dbd9d3;" %>
+          <%= link_to t(".pet_profile", name: pet.pet_name), "/pets/#{pet.id}", class: "btn" %>
+          <%= link_to t(".add_record", name: pet.pet_name.capitalize), new_pet_tracker_path(pet), class: "btn btn-light", style: "background: #f8e4a8;" %>
+          <%= link_to t(".show_record", name: pet.pet_name.capitalize), pet_trackers_path(pet), class: "btn btn-light", style: "background: #dbd9d3;" %>
         </li> 
       <% end %>
     </ol>
