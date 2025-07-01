@@ -1,44 +1,43 @@
----
 en:
-  about: About
+  about: "About"
   activerecord:
     attributes:
-  add_pet: Add Pet
-  delete_user: Delete Profile
-  doc: Doc
-  edit_user_profile: Edit Profile
-  food_list: Favorite Food Lists
-  home: Home
-  log_in: Log In
-  logout: Log Out
+  add_pet: "Add Pet"
+  delete_user: "Delete Profile"
+  doc: "Doc"
+  edit_user_profile: "Edit Profile"
+  food_list: "Favorite Food Lists"
+  home: "Home"
+  log_in: "Log In"
+  logout: "Log Out"
   pages:
     about:
-      about_aji: About
-      note: 'If you''re interested in learning more about cat eating behavior, I highly
-        recommend consulting a professional. I personally found great insights from '
-      paragraph1: This app was inspired by my mischievous cat, Aji — a ginger-and-white
+      about_aji: "About"
+      note: "If you're interested in learning more about cat eating behavior, I highly
+        recommend consulting a professional. I personally found great insights from "
+      paragraph1: "This app was inspired by my mischievous cat, Aji — a ginger-and-white
         furball with a surprisingly picky palate. Unlike most ginger cats, Aji has
         his own unique favorites. For example, he loves chicken more than tuna or
-        salmon.
+        salmon."
       paragraph2: "How do I know? I used to track his meals in an Excel sheet, and
         over time, I started noticing patterns. If I served him something he didn’t
         like… he’d skip the meal entirely (me: 😅)."
-      paragraph3: 'You might say I spoil him — and you''d be absolutely right. I love
+      paragraph3: "You might say I spoil him — and you''d be absolutely right. I love
         Aji, and I want him to enjoy every single meal. But using Excel was tedious
         — every input was manual, and there was no easy way to visualize trends over
         time. So, I built this app: a smarter way to track meals, spot preferences,
-        and keep Aji well-fed and happy.'
+        and keep Aji well-fed and happy."
       paragraph4: "✨ Want to join me? Sign up and try it yourself: "
-      petbuddy: Pet Buddy Cat Behavior, LLC
-      signup: Sign Up
+      petbuddy: "Pet Buddy Cat Behavior, LLC"
+      signup: "Sign Up"
     doc:
-      bene_1: 'Improved Cat Health Monitoring: Provides a clear record of feeding
-        habits, helping owners notice cat''s appetite changes to result from potential
-        health issues.'
-      bene_2: 'Reduced Manual Effort: Automated date/time stamps, total ate amount
-        and visual reminders simplify the data entry process.'
-      bene_3: 'Enhanced Organization: Centralized tracking for multiple cats keeps
-        all feeding information neatly organized.'
+      bene_1: "Improved Cat Health Monitoring: Provides a clear record of feeding
+        habits, helping owners notice cat's appetite changes to result from potential
+        health issues."
+      bene_2: "Reduced Manual Effort: Automated date/time stamps, total ate amount
+        and visual reminders simplify the data entry process."
+      bene_3: "Enhanced Organization: Centralized tracking for multiple cats keeps
+        all feeding information neatly organized."
       bene_4: 'Data-Driven Decisions: Visualizations empower users to understand trends
         and adjust feeding schedules or amounts as needed.'
       bene_5: 'Personalized Feeding Experience: The Favorite Foods List feature allows
@@ -121,16 +120,11 @@ en:
       step1_link: "Cat Feeding Tracker V2"
       step2_title: "Step 2: Sign Up or Log In"
       step2_description: "To start tracking, you'll need an account."
-      new_user_tip: "New Users: Look for a 'Sign Up' button/link on the navigation bar. 
-      Click it and follow the prompts to register a new account. This typically involves 
-      providing an email address and creating a password. Your time zone will likely be set during this process."
+      new_user_tip: "New Users: Look for a 'Sign Up' button/link on the navigation bar. Click it and follow the prompts to register a new account. This typically involves providing an email address and creating a password. Your time zone will likely be set during this process."
       existing_user_tip: "Existing Users: Click on the 'Log In' button/link and enter your credentials to access your dashboard.(Shown as below image)"
       step3_title: "Step 3: Add Your First Pet"
-      step3_description: "Once logged in, the first thing you might want to do is add your cat's profile. You can also skip this and add it later. 
-      The app supports tracking for multiple cats. Here is the pet adding form looks like:"
-      step3_dropdown_instruction: "On your dashboard or home screen, look for an dropdown 'Profile [your registered usernam]', 
-      first item 'Add Pet'. Click on it and enter the necessary details for your cat 
-      (e.g., name, birthday, gender, breed, wight....). Save the pet's profile."
+      step3_description: "Once logged in, the first thing you might want to do is add your cat's profile. You can also skip this and add it later. The app supports tracking for multiple cats. Here is the pet adding form looks like:"
+      step3_dropdown_instruction: "On your dashboard or home screen, look for an dropdown 'Profile [your registered usernam]', first item 'Add Pet'. Click on it and enter the necessary details for your cat (e.g., name, birthday, gender, breed, wight....). Save the pet's profile."
       step3_after_add: "After adding your first pet, you'll see related items appear in the nav bar."
       step3_before_add: "Before adding any pet, the nav bar will look like this:"
       step4_title: "Step 4: Log Your First Feeding"
@@ -187,8 +181,9 @@ en:
       h5_1: 'You do not have any pets yet. Why would you add it right now? Press above '
       h5_2: " button "
       title: "'s Pets"
+      show_list: "Show this pet"
     new:
-      back_to_pets: Back to pets
+      back_to_pets: "Back to pets"
       title: "🐾 Add for a pet🐾"
     pet:
       birthday: 'Birthday: '
@@ -217,22 +212,79 @@ en:
   started: Get Started
   tracker_record: Tracker Records
   trackers:
-    edit:
+    edit: 
+      edit_title: "Editing %{pet_name}'s tracker"
+      date: "Date"
+      hungry_question: "When you prepare food, does he/she wait for the food?"
+      feeding_time: "Feeding Time"
+      feeding_note: "This is the time when you feed, so you can not edit it"
+      eat_back_time: "Come Back to Eat (time record)"
+      eat_back_placeholder: "Please use ',' as a separations. Ex: 07:45, 10:33,..."
+      eat_back_note: "Record time as 07:45, 09:34. If the cat did not come back to eat, you can mark as '-'"
+      food_type: "Food Type"
+      brand: "Brand"
+      description: "Description"
+      amount: "Amount (g)"
+      left_amount: "Left Amount (g)"
+      love: "Do they love this food?"
+      love_extend: "Love extend"
+      weight: "Weight (kg)"
+      weight_note: "You can weigh Cat's Weight every 2~3 weeks, and record it."
+      weight_placeholder: "Please enter a number of range 0~100"
+      note: "Note"
+      note_help: "You can add whatever you want to record, such as when the cat vomit 🤮"
+      submit_create: "Add a new record"
+      submit_update: "Update"
+      links_back: "Back to trackers"
     favorites:
       title_suffix: "'s Top %{count} Favorite Food"
       index: "#"
       brand: "Brand"
       description: "Description"
-      score: "Favorite Score"
+      score: "Favorite Score (ref)"
     form:
-      date: date
-      dry: Dry
-      other: Other
-      select: When you put the food, does he/she eat ASAP?
-      wet: Wet
+      input_date: "date"
+      select: "When you put the food, does he/she eat ASAP?"
+      feeding_time: "Feeding Time"
+      food_type: "Food Type"
+      brand: "Brand"
+      description: "Description"
+      description_help: "Input food's flavor or serial number for easy to track"
+      amount: "Amount (g)"
+      amount_placeholder: "Please enter a number of range 0~500"
+      amount_help: "Input number/float number only without unit"
+
     index:
+      title: "Pet %{pet_name}'s Trackers"
+      add_record: "Adding %{pet_name}'s New Record"
+      export_csv: "Export to CSV"
+      chart_wet: "Wet Ate Total Amount"
+      chart_dry: "Dry Ate Total Amount"
+      chart_other: "Other Ate Total Amount"
     new:
+      new_record_for: "Adding a New Record for %{pet_name}"
+      back_to_trackers: "Back to trackers"
     tracker:
+      number: "#"
+      date: "Date"
+      feeding_time: "Feeding Time"
+      eat_asap: "Does he/she eat ASAP?"
+      record_time: "Record Time (Come back to eat)"
+      food_type: "Food Type"
+      brand: "Brand"
+      description: "Description"
+      amount: "Amount (g)"
+      left_amount: "Left Amount (g)"
+      total_ate_amount: "Total Ate Amount (g)"
+      result: "Result"
+      favorite_score: "Favorite Score (ref)"
+      weight: "Weight (kg)"
+      note: "Note"
+      edit: "Edit"
+      delete: "Delete"
+      update_time_eat: "Please check time of eat back"
+      are_you_sure: "Are you sure?"
+      update_instruction_html: "Press %{icon} to update left amount and press \"Update\" button, below chart will be updated accordingly"
   user_profile: " Profile "
   view_favorite_list: View %{pet}'s Favorite Lists
   view_pets: View %{pet}'s Profile

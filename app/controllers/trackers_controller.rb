@@ -54,7 +54,7 @@ class TrackersController < ApplicationController
     @tracker.favorite_score = calculate_love_score + freq_score
 
     respond_to do |format|
-      if @tracker.update(params.expect(tracker: [ :pet_id, :date, :feeding_time, :time_of_eat_back_and_forth, :food_type, :brand, :description, :amount, :left_amount, :hungry_extend, :result, :weight, :total_ate_amount, :note ]))
+      if @tracker.update(params.expect(tracker: [ :pet_id, :date, :feeding_time, :time_of_eat_back_and_forth, :food_type, :brand, :description, :amount, :left_amount, :hungry_extend, :result, :weight, :total_ate_amount, :note]))
         format.html { redirect_to pet_trackers_path, notice: "Tracker was successfully updated." }
         format.json { render :show, status: :ok, location: pet_trackers_path }
       else
@@ -90,14 +90,22 @@ class TrackersController < ApplicationController
     end
 
     def love_choose
-      if @tracker.love_extend == "Love it So Much"
+      if @tracker.love_extend == "Love it So Much" || @tracker.love_extend == "超喜歡"
         "heart.png"
-      elsif @tracker.love_extend == "So so"
+      elsif @tracker.love_extend == "So so" || @tracker.love_extend == "還好"
         "triangle.png"
-      elsif @tracker.love_extend == "Not Like it"
+      elsif @tracker.love_extend == "Not Like it" || @tracker.love_extend == "不喜歡"
         "x.png"
       end
     end
+
+    #     if @tracker.love_extend == "超喜歡"
+    #   @tracker.love_extend = "Love it So Much"
+    # elsif @tracker.love_extend == "還好"
+    #   @tracker.love_extend = "So so"
+    # elsif @tracker.love_extend == "不喜歡"
+    #   @tracker.love_extend = "Not Like it"
+    # end
 
     def calculate_love_score
       if @tracker.love_extend == "heart.png"

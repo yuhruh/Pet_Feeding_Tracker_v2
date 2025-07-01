@@ -7,13 +7,13 @@
     <div class="row mb-4 justify-content-center">
     <%= form.label t('.name'), class: "col-sm-2 col-form-label required", style: "color: #515a5a; font-weight: bold" %>
     <div class="col-sm-3">
-      <%= form.text_field :pet_name, class: "form-control", placeholder: t '.placeholder' %>
+      <%= form.text_field :pet_name, class: "form-control", placeholder: t('.placeholder') %>
     </div> 
   </div>
 
   <div class="col-12">
     <div class="row mb-4 justify-content-center">
-    <%= form.label t '.birthday', class: "col-sm-2 col-form-label optional", style: "color: #515a5a; font-weight: bold" %>
+    <%= form.label t('.birthday'), class: "col-sm-2 col-form-label optional", style: "color: #515a5a; font-weight: bold" %>
     <div class="col-sm-3">
       <%= form.date_field :birthday, class: "form-control", max: Date.today %>
     </div> 

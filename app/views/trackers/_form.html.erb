@@ -5,7 +5,7 @@
     </div>
 
       <div class="row mb-3 justify-content-center">
-        <%= form.label t('.date'), class: "col-sm-3 col-form-label", style: "color: #515a5a; font-weight: bold" %>
+        <%= form.label t('.input_date'), class: "col-sm-3 col-form-label", style: "color: #515a5a; font-weight: bold" %>
         <div class="col-sm-4">
           <%= form.date_field :date, class: "form-control", value: Date.current, max: Date.current, min: @pet.birthday %>
         </div>
@@ -14,12 +14,12 @@
       <div class="row mb-3 justify-content-center">
         <%= form.label t('.select'), class: "col-sm-3 col-form-label optional", style: "color: #515a5a; font-weight: bold" %>
         <div class="col-sm-4">
-          <%= form.select :hungry_extend, [["Yes"], ["Ate A Little"], ["No"]], { prompt: "Is he/she hungry? Please choose..." }, class: "form-control" %>
+          <%= form.select :hungry_extend, [["Yes"], ["Ate A Little"], ["No"]], { :include_blank => "Is he/she hungry? Please choose..." }, class: "form-control" %>
         </div>
       </div>
 
       <div class="row mb-3 justify-content-center" data-controller="time-zone">
-        <%= form.label :feeding_time, class: "col-sm-3 col-form-label", style: "color: #515a5a; font-weight: bold" %>
+        <%= form.label t('.feeding_time'), class: "col-sm-3 col-form-label", style: "color: #515a5a; font-weight: bold" %>
         <div class="col-sm-4">
           <%= form.time_field :feeding_time, class: "form-control", value: set_current_time.strftime("%H:%M:%S"), max: (set_current_time + 5.minutes).strftime("%H:%M:%S") %>
         </div>
@@ -27,32 +27,32 @@
 
 
       <div class="row mb-3 justify-content-center">
-        <%= form.label :food_type, class: "col-sm-3 col-form-label required", style: "color: #515a5a; font-weight: bold;" %>
+        <%= form.label t('.food_type'), class: "col-sm-3 col-form-label required", style: "color: #515a5a; font-weight: bold;" %>
         <div class="col-sm-4">
-          <%= form.select :food_type, [[t('.dry')], [t('.wet')], [t('.other')]], { prompt: "Select Food Type" }, class: "form-control", required: true %>
+          <%= form.select :food_type, [["Dry"], ["Wet"], ["Other"]], { :include_blank => "Select Food Type" }, class: "form-control", required: true %>
         </div>
       </div>
 
       <div class="row mb-3 justify-content-center">
-        <%= form.label :brand, class: "col-sm-3 col-form-label required", style: "color: #515a5a; font-weight: bold" %>
+        <%= form.label t('.brand'), class: "col-sm-3 col-form-label required", style: "color: #515a5a; font-weight: bold" %>
         <div class="col-sm-4">
           <%= form.text_field :brand, class: "form-control", value: tracker.brand, requried: true %>
         </div>
       </div>
 
       <div class="row mb-3 justify-content-center">
-        <%= form.label :description, class: "col-sm-3 col-form-label required", style: "color: #515a5a; font-weight: bold" %>
+        <%= form.label t('.description'), class: "col-sm-3 col-form-label required", style: "color: #515a5a; font-weight: bold" %>
         <div class="col-sm-4">
           <%= form.text_field :description, class: "form-control", value: tracker.description, requried: true %>
-          <div id="descriptionHelpBlock" class="form-text">Input food's flavor or serial number for easy to track</div>
+          <div id="descriptionHelpBlock" class="form-text"><%= t('.description_help') %></div>
         </div>
       </div>
 
       <div class="row mb-3 justify-content-center">
-        <%= form.label "Amount (g)", class: "col-sm-3 col-form-label required", style: "color: #515a5a; font-weight: bold" %>
+        <%= form.label t('.amount'), class: "col-sm-3 col-form-label required", style: "color: #515a5a; font-weight: bold" %>
         <div class="col-sm-4">
-          <%= form.text_field :amount, class: "form-control floatingInput", placeholder: "Please enter a number of range 0~500", required: true, max: 500, min: 0 %>
-          <div id="amountHelpBlock" class="form-text">Input number/float number only without unit</div>
+          <%= form.text_field :amount, class: "form-control floatingInput", placeholder: t('.amount_placeholder'), required: true, max: 500, min: 0 %>
+          <div id="amountHelpBlock" class="form-text"><%= t '.amount_help' %></div>
         </div>
       </div>
 

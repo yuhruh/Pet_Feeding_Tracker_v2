@@ -1,4 +1,3 @@
----
 zh-TW:
   about: 關於
   activerecord:
@@ -84,8 +83,7 @@ zh-TW:
       existing_user_tip: "已有帳號的用戶：請點選「登入」按鈕，輸入您的帳號與密碼即可進入飲食紀錄。"
       step3_title: "步驟三：新增第一隻寵物"
       step3_description: "登入後，您可以建立貓咪的個人資料，也可以稍後再新增。本應用程式支援多貓咪追蹤。以下是新增寵物資料的畫面："
-      step3_dropdown_instruction: "在首頁導覽列上，尋找下拉選單「個人檔案 [您的註冊用戶名]」，第一個項目「新增寵物」。
-      點選後輸入貓咪的必要資料（例如：姓名、生日、性別、品種、體重等），並儲存貓咪的個人檔案。"
+      step3_dropdown_instruction: "在首頁導覽列上，尋找下拉選單「個人檔案 [您的註冊用戶名]」，第一個項目「新增寵物」。點選後輸入貓咪的必要資料（例如：姓名、生日、性別、品種、體重等），並儲存貓咪的個人檔案。"
       step3_after_add: "新增第一隻寵物後，導覽列會顯示相關項目。"
       step3_before_add: "新增寵物前，導覽列會像這樣："
       step4_title: "步驟四：記錄第一次餵食"
@@ -142,6 +140,7 @@ zh-TW:
       h5_1: 你還沒有任何一隻寵物, 何不現在增加一隻呢？ 請按以上貓貓
       h5_2: " 的按鈕 "
       title: 的寵物列表
+      show_list: "顯示此寵物"
     new:
       back_to_pets: 返回寵物列表
       title: "🐾 新增寵物 🐾"
@@ -173,21 +172,78 @@ zh-TW:
   tracker_record: 餵食紀錄
   trackers:
     edit:
+      edit_title: "編輯 %{pet_name} 的飲食紀錄"
+      date: "日期"
+      hungry_question: "你準備食物時，貓咪會等待食物嗎？"
+      feeding_time: "餵食時間"
+      feeding_note: "這是你餵食的時間，此時間無法修改"
+      eat_back_time: "來回吃飯的時間"
+      eat_back_placeholder: "請使用 ',' 作為分隔。例如：07:45, 10:33,..."
+      eat_back_note: "記錄時間如 07:45、09:34。若沒回來吃飯，可以標記為 '-'"
+      food_type: "食物類型"
+      brand: "品牌"
+      description: "口味"
+      amount: "份量 (公克)"
+      left_amount: "剩餘量 (公克)"
+      love: "他/她喜歡這食物嗎？"
+      love_extend: "喜愛程度"
+      weight: "體重（公斤）"
+      weight_note: "每兩到三週可測量一次體重並記錄"
+      weight_placeholder: "請輸入 0~100 之間的數字"
+      note: "備註"
+      note_help: "你可以記錄任何事項，例如嘔吐 🤮"
+      submit_create: "新增紀錄"
+      submit_update: "更新"
+      links_back: "返回紀錄列表"
     favorites:
       title_suffix: " 最愛的前 %{count} 種食物"
       index: "#"
       brand: "品牌"
       description: "口味"
-      score: "喜愛程度"
+      score: "喜愛程度 (僅供參考)"
     form:
-      date:
-      dry:
-      other:
-      select:
-      wet:
+      input_date: "日期"
+      select: "你準備食物時，貓咪會等待食物嗎？"
+      feeding_time: "餵食時間"
+      food_type: "食物類型"
+      brand: "品牌"
+      description: "口味"
+      description_help: "請輸入食物的口味或續號，方便後續追蹤"
+      amount: "份量 (公克)"
+      amount_placeholder: "請輸入範圍在 0～500 之間的數字"
+      amount_help: "僅能輸入數字或小數，不需含單位"
     index:
+      title: "愛貓 %{pet_name} 的飲食紀錄"
+      add_record: "新增 %{pet_name} 的飲食紀錄"
+      export_csv: "儲存為 CSV 檔"
+      chart_wet: "濕食總攝取量"
+      chart_dry: "乾食總攝取量"
+      chart_other: "其他食物總攝取量"
     new:
+      new_record_for: "新增 %{pet_name} 的飲食紀錄"
+      back_to_trackers: "回到餵食紀錄首頁"
     tracker:
+      number: "#"
+      date: "日期"
+      feeding_time: "餵食時間"
+      eat_asap: "是否立刻吃飯？"
+      record_time: "來回吃飯的時間紀錄"
+      food_type: "食物類型"
+      brand: "品牌"
+      description: "描述"
+      amount: "餵食量（克）"
+      left_amount: "剩餘量（克）"
+      total_ate_amount: "總共吃的量（克）"
+      result: "結果"
+      favorite_score: "喜好分數(僅供參考)"
+      weight: "體重（公斤）"
+      note: "備註"
+      edit: "編輯"
+      delete: "刪除"
+      update_time_eat: "更新來回吃飯的時間"
+      are_you_sure: "你確定要刪除嗎？"
+      update_instruction_html: "點選 %{icon} 來更新剩餘量，然後按下「更新」按鈕，下方的圖表將會隨著更新"
+
   user_profile: " 使用者 "
   view_favorite_list: 查看 %{pet} 的喜愛食物列表
   view_pets: 查看 %{pet} 的資料
