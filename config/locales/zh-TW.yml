@@ -1,4 +1,19 @@
 zh-TW:
+  will_paginate:
+    next_label: "下一頁"
+    page_entries_info:
+      multi_page: "正列出 %{model} 的第 %{from} 到第 %{to} 筆資料 (共 %{count} 筆資料)"
+      multi_page_html: "正列出 %{model} 的第 <strong>%{from}</strong> 到第 <strong>%{to}</strong> 筆資料 (共 <strong>%{count}</strong> 筆資料)"
+      single_page:
+        one: "正列出 1 則 %{model} 資料"
+        other: "正列出所有共 %{count} 筆的 %{model} 資料"
+        zero: "暫無任何 %{model} 的資料"
+      single_page_html:
+        one: "正列出 <strong>1</strong> 筆 %{model} 資料"
+        other: "正列出所有共 <strong>%{count}</strong> 筆的 %{model} 資料"
+        zero: "暫無任何 %{model} 的資料"
+    page_gap: "…"
+    previous_label: "上一頁"
   about: 關於
   activerecord:
     attributes:
@@ -219,6 +234,7 @@ zh-TW:
       chart_wet: "濕食總攝取量"
       chart_dry: "乾食總攝取量"
       chart_other: "其他食物總攝取量"
+      weight: "寵物 %{pet_name} 的體重紀錄趨勢"
     new:
       new_record_for: "新增 %{pet_name} 的飲食紀錄"
       back_to_trackers: "回到餵食紀錄首頁"

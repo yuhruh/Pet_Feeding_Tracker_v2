@@ -27,11 +27,15 @@
   {name: t('.chart_dry'), data: @pet.trackers.where(food_type: "Dry").where.not(total_ate_amount: nil).group(:transformed_time).sum(:total_ate_amount)},
   {name: t('.chart_other'), data: @pet.trackers.where(food_type: "Other").where.not(total_ate_amount: nil).group(:transformed_time).sum(:total_ate_amount)}], stacked: true %>
 
+
 <div class="d-flex digg_pagination justify-content-center">
   <div class="page_info">
     <%= page_entries_info @trackers %>
   </div>
 </div>
-<div class="d-flex digg_pagination justify-content-center mb-4">
+<div class="d-flex digg_pagination justify-content-center mb-5">
   <%= will_paginate @trackers, :container => false %>
 </div>
+
+<h2 class="text-center mt-4" style="font-weight: bold;"><%= t(".weight", pet_name: @pet.pet_name.capitalize) %></h2>
+<%= line_chart @pet.trackers.group(:transformed_time).sum(:weight) %>

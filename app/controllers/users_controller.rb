@@ -3,6 +3,15 @@ class UsersController < ApplicationController
   before_action :require_user, only: %i[ edit update ]
   before_action :require_same_user, only: %i[ edit update destroy ]
 
+  # def check_username
+  #   username = params[:name]
+  #   taken = User.exists?(username: username) # Or, for case-insensitivity: User.exists?("LOWER(username) = LOWER(?)", username)
+
+  #   respond_to do |format|
+  #     format.json { render json: { taken: taken } }
+  #   end
+  # end
+
   # GET /users or /users.json
   def index
     @users = User.all.paginate(page: params[:page], per_page: 5)
