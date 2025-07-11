@@ -21,7 +21,7 @@
       <div class="row mb-3 justify-content-center" data-controller="time-zone">
         <%= form.label t('.feeding_time'), class: "col-sm-3 col-form-label", style: "color: #515a5a; font-weight: bold" %>
         <div class="col-sm-4">
-          <%= form.time_field :feeding_time, class: "form-control", value: set_current_time.strftime("%H:%M") %>
+          <%= form.time_field :feeding_time, class: "form-control", value: set_current_time %>
         </div>
       </div>
 

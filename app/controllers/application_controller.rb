@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
 
   def set_current_time
     Time.zone = current_user.time_zone
-    Time.current
+    Time.current.strftime("%H:%M")
   end
 
   def set_current_date
