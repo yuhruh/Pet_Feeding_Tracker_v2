@@ -25,6 +25,9 @@
         <div class="col-sm-4">
           <%= form.time_field :feeding_time, class: "form-control", value: set_current_time.strftime("%H:%M:%S"), max: (set_current_time + 5.minutes).strftime("%H:%M:%S") %>
         </div>
+        <%= set_current_time %>
+        <%= Time.current %>
+        <%= Time.now %>
       </div>
 
 
