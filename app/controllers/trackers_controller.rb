@@ -46,7 +46,7 @@ class TrackersController < ApplicationController
 
   # PATCH/PUT /trackers/1 or /trackers/1.json
   def update
-    @tracker.update!(params.expect(tracker: [:date, :feeding_time, :amount, :left_amount, :hungry_extend, :time_of_eat_back_and_forth, :love_extend, :favorite_score]))
+    @tracker.update!(params.expect(tracker: [:feeding_time, :amount, :left_amount, :hungry_extend, :time_of_eat_back_and_forth, :love_extend, :favorite_score]))
     @tracker.total_ate_amount = @tracker.amount - @tracker.left_amount
     @tracker.transformed_time = @tracker.date.strftime('%Y-%m-%d')
     @tracker.frequency = @tracker.time_of_eat_back_and_forth.split(', ').count
