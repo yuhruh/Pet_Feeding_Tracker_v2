@@ -33,7 +33,7 @@
       <div class="row mb-3 justify-content-center">
         <%= form.label t('.eat_back_time'), class: "col-sm-3 col-form-label optional", style: "color: #515a5a; font-weight: bold" %>
         <div class="col-sm-5">
-          <%= form.text_field t('.eat_back_time'), class: "form-control", placeholder: t('.eat_back_placeholder') %>
+          <%= form.text_field :time_of_eat_back_and_forth, class: "form-control", placeholder: t('.eat_back_placeholder') %>
           <div id="time_of_eat_back_and_forthHelpBlock" class="form-text"><%= t('.eat_back_note') %></div>
         </div>
       </div>
