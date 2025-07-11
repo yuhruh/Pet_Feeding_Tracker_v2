@@ -90,22 +90,14 @@ class TrackersController < ApplicationController
     end
 
     def love_choose
-      if @tracker.love_extend == "Love it So Much" || @tracker.love_extend == "超喜歡"
+      if @tracker.love_extend == "Love it So Much"
         "heart.png"
-      elsif @tracker.love_extend == "So so" || @tracker.love_extend == "還好"
+      elsif @tracker.love_extend == "So so" 
         "triangle.png"
-      elsif @tracker.love_extend == "Not Like it" || @tracker.love_extend == "不喜歡"
+      elsif @tracker.love_extend == "Not Like it" 
         "x.png"
       end
     end
-
-    #     if @tracker.love_extend == "超喜歡"
-    #   @tracker.love_extend = "Love it So Much"
-    # elsif @tracker.love_extend == "還好"
-    #   @tracker.love_extend = "So so"
-    # elsif @tracker.love_extend == "不喜歡"
-    #   @tracker.love_extend = "Not Like it"
-    # end
 
     def calculate_love_score
       if @tracker.love_extend == "heart.png"
