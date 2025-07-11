@@ -120,6 +120,7 @@
           <td class="text-center justify-content-center"><%= link_to (image_tag("icon_edit.png", width:"18px")), edit_pet_tracker_path(@pet, pet_tracker) %></td>
           <td class="text-center justify-content-center"><%= link_to (image_tag("icon_delete.png", width:"18px")), pet_tracker_path(@pet, pet_tracker), data: { turbo_method: :delete, turbo_confirm: t('.are_you_sure') } %></td>
         </tr>
+        <%= JSON(pet_tracker.feeding_time) %>
       <% end %>
     <% end %>
   </tbody>

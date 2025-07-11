@@ -24,7 +24,7 @@
         <%= form.label t('.feeding_time'), class: "col-sm-3 col-form-label", style: "color: #515a5a; font-weight: bold" %>
         <div class="col-sm-5">
           <fieldset disabled>
-            <%= form.time_field :feeding_time, class: "form-control", value: @tracker.feeding_time.strftime("%H:%M:%S") %>
+            <%= form.text_field :feeding_time, class: "form-control", value: @tracker.feeding_time.strftime("%H:%M") %>
             <div id="feedin_timeHelpBlock" class="form-text"><%= t('.feeding_note') %></div>
           </fieldset>
         </div>
