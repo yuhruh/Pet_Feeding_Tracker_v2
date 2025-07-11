@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
 
   def set_current_date
     Time.zone = current_user.time_zone
-    Date.current
+    Time.current.strftime("%Y-%m-%d")
   end
 
   def logged_in?
