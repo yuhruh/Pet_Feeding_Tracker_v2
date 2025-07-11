@@ -22,14 +22,12 @@
   </thead>
   <tbody class="table-group-divider" id="trackers">
     <% @trackers.order(date: 'asc').each_with_index do |pet_tracker, idx| %>
-      <%= set_current_date %>
-      <%=pet_tracker.date%>
       <% if pet_tracker.total_ate_amount.nil? %>
         <tr class="table-danger">
           <th scope="row"><%= idx+1 %></th>
           <td><%= pet_tracker.date.strftime("%Y-%m-%d") %></td>
-          <td class="text-center justify-content-center"><%= JSON(pet_tracker.feeding_time).split(' ')[1] %></td>
-          <td><%= pet_tracker.hungry_extend %></td>
+          <td class="text-center justify-content-center"><%= pet_tracker.feeding_time.strftime("%H:%M") %></td>
+          <td class="text-center justify-content-center"><%= pet_tracker.hungry_extend %></td>
           <td><%= pet_tracker.time_of_eat_back_and_forth %></td>
           <td class="text-center justify-content-center"><%= pet_tracker.food_type %></td>
           <td class="text-center justify-content-center"><%= pet_tracker.brand %></td>
@@ -57,8 +55,8 @@
         <tr class="table-warning">
           <th scope="row"><%= idx+1 %></th>
           <td><%= pet_tracker.date.strftime("%Y-%m-%d") %></td>
-          <td class="text-center justify-content-center"><%= JSON(pet_tracker.feeding_time).split(' ')[1] %></td>
-          <td><%= pet_tracker.hungry_extend %></td>
+          <td class="text-center justify-content-center"><%= pet_tracker.feeding_time.strftime("%H:%M") %></td>
+          <td class="text-center justify-content-center"><%= pet_tracker.hungry_extend %></td>
           <td><%= pet_tracker.time_of_eat_back_and_forth %></td>
           <td class="text-center justify-content-center"><%= pet_tracker.food_type %></td>
           <td class="text-center justify-content-center"><%= pet_tracker.brand %></td>
@@ -86,8 +84,8 @@
         <tr>
           <th scope="row"><%= idx+1 %></th>
           <td><%= pet_tracker.date.strftime("%Y-%m-%d") %></td>
-          <td class="text-center justify-content-center"><%= JSON(pet_tracker.feeding_time).split(' ')[1] %></td>
-          <td><%= pet_tracker.hungry_extend %></td>
+          <td class="text-center justify-content-center"><%= pet_tracker.feeding_time.strftime("%H:%M") %></td>
+          <td class="text-center justify-content-center"><%= pet_tracker.hungry_extend %></td>
           <td><%= pet_tracker.time_of_eat_back_and_forth %></td>
           <td class="text-center justify-content-center"><%= pet_tracker.food_type %></td>
           <td class="text-center justify-content-center"><%= pet_tracker.brand %></td>
@@ -122,7 +120,6 @@
           <td class="text-center justify-content-center"><%= link_to (image_tag("icon_edit.png", width:"18px")), edit_pet_tracker_path(@pet, pet_tracker) %></td>
           <td class="text-center justify-content-center"><%= link_to (image_tag("icon_delete.png", width:"18px")), pet_tracker_path(@pet, pet_tracker), data: { turbo_method: :delete, turbo_confirm: t('.are_you_sure') } %></td>
         </tr>
-        <%= JSON(pet_tracker.feeding_time) %>
       <% end %>
     <% end %>
   </tbody>
