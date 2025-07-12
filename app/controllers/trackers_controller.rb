@@ -31,6 +31,7 @@ class TrackersController < ApplicationController
   # POST /trackers or /trackers.json
   def create
     @tracker = @pet.trackers.build(tracker_params)
+    @tracker.date = set_current_date
     # @tracker = Tracker.new(tracker_params)
 
     respond_to do |format|

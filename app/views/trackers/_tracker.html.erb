@@ -22,8 +22,6 @@
   </thead>
   <tbody class="table-group-divider" id="trackers">
     <% @trackers.order(date: 'asc').each_with_index do |pet_tracker, idx| %>
-      <%=pet_tracker.date.in_time_zone(current_user.time_zone).strftime("%Y-%m-%d") %> |
-      <%=pet_tracker.date.strftime("%Y-%m-%d")%> ||
       <% if pet_tracker.total_ate_amount.nil? %>
         <tr class="table-danger">
           <th scope="row"><%= idx+1 %></th>
