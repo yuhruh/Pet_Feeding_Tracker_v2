@@ -120,14 +120,14 @@ class TrackersController < ApplicationController
       end
     end
 
-  def set_current_time
-    Time.zone = current_user.time_zone
-    Time.current.strftime("%H:%M")
-  end
+    def set_current_time
+      Time.zone = current_user.time_zone
+      Time.current.strftime("%H:%M")
+    end
 
-  def set_current_date
-    Time.zone = current_user.time_zone
-    Date.current.strftime("%Y-%m-%d")
-  end
+    def set_current_date
+      Time.zone = current_user.time_zone
+      Date.current.strftime("%Y-%m-%d")
+    end
 
 end
