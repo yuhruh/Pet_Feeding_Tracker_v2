@@ -2,6 +2,7 @@ class TrackersController < ApplicationController
   before_action :set_pet
   before_action :set_tracker, only: %i[ show edit update destroy ]
   before_action :require_user, except: %i[ show edit update destroy ]
+  before_action :set_current_date, :set_current_time
 
   # GET /trackers or /trackers.json
   def index
@@ -118,4 +119,15 @@ class TrackersController < ApplicationController
         0
       end
     end
+
+  def set_current_time
+    Time.zone = current_user.time_zone
+    Time.current.strftime("%H:%M")
+  end
+
+  def set_current_date
+    Time.zone = current_user.time_zone
+    Date.current.strftime("%Y-%m-%d")
+  end
+
 end
