@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
   # Only allow modern browsers supporting webp images, web push, badges, import maps, CSS nesting, and CSS :has.
   allow_browser versions: :modern
   helper_method :current_user, :set_current_time, :set_current_date, :logged_in?
-  around_action :set_time_zone, if: :current_user
+  before_action :set_current_date
 
   def current_user
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
@@ -10,12 +10,12 @@ class ApplicationController < ActionController::Base
 
   def set_current_time
     Time.zone = current_user.time_zone
-     Time.current.strftime("%H:%M")
+    Time.current.strftime("%H:%M")
   end
 
   def set_current_date
     Time.zone = current_user.time_zone
-    Time.current.strftime("%Y-%m-%d")
+    Date.current.strftime("%Y-%m-%d")
   end
 
   def logged_in?
