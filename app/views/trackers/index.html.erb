@@ -23,9 +23,9 @@
 
 <%= render 'tracker' %>
 
-<%= column_chart [{name: t('.chart_wet'), data: @pet.trackers.where(food_type: "Wet").where.not(total_ate_amount: nil).group(:transformed_time).order(date: :asc).sum(:total_ate_amount)}, 
-  {name: t('.chart_dry'), data: @pet.trackers.where(food_type: "Dry").where.not(total_ate_amount: nil).group(:transformed_time).order(date: :asc).sum(:total_ate_amount)},
-  {name: t('.chart_other'), data: @pet.trackers.where(food_type: "Other").where.not(total_ate_amount: nil).group(:transformed_time).order(date: :asc).sum(:total_ate_amount)}], stacked: true %>
+<%= column_chart [{name: t('.chart_wet'), data: @pet.trackers.where(food_type: "Wet").where.not(total_ate_amount: nil).group(:transformed_time).sum(:total_ate_amount)}, 
+  {name: t('.chart_dry'), data: @pet.trackers.where(food_type: "Dry").where.not(total_ate_amount: nil).group(:transformed_time).sum(:total_ate_amount)},
+  {name: t('.chart_other'), data: @pet.trackers.where(food_type: "Other").where.not(total_ate_amount: nil).group(:transformed_time).sum(:total_ate_amount)}], stacked: true %>
 
 
 <div class="d-flex digg_pagination justify-content-center">
