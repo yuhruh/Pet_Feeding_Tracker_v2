@@ -45,8 +45,4 @@ class ApplicationController < ActionController::Base
     I18n.locale = session[:locale] || I18n.default_locale
     # I18n.locale = params[:locale] || I18n.default_locale
   end
-
-  def set_time_zone(&block)
-    Time.use_zone(current_user.time_zone, &block)
-  end
 end
